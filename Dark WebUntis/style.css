@@ -1,0 +1,181 @@
+/* ==UserStyle==
+@name           Dark WebUntis
+@namespace      github.com/trgamer-tech/openstyles
+@version        1.0.0
+@description    This Style transforms the WebUntis Calendar into a full dark mode!
+@author         TRGYT
+==/UserStyle== */
+
+@-moz-document domain("tipo.webuntis.com") {
+/* Scroll bar stylings */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--lightestgrey); 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+.dropdown-navigation, .top-section, .expanded-content {
+    background: #2c2c2c!important;
+}
+
+.dropdown-navigation .expanded-content>span {
+    color: #d9d9d9;
+}
+
+.dropdown-navigation .expanded-content>.change-school-link {
+    color: #84a9c3!important;
+}
+
+.icon.icon-list, .icon.icon-x {
+    filter: invert(1);
+}
+
+.un-page__header {
+    background-color: #232323;
+}
+
+.untis-bootstrap .nav-tabs {
+    background-color: transparent;
+}
+
+.un-unicon__icon-questionmark:before {
+    filter:invert(1);
+}
+
+.un-timetable-page__header {
+    background-color: #232323;
+}
+
+.un-timetable-page__element-info {
+    color: #dcdcdc;
+}
+
+.untis-bootstrap .form-control {
+    background-color: #3f3f3f;
+}
+
+.has-value.Select--single>.Select-control .Select-value .Select-value-label {
+    color: #dcdcdc;
+}
+
+.Select-arrow {
+    border-color: #dadada transparent transparent;
+}
+
+.un-page {
+    background-color: #232323;
+}
+
+.redesigned-navigation-bar {
+    background: #1e1e1e;
+}
+
+.Select-control {
+    background-color: #333;
+}
+
+.untis-bootstrap .btn-default {
+    background-color: #626262;
+}
+
+.un-timetable, .un-timetable-page__body {
+    background-color: #303030;
+}
+
+.un-timetable .timetableGridColumn {
+    border-right: 2px solid #717171;
+    border-right-color: #717171;
+}
+
+.un-timetable--grid-lines .timetableGridRow {
+    border-bottom: 1px solid #717171;
+    border-bottom-color: #717171;
+}
+
+.renderedEntry {
+    background-color: rgb(129 207 255 / 66%)!important;
+}
+
+.un-app.redesigned .redesigned-main .content-container .content {
+    background: linear-gradient(207deg,#4b4b4b,#242424);
+    background-image: linear-gradient(207deg, rgb(75, 75, 75), rgb(36, 36, 36));
+}
+
+.un2-redesigned-news__school-name {
+    color: #c6c6c6;
+}
+
+.un2-redesigned-news__current-date {
+    color: #9b9b9b;
+}
+
+.un-app .un2-elements__link {
+    color: #7b7b7b;
+}
+
+.un2-message {
+    background: #6f6f6f;
+    background-color: rgb(53 53 53);
+}
+
+.un2-message__content-blur {
+    background: linear-gradient(180deg,hsla(0,0%,100%,0),#313131);
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(49, 49, 49));
+}
+
+.un2-message__content {
+    color: #959595!important;
+}
+
+font {
+    color: #fff;
+}
+
+.untis-bootstrap .modal-content {
+    background-color: rgb(53 53 53);
+}
+
+.un-dashboard-widget.panel {
+    background-color: #313131;
+}
+
+.redesigned-widget .redesigned-widget__top-section>.school-logo-container>h2 {
+    color: #999999;
+}
+
+.untis-bootstrap img:not(.un2-login-form__mobile-badge) {
+    filter: invert(1);
+}
+
+.un-input-group__input, .un-input-group__password-button{
+    background-color: #4c4c4c;
+    color: #fff!important;
+}
+
+.untis-bootstrap .redesigned-button:disabled {
+    background-color: #7b7b7b;
+}
+
+.untis-bootstrap .panel {
+    background-color: #353535;
+}
+
+.untis-bootstrap .panel-title>a, .untis-bootstrap .panel-title>span, .panel-body {
+    color: #d4d4d4;
+}
+}
