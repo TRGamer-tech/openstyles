@@ -1,7 +1,7 @@
 Openstyles
 =====
 
-Welcome to Openstyles! Take a loo around, you might find something interesting!
+Welcome to Openstyles! Take a look around, you might find something interesting!
 
 About
 -----
