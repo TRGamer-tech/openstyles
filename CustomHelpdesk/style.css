@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           CustomHelpdesk
-@namespace      github.com/trgamer-tech/openstyles
+@namespace      USO Archive
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
 @version        20211007.11.47
@@ -415,5 +415,25 @@
 @-moz-document regexp("(?=.*?\\/Login).*") {
         #divBigHeader, .adminlogo {
         z-index: 0!important;
+    }
+}
+
+@-moz-document regexp("(?=.*?\\/Dashboard).*") {
+    #customerDashboard .outerroundedbox {
+        background: #2e2e2e;
+    }
+    
+    #serverwatchLogsList>div, #callLog>div {
+        background: rgb(40, 40, 40);
+        border-radius: 5px;
+    }
+    
+    #serverwatchLogsList>div:nth-of-type(even), #callLog>div:nth-of-type(even) {
+        background: rgb(37, 37, 37);
+    }
+    
+    table:not(.commentsTbl):not(.horizseparated):not(#maintable) tr:last-of-type>td {
+        padding-bottom: 20px;
+        background-color: #2E2E2E;
     }
 }
