@@ -395,8 +395,19 @@
     
     .productNavigation-module--container--2BnCV>a, 
     .productNavigation-module--container--2BnCV>div>span, 
+    .loginButton-module--loginButton--mWUCI, 
+    .productNavigation-module--container--2BnCV .productNavigation-module--translatorLink--2_7y2:hover, 
     .loginButton-module--loginButton--mWUCI {
         color: var(--link);
+    }
+    
+    .productNavigation-module--container--2BnCV>a.productNavigation-module--active--1WMca, 
+    .productNavigation-module--container--2BnCV>a:not(.productNavigation-module--nohover--Ve9EH):hover, 
+    .productNavigation-module--container--2BnCV>div>span.productNavigation-module--active--1WMca, 
+    .productNavigation-module--container--2BnCV>div>span:not(.productNavigation-module--nohover--Ve9EH):hover, 
+    .productNavigation-module--container--2BnCV .productNavigation-module--translatorLink--2_7y2:hover, 
+    .loginButton-module--loginButton--mWUCI:hover {
+        color: var(--linkhov)!important;
     }
     
     .productNavigation-module--container--2BnCV.productNavigation-module--smallMediumFont--3VB5x img {
