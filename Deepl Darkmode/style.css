@@ -28,6 +28,7 @@
         --border-s: 5px;
     }
 }
+
 @-moz-document regexp("(?=.*?\\/translator).*") {
     .dl_body--redesign {
         background-color: var(--mainbg)!important;
@@ -35,6 +36,7 @@
     
     /*============================= HEADER =============================*/
     
+    .dl_header, 
     .dl_header:before {
         background-color: var(--secbg)!important;
     }
@@ -79,6 +81,11 @@
     
     .button_module_button__db2f9982.button_module_color_primary__db2f9982:hover {
         color: var(--seclinkhov);
+    }
+    
+    .input_module_inputWrapper__3e8dc037 .input_module_input__3e8dc037 {
+        background: transparent;
+        color: var(--mainfont);
     }
     
     /*============================ SIDE BAR ============================*/
@@ -204,7 +211,9 @@
         border-top: var(--border);
     }
     
-    .docTrans_document__upload_progress, .docTrans_document__progress {
+    .docTrans_document__upload_progress, 
+    .docTrans_document__progress, 
+    .lmt__language_select__menu.lmt__language_select__menu_three_columns{
         background-color: var(--thirdbg);
     }
     
@@ -219,6 +228,83 @@
         color: var(--secfont);
     }
     
+    .lmt__language_select__menu.lmt__language_select__menu_three_columns{
+        border-radius: var(--border-m);
+    }
+    
+    .lmt__language_select__menu .lmt__dropdown_item_inside_container, 
+    .lmt__language_select__menu .lmt__formalitySwitch__menu_items>div button, 
+    .lmt__formalitySwitch__menu_items>div .lmt__language_select__menu button, 
+    .lmt__language_select__menu>div button {
+        color: var(--mainfont);
+    }
+    
+    @media (min-device-width: 651px) {
+        .lmt__dict .lmt__dict__inner, .lmt__dict .lmt__dict__empty_state {
+            background-color: var(--secbg);
+        }
+        
+        .lmt__dict.lmt--is-dict-ready .lmt__dict__inner {
+            border: var(--border);
+        }
+        
+        .lmt__dict .tag_lemma a {
+            color: var(--link);
+        }
+        
+        .buttonContainer--3fFBN button {
+            color: var(--link);
+            stroke: var(--link);
+            fill: var(--link);
+        }
+        
+        .buttonContainer--3fFBN button:hover svg {
+            color: var(--linkhov);
+            stroke: var(--linkhov);
+            fill: var(--linkhov);
+        }
+        
+        .lmt__dict .tag_trans {
+            color: var(--secfont);
+        }
+    }
+    
+    @media (max-device-width: 650px), (max-device-height: 650px) and (hover: none) {
+        .lmt--web .lmt__translations_as_text, 
+        .lmt__dict, 
+        .lmt__dict .lmt__dict__inner, 
+        .lmt__dict .lmt__dict__empty_state, 
+        .item--1bMpF, 
+        .lmt__source_toolbar {
+            background-color: var(--secbg);
+        }
+        
+        .lmt__dict .tag_lemma a {
+            color: var(--link);
+        }
+        
+        .lmt__dict .tag_trans {
+            color: var(--secfont);
+        }
+        
+        .buttonContainer--3fFBN button {
+            color: var(--link);
+            stroke: var(--link);
+            fill: var(--link);
+        }
+        
+        .buttonContainer--3fFBN button:hover svg {
+            color: var(--linkhov);
+            stroke: var(--linkhov);
+            fill: var(--linkhov);
+        }
+        
+        .lmt--web .lmt__translations_as_text>.lmt__translations_as_text__item .lmt__translations_as_text__copy_button, 
+        .lmt__mobile_share_container>button {
+            filter: invert(0.5);
+        }
+    }
+        
     /*==================== Main Translation Field ======================*/
     
     /*============================== MAIN ==============================*/
@@ -253,6 +339,141 @@
     .lmt_quote__source {
         color: var(--secfont);
     }
+    
+    /*============================== MAIN ==============================*/
+    
+    /*============================= FOOTER =============================*/
+    
+    .footerOuterContainer--1uk9n {
+        background-color: var(--secbg);
+    }
+    
+    .footerOuterContainer--1uk9n .footerContainer--4HfLI .languageSelectorContainer--vT0OY>*:first-child {
+        filter: invert(1);
+    }
+    
+    .languageSelector--1y4Z- select {
+        color: var(--mainfont);
+    }
+    
+    .languageSelector--1y4Z-::after {
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        filter: none;
+    }
+    
+    .languageSelector--1y4Z- select option {
+        background-color: var(--thirdbg);
+    }
+    
+    .footerOuterContainer--1uk9n img {
+        filter: invert(0.5);
+    }
+    
+    .footerOuterContainer--1uk9n .footerContainer--4HfLI .footerContentContainer--3qUki .linksContainer--g6E0J .linkList--1vXmT li:not(:first-of-type) a {
+        color: var(--link)!important;
+    }
+    
+    .footerOuterContainer--1uk9n .footerContainer--4HfLI .footerContentContainer--3qUki .linksContainer--g6E0J .linkList--1vXmT li:not(:first-of-type) a:hover {
+        color: var(--linkhov)!important;
+    }
+    
+    /*============================= FOOTER =============================*/
+}
+
+@-moz-document regexp("(?=.*?\\/pro).*") {
+    body {
+        background-color: var(--mainbg)!important;
+    }
+    
+    /*============================= HEADER =============================*/
+    
+    .pageHeader-module--container--3YbsI {
+        background-color: var(--secbg)!important;
+    }
+    
+    .productNavigation-module--container--2BnCV>a, 
+    .productNavigation-module--container--2BnCV>div>span, 
+    .loginButton-module--loginButton--mWUCI {
+        color: var(--link);
+    }
+    
+    .productNavigation-module--container--2BnCV.productNavigation-module--smallMediumFont--3VB5x img {
+        filter: invert(0.5);
+    }
+    
+    .menuButton-module--menuButton--3-IXD, 
+    .menuButton-module--menuButton--3-IXD:after, 
+    .menuButton-module--menuButton--3-IXD:before {
+        border-color: var(--link);
+    }
+    
+    .menuButton-module--menuButton--3-IXD:hover, 
+    .menuButton-module--menuButton--3-IXD:hover:after, 
+    .menuButton-module--menuButton--3-IXD:hover:before {
+        border-color: var(--linkhov);
+    }
+    
+    /*============================= HEADER =============================*/
+    
+    /*============================ SIDE BAR ============================*/
+    
+    .sidemenu-module--menuContainer--3Jtyt {
+        background-color: var(--secbg);
+    }
+    
+    .mainMenu-module--container--3Uw1S a, 
+    .button-module--button--ilgw3.button-module--color_primary--2vSXQ, 
+    .signUpCta-module--container--2rySH a, 
+    .button-module--button--ilgw3.button-module--color_primaryAlt--1FPdh {
+        color: var(--link);
+    }
+    
+    .mainMenu-module--container--3Uw1S a:hover, 
+    .button-module--button--ilgw3.button-module--color_primaryAlt--1FPdh:hover {
+        color: var(--linkhov);
+    }
+    
+    .subMenu-module--container--3d8qL button {
+        color: var(--seclink)!important;
+    }
+    
+    .subMenu-module--container--3d8qL button:hover {
+        color: var(--seclinkhov)!important;
+    }
+    
+    .input-module--inputWrapper--47wa8 .input-module--input--3JEgt {
+        background: transparent;
+        color: var(--mainfont);
+    }
+    
+    .label-module--label--3WCz7, 
+    .checkbox-module--label--3K6yS {
+        color: var(--mainfont);
+    }
+    
+    .closeButton-module--closeButton--1YlaO:after, 
+    .closeButton-module--closeButton--1YlaO:before, 
+    .linkWithArrow-module--linkWithArrow--qiNkO path {
+        background-color: var(--link);
+        stroke: var(--link);
+    }
+    
+    .signUpCta-module--container--2rySH a:hover, 
+    .signUpCta-module--container--2rySH a:hover path {
+        color: var(--linkhov);
+        stroke: var(--linkhov);
+    }
+    
+    .checkbox-module--checkbox--1HGWi:before {
+        filter: invert(1);
+    }
+    
+    /*============================ SIDE BAR ============================*/
+    
+    /*============================== MAIN ==============================*/
+    
+    
     
     /*============================== MAIN ==============================*/
     
