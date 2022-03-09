@@ -1,9 +1,10 @@
 /* ==UserStyle==
 @name           DEUPS Darkmode
-@namespace      github.com/trgamer-tech/openstyles
-@version        1.3.2
+@namespace      github.com/TRGamer-Tech/openstyles
+@version        1.3.4
 @description    Darkmode with some additions for the DEUPS Website!
 @author         TRGYT
+@license        CC Zero
 ==/UserStyle== */
 @-moz-document domain("deups.iet-gibb.ch") {
     @font-face {
@@ -66,6 +67,7 @@
         border: 1px solid #5c5c5c;
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
+        overflow: hidden!important;
     }
 
     .side-nav a {
@@ -97,15 +99,6 @@
         color: var(--hoverfont);
     }
 
-    .container > .section > .row:first-of-type {
-        position: sticky;
-        top: 0;
-        z-index: 99;
-        background-color: var(--main);
-        margin-top: 0;
-        border-bottom: 2px solid #fff;
-    }
-
     .collection {
         background-color: var(--main);
         border: 1px solid var(--mainborder);
@@ -124,5 +117,16 @@
         div.section.content {
             padding: 1em;
         }
+    }
+}
+
+@-moz-document regexp("(?=.*?\\/practice\\/).*") {
+    .container > .section > .row:first-of-type {
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        background-color: var(--main);
+        margin-top: 0;
+        border-bottom: 2px solid #fff;
     }
 }
