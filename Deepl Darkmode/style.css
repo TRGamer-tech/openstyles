@@ -2,7 +2,7 @@
 @name           Deepl Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
 @version        2.0.0
-@description    This Style makes Deepl finally dark! Enjoy working with one of the best translators out there without getting any eye strain! <br> <strong>Version 2.0 Update:</strong> The whole thing has been reworked to be consistent with the rest. Enjoy!
+@description    This Style makes Deepl finally dark! Enjoy working with one of the best translators out there without getting any eye strain!
 @author         TRGYT
 @license        CC Zero
 ==/UserStyle== */
@@ -529,7 +529,8 @@
         border-color: var(--linkhov);
     }
     
-    .card-module--cardTitle--3F9Of {
+    .card-module--cardTitle--3F9Of, 
+    .planTableMobile-module--detailListWrapper--2Q6xC .planTableMobile-module--featureWrapper--1qezN .planTableMobile-module--featureHeadline--2cFGR {
         background-color: var(--borderclr)
     }
     
@@ -544,15 +545,23 @@
         border-radius: var(--border-l);
     }
     
-    .button_module_button__db2f9982.button_module_color_primary__db2f9982 {
+    .button_module_button__db2f9982.button_module_color_primary__db2f9982, 
+    .button-module--button--ilgw3.button-module--color_primary--2vSXQ {
         color: var(--link);
         border-color: var(--link);
         border-radius: var(--border-s);
     }
     
-    .button_module_button__db2f9982.button_module_color_primary__db2f9982:hover {
+    .button_module_button__db2f9982.button_module_color_primary__db2f9982:hover, 
+    .button-module--button--ilgw3.button-module--color_primary--2vSXQ:hover {
         color: var(--linkhov);
         border-color: var(--linkhov);
+    }
+    
+    .planTableMobile-module--headerWrapper--26ysb, 
+    .contactSalesBanner-module--bannerContainer--26fVp, 
+    .planTableMobile-module--detailListWrapper--2Q6xC {
+        border: var(--border);
     }
     
     .trialHint-module--trialHint--2wntK {
@@ -586,6 +595,776 @@
     
     .pageFooterV2-module--footerOuterContainer--2eitF {
         background-color: var(--secbg);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--languageSelectorContainer--2zk5C>:first-child {
+        filter: invert(1);
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4 select {
+        color: var(--mainfont);
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4:after {
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        opacity: 1;
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4 select option {
+        background-color: var(--thirdbg);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF a img {
+        filter: invert(0.5);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--footerContentContainer--3lfgq .pageFooterV2-module--linksContainer--8wdHG .pageFooterV2-module--linkList--2l9ZW li:not(:first-of-type) a {
+        color: var(--link)!important;
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--footerContentContainer--3lfgq .pageFooterV2-module--linksContainer--8wdHG .pageFooterV2-module--linkList--2l9ZW li:not(:first-of-type) a:hover {
+        color: var(--linkhov)!important;
+    }
+    
+    /*============================= FOOTER =============================*/
+}
+
+@-moz-document regexp("(?=.*?\\/whydeepl).*") {
+    body {
+        background-color: var(--mainbg)!important;
+        color: var(--mainfont);
+    }
+    
+    /*============================= HEADER =============================*/
+    
+    .pageHeader-module--container--3YbsI {
+        background-color: var(--secbg)!important;
+    }
+    
+    .productNavigation-module--container--2BnCV>a, 
+    .productNavigation-module--container--2BnCV>div>span, 
+    .loginButton-module--loginButton--mWUCI, 
+    .productNavigation-module--container--2BnCV .productNavigation-module--translatorLink--2_7y2:hover, 
+    .loginButton-module--loginButton--mWUCI {
+        color: var(--link);
+    }
+    
+    .productNavigation-module--container--2BnCV>a.productNavigation-module--active--1WMca, 
+    .productNavigation-module--container--2BnCV>a:not(.productNavigation-module--nohover--Ve9EH):hover, 
+    .productNavigation-module--container--2BnCV>div>span.productNavigation-module--active--1WMca, 
+    .productNavigation-module--container--2BnCV>div>span:not(.productNavigation-module--nohover--Ve9EH):hover, 
+    .productNavigation-module--container--2BnCV .productNavigation-module--translatorLink--2_7y2:hover, 
+    .loginButton-module--loginButton--mWUCI:hover {
+        color: var(--linkhov)!important;
+    }
+    
+    .productNavigation-module--container--2BnCV.productNavigation-module--smallMediumFont--3VB5x img {
+        filter: invert(0.5);
+    }
+    
+    .menuButton-module--menuButton--3-IXD, 
+    .menuButton-module--menuButton--3-IXD:after, 
+    .menuButton-module--menuButton--3-IXD:before {
+        border-color: var(--link);
+    }
+    
+    .menuButton-module--menuButton--3-IXD:hover, 
+    .menuButton-module--menuButton--3-IXD:hover:after, 
+    .menuButton-module--menuButton--3-IXD:hover:before {
+        border-color: var(--linkhov);
+    }
+    
+    /*============================= HEADER =============================*/
+    
+    /*============================ SIDE BAR ============================*/
+    
+    .sidemenu-module--menuContainer--3Jtyt, 
+    .content-module--alternateBackgroundColor--3VdU1>div:nth-child(odd) {
+        background-color: var(--secbg);
+    }
+    
+    .mainMenu-module--container--3Uw1S a, 
+    .button-module--button--ilgw3.button-module--color_primary--2vSXQ, 
+    .signUpCta-module--container--2rySH a, 
+    .button-module--button--ilgw3.button-module--color_primaryAlt--1FPdh {
+        color: var(--link);
+    }
+    
+    .mainMenu-module--container--3Uw1S a:hover, 
+    .button-module--button--ilgw3.button-module--color_primaryAlt--1FPdh:hover {
+        color: var(--linkhov);
+    }
+    
+    .subMenu-module--container--3d8qL button {
+        color: var(--seclink)!important;
+    }
+    
+    .subMenu-module--container--3d8qL button:hover {
+        color: var(--seclinkhov)!important;
+    }
+    
+    .input-module--inputWrapper--47wa8 .input-module--input--3JEgt {
+        background: transparent;
+        color: var(--mainfont);
+    }
+    
+    .label-module--label--3WCz7, 
+    .checkbox-module--label--3K6yS{
+        color: var(--mainfont);
+    }
+    
+    .closeButton-module--closeButton--1YlaO:after, 
+    .closeButton-module--closeButton--1YlaO:before, 
+    .linkWithArrow-module--linkWithArrow--qiNkO path {
+        background-color: var(--link);
+        stroke: var(--link);
+    }
+    
+    .signUpCta-module--container--2rySH a:hover, 
+    .signUpCta-module--container--2rySH a:hover path {
+        color: var(--linkhov);
+        stroke: var(--linkhov);
+    }
+    
+    .checkbox-module--checkbox--1HGWi:before {
+        filter: invert(1);
+    }
+    
+    /*============================ SIDE BAR ============================*/
+    
+    /*============================== MAIN ==============================*/
+    
+    .pageContentSection-module--sectionContainer--22H9t:first-of-type, 
+    .socialProof-module--wrapper--187FU {
+        background-color: var(--mainbg)!important;
+    }
+    
+    .pageContentSection-module--sectionContainer--22H9t {
+        background-color: var(--secbg)!important;
+    }
+    
+    .pageContentSection-module--sectionContainer--22H9t p {
+        color: var(--mainfont);
+    }
+    
+    .imageRow-module--rowElement--2zACs img {
+        filter: invert(0.8);
+    }
+    
+    .contentToggle-module--wrapper--BIpsR {
+        background-color: var(--thirdbg);
+    }
+    
+    .mediaQuote-module--wrapper--3czgn {
+        background-color: var(--quotebg);
+        border-radius: var(--border-s);
+    }
+    
+    .text-module--floatingImage--1gphH, .text-module--mobileImage--mD1Kr {
+        filter: drop-shadow(0px 0px 20px white);
+    }
+    
+    .imageCard-module--description--vHQaI {
+        color: var(--quotebg);
+    }
+    
+    /*============================== MAIN ==============================*/
+    
+    /*============================= FOOTER =============================*/
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF {
+        background-color: var(--secbg);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--languageSelectorContainer--2zk5C>:first-child {
+        filter: invert(1);
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4 select {
+        color: var(--mainfont);
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4:after {
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        opacity: 1;
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4 select option {
+        background-color: var(--thirdbg);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF a img {
+        filter: invert(0.5);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--footerContentContainer--3lfgq .pageFooterV2-module--linksContainer--8wdHG .pageFooterV2-module--linkList--2l9ZW li:not(:first-of-type) a {
+        color: var(--link)!important;
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--footerContentContainer--3lfgq .pageFooterV2-module--linksContainer--8wdHG .pageFooterV2-module--linkList--2l9ZW li:not(:first-of-type) a:hover {
+        color: var(--linkhov)!important;
+    }
+    
+    /*============================= FOOTER =============================*/
+}
+
+@-moz-document regexp("(?=.*?\\/pro-api).*") {
+    body {
+        background-color: var(--mainbg)!important;
+        color: var(--mainfont);
+    }
+    
+    /*============================= HEADER =============================*/
+    
+    .pageHeader-module--container--3YbsI {
+        background-color: var(--secbg)!important;
+    }
+    
+    .productNavigation-module--container--2BnCV>a, 
+    .productNavigation-module--container--2BnCV>div>span, 
+    .loginButton-module--loginButton--mWUCI, 
+    .productNavigation-module--container--2BnCV .productNavigation-module--translatorLink--2_7y2:hover, 
+    .loginButton-module--loginButton--mWUCI {
+        color: var(--link);
+    }
+    
+    .productNavigation-module--container--2BnCV>a.productNavigation-module--active--1WMca, 
+    .productNavigation-module--container--2BnCV>a:not(.productNavigation-module--nohover--Ve9EH):hover, 
+    .productNavigation-module--container--2BnCV>div>span.productNavigation-module--active--1WMca, 
+    .productNavigation-module--container--2BnCV>div>span:not(.productNavigation-module--nohover--Ve9EH):hover, 
+    .productNavigation-module--container--2BnCV .productNavigation-module--translatorLink--2_7y2:hover, 
+    .loginButton-module--loginButton--mWUCI:hover {
+        color: var(--linkhov)!important;
+    }
+    
+    .productNavigation-module--container--2BnCV.productNavigation-module--smallMediumFont--3VB5x img {
+        filter: invert(0.5);
+    }
+    
+    .menuButton-module--menuButton--3-IXD, 
+    .menuButton-module--menuButton--3-IXD:after, 
+    .menuButton-module--menuButton--3-IXD:before {
+        border-color: var(--link);
+    }
+    
+    .menuButton-module--menuButton--3-IXD:hover, 
+    .menuButton-module--menuButton--3-IXD:hover:after, 
+    .menuButton-module--menuButton--3-IXD:hover:before {
+        border-color: var(--linkhov);
+    }
+    
+    /*============================= HEADER =============================*/
+    
+    /*============================ SIDE BAR ============================*/
+    
+    .sidemenu-module--menuContainer--3Jtyt, 
+    .content-module--alternateBackgroundColor--3VdU1>div:nth-child(odd) {
+        background-color: var(--secbg);
+    }
+    
+    .mainMenu-module--container--3Uw1S a, 
+    .button-module--button--ilgw3.button-module--color_primary--2vSXQ, 
+    .signUpCta-module--container--2rySH a, 
+    .button-module--button--ilgw3.button-module--color_primaryAlt--1FPdh {
+        color: var(--link);
+    }
+    
+    .mainMenu-module--container--3Uw1S a:hover, 
+    .button-module--button--ilgw3.button-module--color_primaryAlt--1FPdh:hover {
+        color: var(--linkhov);
+    }
+    
+    .subMenu-module--container--3d8qL button {
+        color: var(--seclink)!important;
+    }
+    
+    .subMenu-module--container--3d8qL button:hover {
+        color: var(--seclinkhov)!important;
+    }
+    
+    .input-module--inputWrapper--47wa8 .input-module--input--3JEgt {
+        background: transparent;
+        color: var(--mainfont);
+    }
+    
+    .label-module--label--3WCz7, 
+    .checkbox-module--label--3K6yS{
+        color: var(--mainfont);
+    }
+    
+    .closeButton-module--closeButton--1YlaO:after, 
+    .closeButton-module--closeButton--1YlaO:before, 
+    .linkWithArrow-module--linkWithArrow--qiNkO path {
+        background-color: var(--link);
+        stroke: var(--link);
+    }
+    
+    .signUpCta-module--container--2rySH a:hover, 
+    .signUpCta-module--container--2rySH a:hover path {
+        color: var(--linkhov);
+        stroke: var(--linkhov);
+    }
+    
+    .checkbox-module--checkbox--1HGWi:before {
+        filter: invert(1);
+    }
+    
+    /*============================ SIDE BAR ============================*/
+    
+    /*============================== MAIN ==============================*/
+    
+    .proApiHeader-module--outerContainer--M0_vj, 
+    .planOverview-module--componentBackground--385b7, 
+    .codeExample-module--componentBackground--1iEpF, 
+    .proApiFooter-module--outerContainer--JAove {
+        background-color: var(--mainbg);
+    }
+    
+    .USPSummary-module--componentWrapper--ooL6d, 
+    .proApiSampleBrands-module--componentContainer--1VvP_, 
+    .useCases-module--componentBackground--1nSQI {
+        background-color: var(--secbg);
+    }
+    
+    .checkmarkList-module--itemSection--vu3wW .checkmarkList-module--itemContainer--2pmjK, 
+    .apiFeatureBlock-module--descriptionHeadline--31ROC {
+        color: var(--mainfont);
+    }
+    
+    .USPSummary-module--uspIcon--36tjJ svg path {
+        stroke: var(--linkhov);
+    }
+    
+    .planOverview-module--plans--BQ_qi .planOverview-module--planWrapper--zt_YV .planOverview-module--plan--2zASM .planOverview-module--headline--f_Yd3 {
+        background-color: var(--borderclr);
+            border: var(--border);
+    }
+    
+    .planOverview-module--plans--BQ_qi .planOverview-module--planWrapper--zt_YV .planOverview-module--plan--2zASM .planOverview-module--main--WjYOm, 
+    .codebox-module--requestTypes--GSRlR, 
+    .codebox-module--container--9jUTt {
+        background-color: var(--thirdbg);
+            border: var(--border);
+    }
+    
+    .planOverview-module--plans--BQ_qi .planOverview-module--planWrapper--zt_YV .planOverview-module--plan--2zASM .planOverview-module--main--WjYOm .planOverview-module--subheadline--Vutem {
+        color: var(--mainfont);
+    }
+    
+    .planOverview-module--plans--BQ_qi .planOverview-module--planWrapper--zt_YV .planOverview-module--plan--2zASM .planOverview-module--main--WjYOm .planOverview-module--price--A0SHr .planOverview-module--amount--HkruV, 
+    .codebox-module--label--2v6vb {
+        color: var(--secfont);
+    }
+    
+    .planOverview-module--plans--BQ_qi .planOverview-module--planWrapper--zt_YV .planOverview-module--plan--2zASM .planOverview-module--main--WjYOm .planOverview-module--price--A0SHr .planOverview-module--plusUsageBasedPrice--35H0b, 
+    .planOverview-module--plans--BQ_qi .planOverview-module--planWrapper--zt_YV .planOverview-module--plan--2zASM .planOverview-module--main--WjYOm .planOverview-module--features--3lxG5 .planOverview-module--featuresHeadline--2oA3L {
+        color: var(--placeholder);
+    }
+    
+    .apiFeatureBlock-module--componentWrapper--3WYpK a {
+        color: var(--link);
+    }
+    
+    .apiFeatureBlock-module--componentWrapper--3WYpK a:hover {
+        color: var(--linkhov);
+    }
+    
+    .button-module--button--ilgw3.button-module--color_primary--2vSXQ {
+        color: var(--link);
+        border-color: var(--link);
+    }
+    
+    .button-module--button--ilgw3.button-module--color_primary--2vSXQ:hover {
+        color: var(--linkhov);
+        border-color: var(--linkhov);
+    }
+    
+    .codebox-module--requestTypes--GSRlR li .codebox-module--button--3MrX6 {
+        color: var(--seclink);
+    }
+    
+    /*============================== MAIN ==============================*/
+    
+    /*============================= FOOTER =============================*/
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF {
+        background-color: var(--secbg);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--languageSelectorContainer--2zk5C>:first-child {
+        filter: invert(1);
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4 select {
+        color: var(--mainfont);
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4:after {
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        opacity: 1;
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4 select option {
+        background-color: var(--thirdbg);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF a img {
+        filter: invert(0.5);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--footerContentContainer--3lfgq .pageFooterV2-module--linksContainer--8wdHG .pageFooterV2-module--linkList--2l9ZW li:not(:first-of-type) a {
+        color: var(--link)!important;
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--footerContentContainer--3lfgq .pageFooterV2-module--linksContainer--8wdHG .pageFooterV2-module--linkList--2l9ZW li:not(:first-of-type) a:hover {
+        color: var(--linkhov)!important;
+    }
+    
+    /*============================= FOOTER =============================*/
+}
+
+@-moz-document regexp("(?=.*?\\/app).*") {
+    body {
+        background-color: var(--mainbg)!important;
+        color: var(--mainfont);
+    }
+    
+    /*============================= HEADER =============================*/
+    
+    .pageHeader-module--container--3YbsI {
+        background-color: var(--secbg)!important;
+    }
+    
+    .productNavigation-module--container--2BnCV>a, 
+    .productNavigation-module--container--2BnCV>div>span, 
+    .loginButton-module--loginButton--mWUCI, 
+    .productNavigation-module--container--2BnCV .productNavigation-module--translatorLink--2_7y2:hover, 
+    .loginButton-module--loginButton--mWUCI {
+        color: var(--link);
+    }
+    
+    .productNavigation-module--container--2BnCV>a.productNavigation-module--active--1WMca, 
+    .productNavigation-module--container--2BnCV>a:not(.productNavigation-module--nohover--Ve9EH):hover, 
+    .productNavigation-module--container--2BnCV>div>span.productNavigation-module--active--1WMca, 
+    .productNavigation-module--container--2BnCV>div>span:not(.productNavigation-module--nohover--Ve9EH):hover, 
+    .productNavigation-module--container--2BnCV .productNavigation-module--translatorLink--2_7y2:hover, 
+    .loginButton-module--loginButton--mWUCI:hover {
+        color: var(--linkhov)!important;
+    }
+    
+    .productNavigation-module--container--2BnCV.productNavigation-module--smallMediumFont--3VB5x img {
+        filter: invert(0.5);
+    }
+    
+    .menuButton-module--menuButton--3-IXD, 
+    .menuButton-module--menuButton--3-IXD:after, 
+    .menuButton-module--menuButton--3-IXD:before {
+        border-color: var(--link);
+    }
+    
+    .menuButton-module--menuButton--3-IXD:hover, 
+    .menuButton-module--menuButton--3-IXD:hover:after, 
+    .menuButton-module--menuButton--3-IXD:hover:before {
+        border-color: var(--linkhov);
+    }
+    
+    /*============================= HEADER =============================*/
+    
+    /*============================ SIDE BAR ============================*/
+    
+    .sidemenu-module--menuContainer--3Jtyt, 
+    .content-module--alternateBackgroundColor--3VdU1>div:nth-child(odd) {
+        background-color: var(--secbg);
+    }
+    
+    .mainMenu-module--container--3Uw1S a, 
+    .button-module--button--ilgw3.button-module--color_primary--2vSXQ, 
+    .signUpCta-module--container--2rySH a, 
+    .button-module--button--ilgw3.button-module--color_primaryAlt--1FPdh {
+        color: var(--link);
+    }
+    
+    .mainMenu-module--container--3Uw1S a:hover, 
+    .button-module--button--ilgw3.button-module--color_primaryAlt--1FPdh:hover {
+        color: var(--linkhov);
+    }
+    
+    .subMenu-module--container--3d8qL button {
+        color: var(--seclink)!important;
+    }
+    
+    .subMenu-module--container--3d8qL button:hover {
+        color: var(--seclinkhov)!important;
+    }
+    
+    .input-module--inputWrapper--47wa8 .input-module--input--3JEgt {
+        background: transparent;
+        color: var(--mainfont);
+    }
+    
+    .label-module--label--3WCz7, 
+    .checkbox-module--label--3K6yS{
+        color: var(--mainfont);
+    }
+    
+    .closeButton-module--closeButton--1YlaO:after, 
+    .closeButton-module--closeButton--1YlaO:before, 
+    .linkWithArrow-module--linkWithArrow--qiNkO path {
+        background-color: var(--link);
+        stroke: var(--link);
+    }
+    
+    .signUpCta-module--container--2rySH a:hover, 
+    .signUpCta-module--container--2rySH a:hover path {
+        color: var(--linkhov);
+        stroke: var(--linkhov);
+    }
+    
+    .checkbox-module--checkbox--1HGWi:before {
+        filter: invert(1);
+    }   
+    /*============================ SIDE BAR ============================*/
+    
+    /*============================== MAIN ==============================*/
+    
+    .AppDownloadBannerLegacy-module--bannerContainer--2HF4d {
+        background-color: var(--mainbg)!important;
+    }
+    
+    .container-module--container--VtN-8:nth-child(even) {
+        background-color: var(--secbg)!important;
+    }
+    
+    .appDownloadDownloadInfo-module--alternativeDownloadButtons--KTBb0 a {
+        color: var(--link);
+    }
+    
+    .appDownloadDownloadInfo-module--alternativeDownloadButtons--KTBb0 a:hover {
+        color: var(--linkhov);
+    }
+    
+    .linkWithArrow-module--linkWithArrow--qiNkO {
+        color: var(--link);
+    }
+    
+    .linkWithArrow-module--linkWithArrow--qiNkO:hover {
+        color: var(--linkhov);
+    }
+    
+    .linkWithArrow-module--linkWithArrow--qiNkO:hover svg path {
+        stroke: var(--linkhov);
+    }
+    
+    .appDownloadUSP-module--usp_df2192--3KOXZ ul li img, 
+    .appDownloadBenefits-module--benefitList--3AVg_ img {
+        filter: drop-shadow(0px 0px 10px white); 
+    }
+    
+    .appDownloadUSP-module--usp_df2192--3KOXZ p, 
+    .appDownloadBenefits-module--benefitList--3AVg_ p {
+        color: var(--mainfont);
+    }
+    
+    /*============================== MAIN ==============================*/
+    
+    /*============================= FOOTER =============================*/
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF {
+        background-color: var(--mainbg);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--languageSelectorContainer--2zk5C>:first-child {
+        filter: invert(1);
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4 select {
+        color: var(--mainfont);
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4:after {
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        opacity: 1;
+    }
+    
+    .languageSelector-module--languageSelector--2YUp4 select option {
+        background-color: var(--thirdbg);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF a img {
+        filter: invert(0.5);
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--footerContentContainer--3lfgq .pageFooterV2-module--linksContainer--8wdHG .pageFooterV2-module--linkList--2l9ZW li:not(:first-of-type) a {
+        color: var(--link)!important;
+    }
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--footerContentContainer--3lfgq .pageFooterV2-module--linksContainer--8wdHG .pageFooterV2-module--linkList--2l9ZW li:not(:first-of-type) a:hover {
+        color: var(--linkhov)!important;
+    }
+    
+    /*============================= FOOTER =============================*/
+}
+
+@-moz-document regexp("(?=.*?\\/contact-us).*") {
+    body {
+        background-color: var(--mainbg)!important;
+        color: var(--mainfont);
+    }
+    
+    /*============================= HEADER =============================*/
+    
+    .pageHeader-module--container--3YbsI {
+        background-color: var(--secbg)!important;
+    }
+    
+    .productNavigation-module--container--2BnCV>a, 
+    .productNavigation-module--container--2BnCV>div>span, 
+    .loginButton-module--loginButton--mWUCI, 
+    .productNavigation-module--container--2BnCV .productNavigation-module--translatorLink--2_7y2:hover, 
+    .loginButton-module--loginButton--mWUCI {
+        color: var(--link);
+    }
+    
+    .productNavigation-module--container--2BnCV>a.productNavigation-module--active--1WMca, 
+    .productNavigation-module--container--2BnCV>a:not(.productNavigation-module--nohover--Ve9EH):hover, 
+    .productNavigation-module--container--2BnCV>div>span.productNavigation-module--active--1WMca, 
+    .productNavigation-module--container--2BnCV>div>span:not(.productNavigation-module--nohover--Ve9EH):hover, 
+    .productNavigation-module--container--2BnCV .productNavigation-module--translatorLink--2_7y2:hover, 
+    .loginButton-module--loginButton--mWUCI:hover {
+        color: var(--linkhov)!important;
+    }
+    
+    .productNavigation-module--container--2BnCV.productNavigation-module--smallMediumFont--3VB5x img {
+        filter: invert(0.5);
+    }
+    
+    .menuButton-module--menuButton--3-IXD, 
+    .menuButton-module--menuButton--3-IXD:after, 
+    .menuButton-module--menuButton--3-IXD:before {
+        border-color: var(--link);
+    }
+    
+    .menuButton-module--menuButton--3-IXD:hover, 
+    .menuButton-module--menuButton--3-IXD:hover:after, 
+    .menuButton-module--menuButton--3-IXD:hover:before {
+        border-color: var(--linkhov);
+    }
+    
+    /*============================= HEADER =============================*/
+    
+    /*============================ SIDE BAR ============================*/
+    
+    .sidemenu-module--menuContainer--3Jtyt, 
+    .content-module--alternateBackgroundColor--3VdU1>div:nth-child(odd) {
+        background-color: var(--secbg);
+    }
+    
+    .mainMenu-module--container--3Uw1S a, 
+    .button-module--button--ilgw3.button-module--color_primary--2vSXQ, 
+    .signUpCta-module--container--2rySH a, 
+    .button-module--button--ilgw3.button-module--color_primaryAlt--1FPdh {
+        color: var(--link);
+    }
+    
+    .mainMenu-module--container--3Uw1S a:hover, 
+    .button-module--button--ilgw3.button-module--color_primaryAlt--1FPdh:hover {
+        color: var(--linkhov);
+    }
+    
+    .subMenu-module--container--3d8qL button {
+        color: var(--seclink)!important;
+    }
+    
+    .subMenu-module--container--3d8qL button:hover {
+        color: var(--seclinkhov)!important;
+    }
+    
+    .input-module--inputWrapper--47wa8 .input-module--input--3JEgt {
+        background: transparent;
+        color: var(--mainfont);
+    }
+    
+    .label-module--label--3WCz7, 
+    .checkbox-module--label--3K6yS{
+        color: var(--mainfont);
+    }
+    
+    .closeButton-module--closeButton--1YlaO:after, 
+    .closeButton-module--closeButton--1YlaO:before, 
+    .linkWithArrow-module--linkWithArrow--qiNkO path {
+        background-color: var(--link);
+        stroke: var(--link);
+    }
+    
+    .signUpCta-module--container--2rySH a:hover, 
+    .signUpCta-module--container--2rySH a:hover path {
+        color: var(--linkhov);
+        stroke: var(--linkhov);
+    }
+    
+    .checkbox-module--checkbox--1HGWi:before {
+        filter: invert(1);
+    }   
+    /*============================ SIDE BAR ============================*/
+    
+    /*============================== MAIN ==============================*/
+    
+    .AppDownloadBannerLegacy-module--bannerContainer--2HF4d {
+        background-color: var(--mainbg)!important;
+    }
+    
+    .contactUs-module--footer--3kn8M {
+        background-color: var(--secbg)!important;
+    }
+    
+    .proMediaQuote-module--affiliation--qaU4T {
+        color: var(--placeholder);
+    }
+    
+    .proMediaQuote-module--quoteTile--3XbyQ {
+        background-color: var(--quotebg);
+        border: var(--border);
+    }
+    
+    .contactUs-module--textWithLinks--3tjiN a {
+        color: var(--link);
+    }
+    
+    .contactUs-module--textWithLinks--3tjiN a:hover {
+        color: var(--linkhov);
+    }
+    
+    .linkWithArrow-module--linkWithArrow--qiNkO {
+        color: var(--link);
+    }
+    
+    .linkWithArrow-module--linkWithArrow--qiNkO:hover {
+        color: var(--linkhov);
+    }
+    
+    .linkWithArrow-module--linkWithArrow--qiNkO:hover svg path {
+        stroke: var(--linkhov);
+    }
+    
+    .contactUsFormFrame-module--formWrapper--rTPsx {
+        background: var(--borderclr);
+        border: var(--border);
+    }
+    
+    p {
+        color: var(--mainfont);
+    }
+    
+    /*============================== MAIN ==============================*/
+    
+    /*============================= FOOTER =============================*/
+    
+    .pageFooterV2-module--footerOuterContainer--2eitF {
+        background-color: var(--mainbg);
     }
     
     .pageFooterV2-module--footerOuterContainer--2eitF .pageFooterV2-module--footerContainer--2VGmz .pageFooterV2-module--languageSelectorContainer--2zk5C>:first-child {
