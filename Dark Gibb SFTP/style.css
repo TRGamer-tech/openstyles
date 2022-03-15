@@ -1,105 +1,141 @@
 /* ==UserStyle==
 @name           Dark Gibb SFTP
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.1.0
+@version        1.2.1
 @description    Makes the SFTP Darkmode properly dark. REQUIRES DARK MODE ACTIVATED FOR IT TO LOOK GOOD!
 @author         TRGYT
 @license        CC Zero
 ==/UserStyle== */
 
-
-@-moz-document regexp("(?=.*?\\/login).*") {
-    .dark-mode .component_page_connection_form {
-        background: transparent!important;
-    }
-    
-    .box {
-        background: #1a1a1a;
-    }
-    
-    .component_page_connection_form .box {
-        border-radius: 10px;
-    }
-}
 @-moz-document domain("sftp.iet-gibb.ch") {    
-    .dark-mode .component_thing:hover .box {
-        background: #274554!important;
-        border-radius: 15px;
+    :root {
+        --mainbg: #121212;
+        --secbg: #1d1d1d;
+        --thirdbg: #474747;
+        --errbg: #332626;
+        --mainfont: #fff;
+        --secfont: #dbdbdb;
+        --placeholder: #bcbcbc;
+        --link: #4f9cf5;
+        --linkhov: #007dd6;
+        --border: 1px solid #8c8c8c;
+        --borderclr: #8c8c8c;
+        --border-l: 15px;
+        --border-m: 10px;
+        --border-s: 5px;
     }
     
-    .component_frequently-access .frequent_wrapper a {
-        border-radius: 5px;
+    body {
+        background: var(--mainbg)!important;
     }
     
-    .dark-mode .component_breadcrumb .breadcrumb {
-        background: rgba(49, 49, 49, .41);
-        border-bottom-right-radius: 10px;
-        border-bottom-left-radius: 10px;
-        border-bottom-color: transparent;
+    .breadcrumb {
+        background-image: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,241,0,1) 10%, rgba(101,255,0,1) 20%, rgba(0,255,134,1) 30%, rgba(0,239,255,1) 40%, rgba(0,191,255,1) 50%, rgba(18,125,248,1) 60%, rgba(88,77,225,1) 70%, rgba(146,90,203,1) 80%, rgba(188,50,151,1) 90%, rgba(255,0,0,1) 100%)!important;
+        background-color: var(--secbg)!important;
+        border-bottom: var(--border)!important;
     }
     
-    .dark-mode .component_page_connection_form {
-        background: #343434;
+    .breadcrumb div.label {
+        color: var(--mainfont)!important;
+    }
+    
+    .component_breadcrumb .component_logout .component_icon {
+        filter: invert(1);
     }
     
     .component_frequently-access .nothing_placeholder {
-        border-radius: 10px;
+        background-color: var(--thirdbg)!important;
+        border-radius: var(--border-m);
     }
     
-    .component_input {
-        background-color: #1a1a1a!important; 
-        color: white!important;
+    .box {
+        background-color: var(--secbg)!important;
+        border: none!important;
+        border-radius: var(--border-m);
     }
     
-    body.dark-mode {
-        background: #181818;
+    .frequent_wrapper a {
+        background-color: var(--secbg)!important;
+        border: none!important;
     }
     
-    body.dark-mode .background-color {
-        background: #181818;
+    .frequent_wrapper a:hover {
+        box-shadow: 0px 0px 10px 5px rgba(79,156,245,0.25)!important;
     }
     
-    .component_dropdown.active .dropdown_container li {
-        background: #222;
-        color: #b9b9b9;
+    .component_thing:hover {
+        background-color: transparent!important;
+        border-radius: var(--border-m);
     }
     
-    .component_dropdown.active .dropdown_container ul {
-        background: #222;
-        border: none;
+    .component_thing:hover .box {
+        background-color: var(--thirdbg)!important;
+        border-radius: var(--border-m)!important;
+        box-shadow: 0px 0px 10px 5px rgba(79,156,245,0.25)!important;
     }
     
-    .component_dropdown.active .dropdown_container li:hover {
-        background: #3b3b3b;;
+    .component_filename, .component_frequently-access .frequent_wrapper a {
+        color: var(--secfont)!important;
     }
     
-    .dark-mode .component_frequently-access .frequent_wrapper a:hover {
-        box-shadow: 2px 2px 10px rgb(106 106 106 / 70%);
+    .CodeMirror-scroll, .CodeMirror .CodeMirror-linenumber {
+        background-color: var(--thirdbg)!important;
+        color: var(--secfont)!important;
     }
     
-    .CodeMirror {
-        width: 100%;
-        height: 100%;
-        color: #ced0d3;
-        background: #1e1e1e;
+    .component_mobilefileupload input[type="file"] + label {
+        background-color: var(--link)!important;
     }
     
-    .CodeMirror .CodeMirror-linenumber {
-        color: #ffffff;
+    .component_mobilefileupload input[type="file"] + label:hover {
+        background-color: var(--linkhov)!important;
     }
     
-    .component_ide .component_menubar {
-        background: #323232;
-        background: linear-gradient(#323232 94%, var(--dark));
+    .list > span > .component_thing.view-grid .box .component_filename .file-details > span, .component_action .component_icon {
+        filter: brightness(0.5)!important;
     }
     
-    .component_menubar {
-        background: #323232;
-        background: linear-gradient(#323232 94%, var(--dark));
+    .component_modal > div {
+        border-radius: var(--border-m)!important;
+        background-color: var(--secbg)!important;
     }
     
-    .component_filedownloader {
-        background: #181818;
+    .component_share h2 {
+        color: var(--mainfont);
+    }
+    
+    .component_share .share--content.link-type > div {
+        background-color: var(--thirdbg);
+        color: var(--link);
+    }
+    
+    .component_share .share--content.link-type > div:hover {
+        background-color: var(--linkhov);
+        color: var(--mainfont);
+    }
+    
+    .component_share .share--content.link-type > div.active {
+        background-color: var(--linkhov)!important;
+        color: var(--mainfont)!important;
+    }
+    
+    .component_supercheckbox > label {
+        color: var(--secfont)!important;
+    }
+    
+    .component_share h2 .component_icon {
+        filter: invert(1);
+    }
+    
+    .component_popup .buttons {
+        margin: 15px 0 0 0;
+        text-align: center;
+        display: block;
+    }
+    
+    .component_popup .buttons [type="submit"] {
+        border-radius: var(--border-m);
+        width: 80%;
     }
     
     .component_filedownloader .download_button {
@@ -158,5 +194,43 @@
         0% { background-position: 0 0; }
         50% { background-position: 400% 0; }
         100% { background-position: 0 0; }
+    }
+}
+
+@-moz-document regexp("(?=.*?\\/login).*") {
+    .component_page_connect {
+        background: var(--mainbg)!important;
+    }
+    
+    .dark-mode .component_page_connection_form {
+        background: transparent!important;
+    }
+    
+    .box, .frequent_wrapper a {
+        background-color: var(--secbg)!important;
+        border-color: var(--borderclr)!important;
+    }
+    
+    .box:hover, .frequent_wrapper a {
+        background-color: var(--secbg)!important;
+        border: none!important;
+    }
+    
+    .component_page_connection_form .component_input {
+        background-color: var(--thirdbg)!important;
+        color: var(--mainfont)!important;
+        border: none!important;
+    }
+    
+    .component_page_connection_form .box {
+        border-radius: var(--border-m);
+    }
+    
+    button.emphasis {
+        background-color: var(--link)!important;
+    }
+    
+    button.emphasis:hover {
+        background-color: var(--linkhov)!important;
     }
 }
