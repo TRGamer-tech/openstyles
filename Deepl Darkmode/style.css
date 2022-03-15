@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Deepl Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        2.2.1
+@version        2.2.3
 @description    This Style makes Deepl finally dark! Enjoy working with one of the best translators out there without getting any eye strain! <br> <strong>Version 2.0 Update:</strong> The whole thing has been reworked to be consistent with the rest. Enjoy!
 @author         TRGYT
 @license        CC Zero
@@ -1026,7 +1026,7 @@
     /*============================= FOOTER =============================*/
 }
 
-@-moz-document regexp("(?=.*?\\/[a-zA-Z]{2}\\/app).*") {
+@-moz-document regexp("(?=.*?\\/[a-zA-Z]{2}\\/app).*"), regexp("(?=.*?deepl\\.com\\/app).*") {
     body {
         background-color: var(--mainbg)!important;
         color: var(--mainfont);
@@ -1136,6 +1136,10 @@
     
     .container-module--container--VtN-8:nth-child(even) {
         background-color: var(--secbg)!important;
+    }
+    
+    .appDownloadDownloadInfo-module--subheading--VUylS {
+        color: var(--secfont);
     }
     
     .appDownloadDownloadInfo-module--alternativeDownloadButtons--KTBb0 a {
