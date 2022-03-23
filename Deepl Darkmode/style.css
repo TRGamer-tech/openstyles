@@ -29,7 +29,7 @@
     }
 }
 
-@-moz-document regexp("https?:\\/\\/www.deepl\\.com\\/translator.*") {
+@-moz-document regexp("https?:\\/\\/www.deepl\\.com.*\\/translator.*") {
     .dl_body--redesign {
         background-color: var(--mainbg)!important;
     }
@@ -381,7 +381,7 @@
     /*============================= FOOTER =============================*/
 }
 
-@-moz-document regexp("https?:\\/\\/www.deepl\\.com\\/pro.*") {
+@-moz-document regexp("https?:\\/\\/www.deepl\\.com.*\\/pro.*") {
     body {
         background-color: var(--mainbg)!important;
         color: var(--mainfont);
@@ -630,7 +630,7 @@
     /*============================= FOOTER =============================*/
 }
 
-@-moz-document regexp("https?:\\/\\/www.deepl\\.com\\/.*whydeepl.*") {
+@-moz-document regexp("https?:\\/\\/www.deepl\\.com.*\\/whydeepl.*") {
     body {
         background-color: var(--mainbg)!important;
         color: var(--mainfont);
@@ -810,7 +810,7 @@
     /*============================= FOOTER =============================*/
 }
 
-@-moz-document regexp("https?:\\/\\/www.deepl\\.com\\/.*pro-api.*") {
+@-moz-document regexp("https?:\\/\\/www.deepl\\.com.*\\/pro-api.*") {
     body {
         background-color: var(--mainbg)!important;
         color: var(--mainfont);
@@ -1026,7 +1026,7 @@
     /*============================= FOOTER =============================*/
 }
 
-@-moz-document regexp("https?:\\/\\/www.deepl\\.com\\/.*\\/app.*") {
+@-moz-document regexp("https?:\\/\\/www.deepl\\.com.*\\/app.*") {
     body {
         background-color: var(--mainbg)!important;
         color: var(--mainfont);
@@ -1213,7 +1213,7 @@
     /*============================= FOOTER =============================*/
 }
 
-@-moz-document regexp("https?:\\/\\/www.deepl\\.com\\/contact-us.*") {
+@-moz-document regexp("https?:\\/\\/www.deepl\\.com.*\\/contact-us.*") {
     body {
         background-color: var(--mainbg)!important;
         color: var(--mainfont);
