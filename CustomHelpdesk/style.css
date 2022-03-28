@@ -137,6 +137,10 @@
 } 
 
 @-moz-document domain("/*[[url]]*/") {
+    #ticketBody #subject #subject-span.contentEditable {
+        color: white;
+    }
+    
     table.horizseparated tr.overdue td a.ticketLink, table.horizseparated tr.overdue td.duedate {
         color: #ff0900;
     }
