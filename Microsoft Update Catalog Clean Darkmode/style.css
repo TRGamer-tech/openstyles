@@ -1,0 +1,211 @@
+/* ==UserStyle==
+@name           MSU Darkmode
+@namespace      github.com/TRGamer-Tech/openstyles
+@version        1.0.0
+@description    This is just a simple redesign (and darkmode) of the Microsoft Update-Catalog Website 
+@author         TRGYT
+@license        CC Zero
+==/UserStyle== */
+
+
+@-moz-document domain("catalog.update.microsoft.com") {
+    :root {
+        --mainbg: #1d1d1d;
+        --secbg: #2e2e2e;
+        --thirdbg: #474747;
+        --quotebg: #313e48;
+        --errbg: #332626;
+        --mainfont: #fff;
+        --secfont: #dbdbdb;
+        --placeholder: #bcbcbc;
+        --link: #70cfff;
+        --linkhov: #0090d6;
+        --seclink: #0098b3;
+        --seclinkhov: #006494;
+        --border: 1px solid #8c8c8c;
+        --borderclr: #8c8c8c;
+        --border-l: 15px;
+        --border-m: 10px;
+        --border-s: 5px;
+    }
+    
+    #headerBox {
+        background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Images/bg_Globe.jpg) no-repeat #6487dc;
+    }
+    
+    #searchGlowTopBox, 
+    #searchGlowBottomBox {
+        background-image: none!important;
+    }
+    
+    #searchGlowPart1, 
+    #searchGlowPart3, 
+    #searchGlowPart8aBox, 
+    #searchGlowPart8bBox, 
+    #searchGlowPart7, 
+    #searchGlowPart5, 
+    #searchGlowPart4aBox, 
+    #searchGlowPart4bBox {
+        opacity: 0;
+    }
+    
+    #searchTextboxBox, #searchTextboxBox input {
+        background-color: var(--thirdbg);
+        color: var(--mainfont);
+        border-bottom-left-radius: var(--border-s);
+        border-top-left-radius: var(--border-s);
+    }
+    
+    #searchTextboxBox input:hover {
+        color: var(--secfont);
+    }
+    
+    #searchButtonBox {
+        background-image: none!important;
+        background-color: var(--secbg);
+        border-bottom-right-radius: var(--border-s);
+        border-top-right-radius: var(--border-s);
+    }
+    
+    #searchButtonBox input {
+        color: var(--mainfont);
+    }
+    
+    #searchButtonBox input:hover {
+        color: var(--secfont);
+    }
+    
+    .mainBody, 
+    .dialogBody {
+        background-image: none!important;
+        background-color: var(--mainbg);
+    }
+    
+    .textSubHeadingColor, 
+    .dialogHeader, 
+    .contentPageTitleHeader {
+        color: var(--mainfont);
+    }
+    
+    .resultsNavigation, 
+    .dialogDetail, 
+    .contentTextItemSpacerTitle, 
+    .contentTextItemSpacerNoBreak, 
+    .contentTextItemSpacer, 
+    .contentTextItemSpacerBullets, 
+    *::marker{
+        color: var(--secfont);
+    }
+    
+    .resultsBackGround {
+        background: transparent!important;
+        border-radius: 75px;
+    }
+    
+    .resultsBackGround > tbody tr:last-of-type td:first-of-type {
+        border-bottom-left-radius: var(--border-m);
+    }
+    
+    .resultsBackGround > tbody tr:last-of-type td:last-of-type {
+        border-bottom-right-radius: var(--border-m);
+    }
+    
+    .resultsBackGround > tbody tr:last-of-type td {
+        border-color: transparent!important;
+    }
+    
+    .resultsBackGround > tbody tr td input {
+        margin-right: 100px;
+    }
+    
+    .resultsBackGround > tbody tr td {
+        text-align: center;
+    }
+    
+    .flatBlueButtonDownload, .flatBlueButtonDownloadClose {
+        background: var(--borderclr);
+        border: none;
+        border-radius: var(--border-m);
+        padding: 5px;
+        width: 50%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 25%;
+    }
+    
+    .flatBlueButtonDownload:hover, .flatBlueButtonDownloadClose:hover {
+        background: var(--linkhov);
+    }
+    
+    .ResultsHeaderTD {
+        background: var(--secbg);
+        color: var(--mainfont);
+    }
+    
+    .ResultsHeaderTD headertemplate {
+        display: none!important;
+    }
+    
+    .headerText a, 
+    .headerText a:visited, 
+    .headerText a:active {
+        color: var(--mainfont);
+    }
+    
+    .ResultsHeaderTD:first-of-type {
+        border-top-left-radius: var(--border-m);
+    }
+    
+    .ResultsHeaderTD:last-of-type {
+        border-top-right-radius: var(--border-m);
+    }
+    
+    .resultsBorder, 
+    .ResultsHeaderTD, 
+    .progressHeaderTD, 
+    .cancelHeaderTD, 
+    #downloadDialogButtonsBox {
+        border: none!important;
+        border-collapse: unset!important;
+    }
+    
+    .resultsbottomBorder {
+        background-color: var(--thirdbg);
+        color: var(--mainfont);
+        border-bottom: 1px solid var(--placeholder)!important;
+    }
+    
+    .resultsbottomBorder a, 
+    .textContentPageBottomSpacer a {
+        color: var(--link)!important;
+    }
+    
+    .resultsbottomBorder a:hover, 
+    .textContentPageBottomSpacer a:hover {
+        color: var(--linkhov)!important;
+    }
+    
+    #footerBox {
+        border: none;
+    }
+    
+    #footerBox #innerFooterBox {
+        color: var(--mainfont);
+    }
+    
+    a.footerLink {
+        color: var(--link);
+    }
+    
+    a.footerLink:hover {
+        color: var(--linkhov);
+    }
+    
+    #downloadFiles a {
+        color: var(--link);
+    }
+    
+    #downloadFiles a:hover {
+        color: var(--linkhov);
+    }
+}
