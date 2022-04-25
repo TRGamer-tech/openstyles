@@ -1,0 +1,34 @@
+/* ==UserStyle==
+@name           (DS) Digitalstrom WebApp Darkmode
+@namespace      github.com/TRGamer-Tech/openstyles
+@author         TRGYT
+@description    Simple darkmode for DigitalStrom WebApp
+@version        1.0.0
+@license        CC Zero
+==/UserStyle== */
+
+@-moz-document domain("webapp.digitalstrom.com") {
+    :root {
+        --main-background-color: #2e2e2e!important;
+        --navigation-menu-background: #252525!important;
+        --scenario-name-active-color: #858585!important;
+        --link-color: #b5b5b5!important;
+    }
+    
+    .context-menu-container, 
+    .about-info-value {
+        background-color: var(--navigation-menu-background);
+    }
+    
+    .navigation-tile {
+        background-color: var(--main-background-color);
+        box-shadow: 0 1px 2px #737373;
+    }
+    
+    h3, 
+    .about-info-label, 
+    .about-info-value,
+    .about-footer-copy {
+        color: white;
+    }
+}
