@@ -3,7 +3,7 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    Simple darkmode for DigitalStrom WebApp
-@version        1.0.0
+@version        1.0.1
 @license        CC Zero
 ==/UserStyle== */
 
@@ -13,6 +13,7 @@
         --navigation-menu-background: #252525!important;
         --scenario-name-active-color: #858585!important;
         --link-color: #b5b5b5!important;
+        background-color: var(--main-background-color)!important;
     }
     
     .context-menu-container, 
