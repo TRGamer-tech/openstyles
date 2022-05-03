@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DEUPS Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.3.6
+@version        1.3.7
 @description    Darkmode with some additions for the DEUPS Website!
 @author         TRGYT
 @license        CC Zero
@@ -120,10 +120,21 @@
     }
 }
 
-@-moz-document regexp("https?:\\/\\/deups\\.iet-gibb\\.ch.*\\/practice.*"), regexp("https?:\\/\\/deups\\.iet-gibb\\.ch.*\\/exam.*") {
+@-moz-document regexp("https?:\\/\\/deups\\.iet-gibb\\.ch.*\\/practice.*"), regexp("http?:\\/\\/deups\\.iet-gibb\\.ch.*\\/practice.*") {
     .container > .section > .row:first-of-type {
         position: sticky;
-        top: 0;
+        top: -60px;
+        z-index: 99;
+        background-color: var(--main);
+        margin-top: 0;
+        border-bottom: 2px solid #fff;
+    }
+}
+
+@-moz-document regexp("https?:\\/\\/deups\\.iet-gibb\\.ch.*\\/exam.*"), regexp("http?:\\/\\/deups\\.iet-gibb\\.ch.*\\/exam.*") {
+    .container > .section > .row:first-of-type {
+        position: sticky;
+        top: -150px;
         z-index: 99;
         background-color: var(--main);
         margin-top: 0;
