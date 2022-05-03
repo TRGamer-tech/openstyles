@@ -120,7 +120,7 @@
     }
 }
 
-@-moz-document regexp("(?=.*?\\/practice\\/).*") {
+@-moz-document regexp("https?:\\/\\/deups\\.iet-gibb\\.ch.*\\/practice.*"), regexp("https?:\\/\\/deups\\.iet-gibb\\.ch.*\\/exam.*") {
     .container > .section > .row:first-of-type {
         position: sticky;
         top: 0;
