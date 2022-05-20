@@ -1,0 +1,97 @@
+/* ==UserStyle==
+@name           MS Volume Licensing Service Center Darkmode
+@namespace      github.com/TRGamer-Tech/openstyles
+@version        1.0.0
+@description    This is just a simple redesign (and darkmode) of the Microsoft Volume Licensing Service Center Website 
+@author         TRGYT
+@license        CC Zero
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.microsoft.com/Licensing/servicecenter/") {
+    :root {
+        --mainbg: #1d1d1d;
+        --secbg: #2e2e2e;
+        --thirdbg: #474747;
+        --quotebg: #313e48;
+        --errbg: #332626;
+        --mainfont: #fff;
+        --secfont: #dbdbdb;
+        --placeholder: #bcbcbc;
+        --link: #70cfff;
+        --linkhov: #0090d6;
+        --seclink: #0098b3;
+        --seclinkhov: #006494;
+        --border: 1px solid #8c8c8c;
+        --borderclr: #8c8c8c;
+        --border-l: 15px;
+        --border-m: 10px;
+        --border-s: 5px;
+    }
+    
+    body, 
+    .body.usp, 
+    .body {
+        background: var(--mainbg)!important;
+    }
+    
+    .bodyBottom {
+        filter: invert(0.89);
+    }
+    
+    .UnShomePage .fphptitle, 
+    .UnShomePage .fphppgTitle {
+        color: var(--linkhov);
+    }
+    
+    span {
+        color: var(--mainfont);
+    }
+    
+    .icoCarrot1 img {
+        filter: invert(1);
+    }
+    
+    a:link, a:visited {
+        color: var(--link);
+    }
+    
+    a:hover {
+        color: var(--linkhov);
+    }
+    
+    .fphpTitleM, 
+    .fphpTitleL, 
+    .fphpTitleR {
+        background: var(--quotebg);
+    }
+    
+    .UnShomePage .unshpfpbblwh1 {
+        background-color: var(--secbg);
+        border: none!important;
+    }
+    
+    .UnShomePage .unshpfpbbl2 {
+        border: none!important;
+    }
+    
+    .UnShomePage .unshpblc, 
+    .UnShomePage .unshprcm, 
+    .UnShomePage .unshprcb {
+        background: none!important;
+    }
+    
+    .footer {
+        background-color: var(--secbg);
+        color: var(--mainfont);
+    }
+    
+    .footer a:link, 
+    .footer a:visited, 
+    .footer a:active {
+        color: var(--link);
+    }
+    
+    .footer a:hover {
+        color: var(--linkhov);
+    }
+}
