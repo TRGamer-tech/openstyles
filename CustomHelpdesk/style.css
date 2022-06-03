@@ -3,7 +3,7 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
-@version        1.5.7
+@version        1.5.8
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
@@ -219,6 +219,21 @@
 
     .outerroundedbox {
         background-color: #1f1f1f;
+        border-radius: 10px;
+    }
+    
+    table.outerroundedborder th:last-child, 
+    table.outerroundedbox th:last-child {
+        border-top-right-radius: 10px;
+    }
+    
+    table.outerroundedborder th:first-child, 
+    table.outerroundedbox th:first-child {
+        border-top-left-radius: 10px;
+    }
+    
+    .outerroundedborder {
+        border-radius: 10px;
     }
 
     #tblTickets th a, #tblTickets th a:visited, h3 {
@@ -229,6 +244,7 @@
         background-color: #353638;
         border: 1px solid #424242;
     }
+    
 
     .Titel-Wrapper .chosen-results li.active-result {
         color: var(--text);
@@ -436,6 +452,10 @@
     
     .companyStatus span {
         color: #960100;
+    }
+    
+    .editCell:after {
+        border-color: transparent var(--secbody);
     }
 }
 
