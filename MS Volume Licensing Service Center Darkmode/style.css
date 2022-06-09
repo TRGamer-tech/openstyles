@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name           MS Volume Licensing Service Center Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.0.0
+@version        1.1.0
 @description    This is just a simple redesign (and darkmode) of the Microsoft Volume Licensing Service Center Website 
 @author         TRGYT
 @license        CC Zero
 ==/UserStyle== */
 
-@-moz-document url-prefix("https://www.microsoft.com/Licensing/servicecenter/") {
+@-moz-document url-prefix("https://www.microsoft.com/Licensing/servicecenter/"), url-prefix("https://www.microsoft.com/Licensing/Servicecenter/") {
     :root {
         --mainbg: #1d1d1d;
         --secbg: #2e2e2e;
@@ -30,12 +30,24 @@
     
     body, 
     .body.usp, 
-    .body {
+    .body, 
+    .hpblc {
         background: var(--mainbg)!important;
     }
     
+    #ctl00_ctl00_homeLink img {
+        display: none;
+    }
+    
+    #ctl00_ctl00_homeLink { 
+        background-image: url(https://4.bp.blogspot.com/-y0-QxjF_g94/WWefD0MshDI/AAAAAAAAF0s/TlT4dVtyWFo36y1AdhQzGCXj9EPHT2AewCLcBGAs/s1600/microsoft_logo.png);
+        background-repeat: no-repeat;
+        background-size: 11vw;
+        top: -30px;
+    }
+    
     .bodyBottom {
-        filter: invert(0.89);
+        filter: invert(0.886);
     }
     
     .UnShomePage .fphptitle, 
@@ -43,7 +55,8 @@
         color: var(--linkhov);
     }
     
-    span {
+    span, 
+    .bodyText {
         color: var(--mainfont);
     }
     
@@ -51,7 +64,8 @@
         filter: invert(1);
     }
     
-    a:link, a:visited {
+    a:link, a:visited,
+    div.navbar span.topnavfont a:link, div.navbar span.topnavfont a:visited, div.navbar span.topnavfont a:active, div.navbar span.topnavfont a:hover {
         color: var(--link);
     }
     
@@ -65,8 +79,19 @@
         background: var(--quotebg);
     }
     
-    .UnShomePage .unshpfpbblwh1 {
-        background-color: var(--secbg);
+    .hplstHdr {
+        font-size: 13px;
+    }
+    
+    .UnShomePage .unshpfpbblwh1, 
+    .osahomelink,
+    .hpfpbbl2, 
+    .hpfpbbl3,
+    .hprcba,
+    .PagerBg,
+    .bluetabSpacer, 
+    .bluetabSpacer2{
+        background: var(--secbg);
         border: none!important;
     }
     
@@ -78,6 +103,67 @@
     .UnShomePage .unshprcm, 
     .UnShomePage .unshprcb {
         background: none!important;
+    }
+    
+    #ctl00_ctl00_MainContent_BodyContent_updateTop > table,
+    .GridViewRowStyle,
+    #ctl00_ctl00_MainContent_BodyContent_KeysGrid_filterKeysTableRow > td > table,
+    .blueTabs {
+        background: var(--secbg)!important;
+        border-radius: var(--border-m);
+    }
+    
+    .GridViewAlternatingRowStyle,
+    div.navbar .topnavitem:hover {
+        background: var(--thirdbg)!important;
+    }
+    
+    .GridViewBorderStyle {
+        border: var(--border);
+    }
+    
+    #ctl00_ctl00_MainContent_BodyContent_KeysGrid_filterKeysTableRow > td > table {
+        margin-top: 20px;
+    }
+    
+    .blueInActiveTab {
+        background: var(--link);
+    }
+    
+    .blueInActiveTab span {
+        color: black;
+    }
+    
+    select, 
+    div#navbarcontainer,
+    div.navbar{
+        background: var(--secbg);
+    }
+    
+    .button{
+        background: var(--link);
+        border: none;
+        width: 100%;
+        border-radius: var(--border-s);
+    }
+    
+    div.navbar .subnavitems .flyout {
+        background: var(--secbg);
+        border: var(--border);
+    }
+    
+    div.navbar .subnavitems .flyout a,
+    div.navbar .tabflyoutopen a{
+        color: var(--mainfont)!important;
+    }
+    
+    div.navbar .tabflyoutopen {
+        background: var(--secbg);
+    }
+    
+    div.navbar .subnavitems .flyout .subnavitem a:hover,
+    div.navbar .currentfocus {
+        background: var(--borderclr);
     }
     
     .footer {
