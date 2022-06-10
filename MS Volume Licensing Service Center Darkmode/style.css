@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           MS Volume Licensing Service Center Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.1.1
+@version        1.2.1
 @description    This is just a simple redesign (and darkmode) of the Microsoft Volume Licensing Service Center Website 
 @author         TRGYT
 @license        CC Zero
@@ -51,12 +51,15 @@
     }
     
     .UnShomePage .fphptitle, 
-    .UnShomePage .fphppgTitle {
+    .UnShomePage .fphppgTitle,
+    .PopupHeader {
         color: var(--linkhov);
     }
     
     span, 
-    .bodyText {
+    .bodyText,
+    div.popUp,
+    .LoginPanelCSS > div {
         color: var(--mainfont);
     }
     
@@ -65,11 +68,16 @@
     }
     
     a:link, a:visited,
-    div.navbar span.topnavfont a:link, div.navbar span.topnavfont a:visited, div.navbar span.topnavfont a:active, div.navbar span.topnavfont a:hover {
+    div.navbar span.topnavfont a:link, 
+    div.navbar span.topnavfont a:visited, 
+    div.navbar span.topnavfont a:active,
+    div.popUp input {
         color: var(--link);
     }
     
-    a:hover {
+    a:hover,
+    div.navbar span.topnavfont a:hover,
+    div.popUp input:hover {
         color: var(--linkhov);
     }
     
@@ -90,9 +98,17 @@
     .hprcba,
     .PagerBg,
     .bluetabSpacer, 
-    .bluetabSpacer2{
-        background: var(--secbg);
+    .bluetabSpacer2p {
+        background: var(--secbg)!important;
         border: none!important;
+    }
+    
+    #ctl00_ctl00_MainContent_BodyContent_LoginPopup_Login_LoginIdTextBox,
+    #ctl00_ctl00_MainContent_BodyContent_LoginPopup_Login_LoginSubmitButton {
+        color: var(--mainfont)!important;
+        background: var(--thirdbg);
+        border: var(--border);
+        border-radius: var(--border-s);
     }
     
     .UnShomePage .unshpfpbbl2 {
@@ -108,9 +124,15 @@
     #ctl00_ctl00_MainContent_BodyContent_updateTop > table,
     .GridViewRowStyle,
     #ctl00_ctl00_MainContent_BodyContent_KeysGrid_filterKeysTableRow > td > table,
-    .blueTabs {
+    .blueTabs,
+    div.popUp table,
+    div.popUp {
         background: var(--secbg)!important;
         border-radius: var(--border-m);
+    }
+    
+    div.shadow {
+        display: none!important;
     }
     
     .GridViewAlternatingRowStyle,
