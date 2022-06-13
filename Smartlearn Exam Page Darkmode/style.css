@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Smartlearn Exam Page Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.1.0
+@version        1.1.1
 @description    Just a simple dark mode for yet another Gibb website
 @author         TRGYT
 @license        CC Zero
@@ -39,7 +39,8 @@
     .ant-card-bordered,
     .ant-card-actions,
     .ant-input,
-    .ant-input-affix-wrapper {
+    .ant-input-affix-wrapper,
+    .ant-card-type-inner .ant-card-head {
         background-color: var(--secbg);
         border: none!important;
     }
@@ -52,7 +53,8 @@
     
     .ant-layout-content .ant-page-header,
     .ant-card-bordered,
-    .ant-card-actions {
+    .ant-card-actions,
+    .ant-card-type-inner .ant-card-head{
         border-radius: var(--border-m)!important;
     }
     
@@ -64,12 +66,15 @@
     .ant-dropdown-menu > li > div,
     .ant-card .ant-typography,
     .ant-input,
-    .ant-input-affix-wrapper {
-        color: var(--mainfont);
+    .ant-input-affix-wrapper,
+    .ant-card-head-title,
+    .ant-typography-secondary,
+    .ant-card-body {
+        color: var(--mainfont)!important;
     }
     
     .ant-tabs-tab-btn:hover {
-        color: var(--link);
+        color: var(--link)!important;
     }
     
     .ant-radio-button-wrapper>.ant-radio-button,
@@ -97,6 +102,10 @@
     .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
         color: #40a9ff;
         border-color: #40a9ff;
+    }
+    
+    .ant-tabs-tab > div {
+        color: var(--mainbg)!important;
     }
     
     .ant-radio-button-wrapper:last-child {
