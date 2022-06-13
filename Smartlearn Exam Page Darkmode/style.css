@@ -1,0 +1,122 @@
+/* ==UserStyle==
+@name           Smartlearn Exam Page Darkmode
+@namespace      github.com/TRGamer-Tech/openstyles
+@version        1.1.0
+@description    Just a simple dark mode for yet another Gibb website
+@author         TRGYT
+@license        CC Zero
+==/UserStyle== */
+
+@-moz-document domain("smartlearn.iet-gibb.ch") {
+    :root {
+        --mainbg: #121212;
+        --secbg: #1d1d1d;
+        --thirdbg: #474747;
+        --quotebg: #313e48;
+        --errbg: #332626;
+        --mainfont: #fff;
+        --secfont: #dbdbdb;
+        --placeholder: #bcbcbc;
+        --link: #70e9ff;
+        --linkhov: #0090d6;
+        --seclink: #0098b3;
+        --seclinkhov: #006494;
+        --border: 1px solid #8c8c8c;
+        --boldborder: 2px solid #8c8c8c;
+        --borderclr: #8c8c8c;
+        --border-l: 15px;
+        --border-m: 10px;
+        --border-s: 5px;
+    }
+    
+    .ant-layout,
+    body {
+        background-color: var(--mainbg);
+    }
+    
+    .ant-page-header,
+    .ant-btn,
+    .ant-card-bordered,
+    .ant-card-actions,
+    .ant-input,
+    .ant-input-affix-wrapper {
+        background-color: var(--secbg);
+        border: none!important;
+    }
+    
+    .ant-alert-info {
+        background-color: var(--seclinkhov);
+        border-radius: var(--border-m);
+        margin-bottom: 10px;
+    }
+    
+    .ant-layout-content .ant-page-header,
+    .ant-card-bordered,
+    .ant-card-actions {
+        border-radius: var(--border-m)!important;
+    }
+    
+    .ant-result-title,
+    .ant-page-header-heading-title,
+    .ant-page-header-heading-sub-title,
+    .ant-tabs-tab-btn,
+    .ant-btn,
+    .ant-dropdown-menu > li > div,
+    .ant-card .ant-typography,
+    .ant-input,
+    .ant-input-affix-wrapper {
+        color: var(--mainfont);
+    }
+    
+    .ant-tabs-tab-btn:hover {
+        color: var(--link);
+    }
+    
+    .ant-radio-button-wrapper>.ant-radio-button,
+    .ant-btn,
+    .ant-dropdown-menu,
+    .ant-card,
+    .ant-card-actions {
+        background-color: var(--thirdbg);
+    }
+    
+    .ant-btn:hover, .ant-btn:focus, .ant-btn:active {
+        background-color: var(--placeholder);
+        color: var(--seclink);
+    }
+    
+    .ant-radio-button-wrapper:first-child, 
+    .ant-radio-button-wrapper:last-child,
+    .ant-radio-button-wrapper {
+        background-color: var(--secbg);
+        color: var(--mainfont);
+        border: var(--boldborder);
+        border-radius: var(--border-s);
+    }
+    
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+        color: #40a9ff;
+        border-color: #40a9ff;
+    }
+    
+    .ant-radio-button-wrapper:last-child {
+        margin-left: 10px;
+    }
+    
+    .anticon-book,
+    .anticon-eye-invisible,
+    .ant-input-password-icon,
+    .anticon-lock,
+    .anticon-user {
+        filter: invert(1);
+    }
+    
+    .ant-layout-footer {
+        background-color: var(--secbg);
+        color: var(--mainfont);
+    }
+    
+    .ant-layout-footer button {
+        margin-left: 20px;
+    }
+}
