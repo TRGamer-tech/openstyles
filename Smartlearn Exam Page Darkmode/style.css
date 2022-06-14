@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Smartlearn Exam Page Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.1.1
+@version        1.1.2
 @description    Just a simple dark mode for yet another Gibb website
 @author         TRGYT
 @license        CC Zero
@@ -69,7 +69,8 @@
     .ant-input-affix-wrapper,
     .ant-card-head-title,
     .ant-typography-secondary,
-    .ant-card-body {
+    .ant-card-body,
+    .ant-result-subtitle {
         color: var(--mainfont)!important;
     }
     
@@ -82,7 +83,11 @@
     .ant-dropdown-menu,
     .ant-card,
     .ant-card-actions {
-        background-color: var(--thirdbg);
+        background-color: var(--thirdbg)!important;
+    }
+    
+    .ant-result-500 {
+        background-color: var(--errbg)!important;
     }
     
     .ant-btn:hover, .ant-btn:focus, .ant-btn:active {
