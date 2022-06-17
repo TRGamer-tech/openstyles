@@ -197,7 +197,7 @@
     }
 }
 
-@-moz-document regexp("(?=.*?sftp\\.iet-gibb\\.ch\\/login).*") {
+@-moz-document regexp("https?:\\/\\/www.sftp\\.iet\\-gibb\\.ch.*\\/translator.*") {
     .component_page_connect {
         background: var(--mainbg)!important;
     }
