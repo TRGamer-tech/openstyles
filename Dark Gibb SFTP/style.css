@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Dark Gibb SFTP
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.2.2
+@version        1.2.3
 @description    Makes the SFTP Darkmode properly dark. REQUIRES DARK MODE ACTIVATED FOR IT TO LOOK GOOD!
 @author         TRGYT
 @license        CC Zero
@@ -26,7 +26,7 @@
     }
     
     body {
-        background: var(--mainbg)!important;
+        background-color: var(--mainbg)!important;
     }
     
     .breadcrumb {
@@ -197,9 +197,9 @@
     }
 }
 
-@-moz-document regexp("https?:\\/\\/www.sftp\\.iet\\-gibb\\.ch.*\\/translator.*") {
+@-moz-document regexp("https?:\\/\\/sftp\\.iet\\-gibb\\.ch.*\\/login.*") {
     .component_page_connect {
-        background: var(--mainbg)!important;
+        background-color: var(--mainbg)!important;
     }
     
     .dark-mode .component_page_connection_form {
