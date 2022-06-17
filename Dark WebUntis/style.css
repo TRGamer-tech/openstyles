@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Dark WebUntis
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.1.0
+@version        1.1.1
 @description    This Style transforms the WebUntis Calendar into a full dark mode!
 @author         TRGYT
 @license        CC Zero
@@ -179,4 +179,4 @@
     .untis-bootstrap .panel-title>a, .untis-bootstrap .panel-title>span, .panel-body {
         color: #d4d4d4;
     }
-    }
+}
