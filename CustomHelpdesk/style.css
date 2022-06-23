@@ -3,7 +3,7 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
-@version        1.5.8
+@version        1.6.0
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
@@ -13,6 +13,7 @@
     :root {
         --mainbody: /*[[bodyColor]]*/;
         --secbody: #1f1f1f;
+        --thirdbody: #272727;
         --hovbody: #353638;
         --redbody: box-shadow: inset 0 0 0 2000px rgb(255 50 50 / 5%);
         --link: #39b1ff;
@@ -79,7 +80,7 @@
     }
 
     .lightbg {
-        background-color: #1f1f1f;
+        background-color: var(--secbody);
     }
 }
 @-moz-document domain("/*[[url]]*/") {
@@ -195,8 +196,8 @@
     }
 
     #timeheader th {
-        background: #1f1f1f;
-        border-color: #1f1f1f;
+        background: var(--secbody);
+        border-color: var(--secbody);
         color: var(--text);
     }
 
@@ -218,7 +219,7 @@
     }
 
     .outerroundedbox {
-        background-color: #1f1f1f;
+        background-color: var(--secbody);
         border-radius: 10px;
     }
     
@@ -294,12 +295,12 @@
         color: var(--text);
     }
 
-    div.richeditor div.editbar {
-        background: #272727;
+    div.richeditor div.editbar, #linkInventoryBox {
+        background: var(--thirdbody);
     }
 
     #new-ticket-form #divUsers {
-        background-color: #272727;
+        background-color: var(--thirdbody);
     }
 
     .report-settings div.report-input {
@@ -324,7 +325,7 @@
     }
 
     .xdsoft_datetimepicker, .xdsoft_noselect, .xdsoft_, .xdsoft_label {
-        background: #272727!important;
+        background: var(--thirdbody)!important;
         background-color: transparent;
         color: var(--text);
     }
@@ -336,7 +337,7 @@
     }
 
     .xdsoft_datetimepicker .xdsoft_calendar th {
-        background: #272727!important;
+        background: var(--thirdbody)!important;
     }
 
     .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default, .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current {
@@ -345,12 +346,12 @@
     }
 
     .xdsoft_datetimepicker .xdsoft_calendar td, .xdsoft_datetimepicker .xdsoft_calendar th {
-        background: #272727!important;
+        background: var(--thirdbody)!important;
         color: #A1A1A1!important;
     }
 
     .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div {
-        background: #272727!important;
+        background: var(--thirdbody)!important;
         /* color: #666; */
     }
 
@@ -362,18 +363,18 @@
 
 
     div.kbHeader input {
-        background-color: #1f1f1f;
+        background-color: var(--secbody);
         border: 1px solid #3a3a3a;
     }
 
     div.kbHeader div>a {
         box-shadow: 0 1px 12px -2px rgb(0 0 0 / 15%);
-        background-color: #1f1f1f;
+        background-color: var(--secbody);
         color: #b7b5b5;
     }
 
     .footer {
-        background-color: #272727;
+        background-color: var(--thirdbody);
     }
 
     a {
@@ -402,11 +403,11 @@
     .chosen-container-multi .chosen-choices {
         border: 1px solid #444;
         background-color: #5c5c5c;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #272727), color-stop(15%, #353638));
-        background-image: -webkit-linear-gradient(#272727 1%, #353638 15%);
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, var(--thirdbody)), color-stop(15%, #353638));
+        background-image: -webkit-linear-gradient(var(--thirdbody) 1%, #353638 15%);
         background-image: -moz-linear-gradient(#eeeeee 1%, #ffffff 15%);
         background-image: -o-linear-gradient(#eeeeee 1%, #ffffff 15%);
-        background-image: linear-gradient(#272727 1%, #353638 15%);
+        background-image: linear-gradient(var(--thirdbody) 1%, #353638 15%);
     }
 
     .chosen-container .chosen-results li.active-result {
@@ -421,11 +422,11 @@
         color: var(--text);
         border: 1px solid #424242;
         background-color: #353638;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #272727), color-stop(50%, #272727), color-stop(52%, #353638), color-stop(100%, #353638));
-        background-image: -webkit-linear-gradient(#2e2e2e 20%, #272727 50%, #272727 52%, #353638 100%);
-        background-image: -moz-linear-gradient(#2e2e2e 20%, #272727 50%, #272727 52%, #353638 100%);
-        background-image: -o-linear-gradient(#2e2e2e 20%, #272727 50%, #272727 52%, #353638 100%);
-        background-image: linear-gradient(#2e2e2e 20%, #272727 50%, #272727 52%, #353638 100%);
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, var(--thirdbody)), color-stop(50%, var(--thirdbody)), color-stop(52%, #353638), color-stop(100%, #353638));
+        background-image: -webkit-linear-gradient(#2e2e2e 20%, var(--thirdbody) 50%, var(--thirdbody) 52%, #353638 100%);
+        background-image: -moz-linear-gradient(#2e2e2e 20%, var(--thirdbody) 50%, var(--thirdbody) 52%, #353638 100%);
+        background-image: -o-linear-gradient(#2e2e2e 20%, var(--thirdbody) 50%, var(--thirdbody) 52%, #353638 100%);
+        background-image: linear-gradient(#2e2e2e 20%, var(--thirdbody) 50%, var(--thirdbody) 52%, #353638 100%);
     }
 
     .chosen-container-active .chosen-choices li.search-field input[type="text"] {
@@ -434,7 +435,7 @@
 
     .chosen-container-multi .chosen-drop .result-selected {
         color: #444;
-        background: #1f1f1f;
+        background: var(--secbody);
     }
     
     .hovertext:before {
@@ -473,7 +474,7 @@
     }
 
     .outerroundedbox {
-        background-color: #1f1f1f;
+        background-color: var(--secbody);
     }
     
     .outerroundedbox h2 {
