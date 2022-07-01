@@ -3,7 +3,7 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
-@version        1.6.0
+@version        1.6.1
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
@@ -26,6 +26,9 @@
         --sectext: #bbb;
         --hovtext: #888; 
         --border: 1px solid #414141;
+        --border-l: 15px;
+        --border-m: 10px;
+        --border-s: 5px;
         --borderclr: #414141;
         --blueborder: 1px solid #005b75;
     }
@@ -210,7 +213,7 @@
     }
 
     #rteBody {
-        background: #353638!important;
+        background: var(--hovbody)!important;
     }
 
     .categories, .midbg{
@@ -220,21 +223,21 @@
 
     .outerroundedbox {
         background-color: var(--secbody);
-        border-radius: 10px;
+        border-radius: var(--border-m);
     }
     
     table.outerroundedborder th:last-child, 
     table.outerroundedbox th:last-child {
-        border-top-right-radius: 10px;
+        border-top-right-radius: var(--border-m);
     }
     
     table.outerroundedborder th:first-child, 
     table.outerroundedbox th:first-child {
-        border-top-left-radius: 10px;
+        border-top-left-radius: var(--border-m);
     }
     
     .outerroundedborder {
-        border-radius: 10px;
+        border-radius: var(--border-m);
     }
 
     #tblTickets th a, #tblTickets th a:visited, h3 {
@@ -242,7 +245,7 @@
     }
 
     .chosen-container-single .chosen-drop {
-        background-color: #353638;
+        background-color: var(--hovbody);
         border: 1px solid #424242;
     }
     
@@ -271,7 +274,7 @@
     }
 
     .chosen-container-single .chosen-single {
-        background: #353638 !important;
+        background: var(--hovbody) !important;
         box-shadow: none;
         border: 1px solid #424242;
     }
@@ -283,7 +286,7 @@
     .chosen-container .chosen-results li.no-results {
         color: #777;
         display: list-item;
-        background: #353638;
+        background: var(--hovbody);
     }
 
     .chosen-container-active.chosen-with-drop .chosen-single {
@@ -309,7 +312,7 @@
 
     .report-settings div.report-input input {
         display: inline-block;
-        margin-left: 5px;
+        margin-left: var(--border-s);
     }
 
     .report-settings div.report-input input[type=checkbox] {
@@ -403,15 +406,15 @@
     .chosen-container-multi .chosen-choices {
         border: 1px solid #444;
         background-color: #5c5c5c;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, var(--thirdbody)), color-stop(15%, #353638));
-        background-image: -webkit-linear-gradient(var(--thirdbody) 1%, #353638 15%);
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, var(--thirdbody)), color-stop(15%, var(--hovbody)));
+        background-image: -webkit-linear-gradient(var(--thirdbody) 1%, var(--hovbody) 15%);
         background-image: -moz-linear-gradient(#eeeeee 1%, #ffffff 15%);
         background-image: -o-linear-gradient(#eeeeee 1%, #ffffff 15%);
-        background-image: linear-gradient(var(--thirdbody) 1%, #353638 15%);
+        background-image: linear-gradient(var(--thirdbody) 1%, var(--hovbody) 15%);
     }
 
     .chosen-container .chosen-results li.active-result {
-        background-color: #353638;
+        background-color: var(--hovbody);
     }
 
     .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
@@ -421,12 +424,8 @@
     .chosen-container-multi .chosen-choices li.search-choice {
         color: var(--text);
         border: 1px solid #424242;
-        background-color: #353638;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, var(--thirdbody)), color-stop(50%, var(--thirdbody)), color-stop(52%, #353638), color-stop(100%, #353638));
-        background-image: -webkit-linear-gradient(#2e2e2e 20%, var(--thirdbody) 50%, var(--thirdbody) 52%, #353638 100%);
-        background-image: -moz-linear-gradient(#2e2e2e 20%, var(--thirdbody) 50%, var(--thirdbody) 52%, #353638 100%);
-        background-image: -o-linear-gradient(#2e2e2e 20%, var(--thirdbody) 50%, var(--thirdbody) 52%, #353638 100%);
-        background-image: linear-gradient(#2e2e2e 20%, var(--thirdbody) 50%, var(--thirdbody) 52%, #353638 100%);
+        background-color: var(--hovbody);
+        background-image: none;
     }
 
     .chosen-container-active .chosen-choices li.search-field input[type="text"] {
@@ -499,13 +498,28 @@
     
     #customerDashboard .outerroundedbox {
         background: #2e2e2e69;
-        border-radius: 5px;
+        border-radius: var(--border-s);
         backdrop-filter: blur(10px);
     }
     
     #createNewAnsprechpartnerForm, #dashboardOptions {
         background: #2e2e2e;
-        border-radius: 5px;
+        border-radius: var(--border-s);
+    }
+    
+    .chosen-container .chosen-drop {
+        background: var(--hovbody);
+        border-bottom-left-radius: var(--border-s);
+        border-bottom-right-radius: var(--border-s);
+        border: var(--border)
+    }
+    
+    .chosen-container-active .chosen-choices li.search-field input[type="text"] {
+        color: var(--text)!important;
+    }
+    
+    .chosen-choices {
+        border-radius: var(--border-s)!important;
     }
     
     .chosen-container .chosen-results {
@@ -530,23 +544,41 @@
     
     #apPhone {
         border: 1px solid #424242;
-        border-radius: 5px;
+        border-radius: var(--border-s);
     }
     
     input[type=tel] {
-        background-color: #353638;
+        background-color: var(--hovbody);
     }
     
     input[type=tel]:disabled {
         background-color: #232323;
     }
     
-    .boSearch input::placeholder {
+    .boSearch input::placeholder, #opendashboardOptions {
         color: #222;
     }
     
     polyline, path {
         stroke: rgb(41, 196, 17)!important;
         filter: drop-shadow( 0px 0px 2px rgba(28, 186, 45, .3));
+    }
+    
+    #customerInfo > table > tbody > tr > th:nth-child(1) {
+        border-top-left-radius: var(--border-s);
+    }
+    
+    #customerInfo > table > tbody > tr > th:nth-child(2) {
+        border-top-right-radius: var(--border-s);
+    }
+    
+    table.outerroundedborder th:last-child, 
+    table.outerroundedbox th:last-child {
+        border-top-right-radius: var(--border-s);
+    }
+    
+    table.outerroundedborder th:first-child, 
+    table.outerroundedbox th:first-child {
+        border-top-left-radius: var(--border-s);
     }
 }
