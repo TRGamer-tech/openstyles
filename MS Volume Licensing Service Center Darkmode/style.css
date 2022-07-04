@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           MS Volume Licensing Service Center Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.2.1
+@version        1.2.2
 @description    This is just a simple redesign (and darkmode) of the Microsoft Volume Licensing Service Center Website 
 @author         TRGYT
 @license        CC Zero
@@ -59,12 +59,17 @@
     span, 
     .bodyText,
     div.popUp,
-    .LoginPanelCSS > div {
+    .LoginPanelCSS > div,
+    .FilterPanel .WaterMarkText, .FilterPanel .filterText{
         color: var(--mainfont);
     }
     
     .icoCarrot1 img {
         filter: invert(1);
+    }
+    
+    div.fileGrid .imageHeight {
+        filter: invert(0.7);
     }
     
     a:link, a:visited,
@@ -98,17 +103,29 @@
     .hprcba,
     .PagerBg,
     .bluetabSpacer, 
-    .bluetabSpacer2p {
+    .bluetabSpacer2p,
+    .ttcontent,
+    .ttcenter,
+    .g1 .g2,
+    .g2 .g3,
+    .g3 .g4,
+    ul.p2 div.g1,
+    .ACTIVE ul.p2 .top,
+    .ACTIVE ul.p2 .center,
+    .ACTIVE ul.p2 .bottom{
         background: var(--secbg)!important;
         border: none!important;
     }
     
     #ctl00_ctl00_MainContent_BodyContent_LoginPopup_Login_LoginIdTextBox,
-    #ctl00_ctl00_MainContent_BodyContent_LoginPopup_Login_LoginSubmitButton {
+    #ctl00_ctl00_MainContent_BodyContent_LoginPopup_Login_LoginSubmitButton,
+    .autosuggest-body,
+    .g4 .g5 {
         color: var(--mainfont)!important;
-        background: var(--thirdbg);
+        background: var(--thirdbg)!important;
         border: var(--border);
         border-radius: var(--border-s);
+        box-shadow: none;
     }
     
     .UnShomePage .unshpfpbbl2 {
@@ -136,7 +153,11 @@
     }
     
     .GridViewAlternatingRowStyle,
-    div.navbar .topnavitem:hover {
+    div.navbar .topnavitem:hover,
+    div.tabGrid span.alt,
+    .FilterPanel .filterpDiv,
+    .FilterPanel .WaterMarkText, .FilterPanel .filterText,
+    div.tp div {
         background: var(--thirdbg)!important;
     }
     
@@ -157,9 +178,11 @@
     }
     
     select, 
+    option, 
     div#navbarcontainer,
-    div.navbar{
+    div.navbar {
         background: var(--secbg);
+        color: var(--mainfont)
     }
     
     .button{
@@ -169,7 +192,9 @@
         border-radius: var(--border-s);
     }
     
-    div.navbar .subnavitems .flyout {
+    div.navbar .subnavitems .flyout,
+    .dataPanel,
+    div.tabGrid span.reg {
         background: var(--secbg);
         border: var(--border);
     }
@@ -186,6 +211,11 @@
     div.navbar .subnavitems .flyout .subnavitem a:hover,
     div.navbar .currentfocus {
         background: var(--borderclr);
+    }
+    
+    #ctl00_ctl00_MainContent_BodyContent_FlightingPanelId_FlightingControlPanel {
+        background-color: var(--quotebg)!important;
+        border-radius: var(--border-m);
     }
     
     .footer {
