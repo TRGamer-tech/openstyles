@@ -3,7 +3,7 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
-@version        1.6.2
+@version        1.6.3
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
@@ -602,5 +602,10 @@
     table.outerroundedborder th:first-child, 
     table.outerroundedbox th:first-child {
         border-top-left-radius: var(--border-s);
+    }
+    
+    .chosen-with-drop .chosen-choices {
+        border-bottom-left-radius: 0px!important;
+        border-bottom-right-radius: 0px!important;
     }
 }
