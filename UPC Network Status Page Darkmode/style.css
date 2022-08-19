@@ -1,0 +1,78 @@
+/* ==UserStyle==
+@name           UPC Network Status Page Darkmode
+@namespace      github.com/TRGamer-Tech/openstyles
+@author         TRGYT
+@description    Just a fun lil Darkmode for the UPC Network Status Page
+@version        1.1.1
+@license        CC Zero
+==/UserStyle== */
+
+@-moz-document url("https://www.upc.ch/de/support/netzwerkstatus/") {
+    /* Quelltext hier eingeben... */
+    :root {
+        --mainbody: rgb(39, 39, 39);
+        --secbody: #1f1f1f;
+        --thirdbody: #272727;
+        --hovbody: #353638;
+        --redbody: box-shadow: inset 0 0 0 2000px rgb(255 50 50 / 5%);
+        --link: #39b1ff;
+        --visitedlink: #69a6ce;
+        --linkhov: #47799a;
+        --green: #499636;
+        --orange: #d86b10;
+        --tabcolor: rgb(0, 133, 171);
+        --text: #fff;
+        --sectext: #bbb;
+        --hovtext: #888; 
+        --border: 1px solid #757575;
+        --thiccborder: 2px solid #757575;
+        --border-l: 15px;
+        --border-m: 10px;
+        --border-s: 5px;
+        --borderclr: #414141;
+        --blueborder: 1px solid #005b75;
+    }
+    
+    body{
+        background-color: var(--mainbody);
+        color: var(--text);
+    }
+    
+    #lgi_inc_header, 
+    .lgi-bgcontainer-topnav,
+    .lgi-main-navigation-bgpanel, 
+    .lgi-main-navigation-bgpanel_spot,
+    .lgi-bgcontainer-service,
+    .lgi-main-navigation-menu, 
+    .lgi-main-navigation-level2-container,
+    .serv-stat-inpage-tab,
+    .serv-stat-outer-cont,
+    .lgi-bgcontainer-breadcrumb {
+        background-color: var(--secbody)!important;
+    }
+    
+    .serv-stat-inpage-tab {
+        box-shadow: 0 10px 10px #2d2d2d;
+    }
+    
+    .serv-stat-outer-cont {
+        border: var(--thiccborder)!important;
+    }
+    
+    h1, h2, h3, h4, h5, h6, p,
+    .lgi-main-navigation-level1item>a {
+        color: var(--text)!important;
+    }
+    
+    .ibuy-rfsstandalone.rfscheck_parent {
+        background-color: var(--secbody);
+    }
+    
+    .commerce-ibuy-input input[type='text'], 
+    .commerce-ibuy-input input[type='tel'], 
+    .commerce-ibuy-input input[type='email'], 
+    .commerce-ibuy-input input[type='number'] {
+        background-color: var(--thirdbody)!important;
+        color: var(--text)!important;
+    }
+}
