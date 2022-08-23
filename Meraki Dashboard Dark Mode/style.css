@@ -1,0 +1,269 @@
+/* ==UserStyle==
+@name           Meraki Dashboard Dark Mode
+@namespace      github.com/openstyles/stylus
+@version        2.2.0
+@description    Dark Mode for Meraki Dashboard
+@author         TRGYT
+==/UserStyle== */
+
+@-moz-document domain("meraki.com") {
+    :root {
+        --mainbg: #121212;
+        --secbg: #1d1d1d;
+        --thirdbg: #474747;
+        --quotebg: #313e48;
+        --infobg: #002937;
+        --successbg: #1a3700;
+        --warningbg: #353700;
+        --errbg: #332626;
+        --mainfont: #fff;
+        --secfont: #dbdbdb;
+        --placeholder: #bcbcbc;
+        --link: #70e9ff;
+        --linkhov: #0090d6;
+        --seclink: #0098b3;
+        --seclinkhov: #006494;
+        --border: 1px solid #8c8c8c;
+        --borderclr: #8c8c8c;
+        --border-l: 15px;
+        --border-m: 10px;
+        --border-s: 5px;
+    }
+    
+    /* INFO POPUPS START*/
+    .mds-notification.mds-notification-banner {
+        background-color: var(--infobg);
+    }
+    
+    .mds-text-color-regular {
+        color: var(--mainfont);
+    }
+    
+    .mds-link,
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link:focus .mds-global-nav-menu-link-text, 
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link:hover .mds-global-nav-menu-link-text {
+        color: var(--link)!important;
+    }
+    
+    .mds-link.visited, .mds-link:visited {
+        color: var(--linkhov)
+    }
+    
+    .alert-info {
+        background-color: var(--infobg);
+        color: var(--secfont);
+        border: var(--border);
+    }
+    
+    .alert-success {
+        background-color: var(--successbg);
+        color: var(--secfont);
+        border: var(--border);
+    }
+    
+    .hover_help_contents {
+        background-color: var(--warningbg);
+        border: none;
+        border-radius: var(--border-s);
+        color: var(--mainfont);
+    }
+    
+    .mds-card {
+        background-color: var(--thirdbg);
+    }
+    
+    .mds-heading {
+        color: var(--mainfont);
+    }
+    
+    .mds-card p {
+        color: var(--secfont)!important;
+    }
+    
+    /* INFO POPUPS END*/
+    
+    /* BODY START */
+    body,
+    .Widget__label,
+    .dropdown-menu>li>a,
+    .mds-global-nav .mds-global-nav-item.mds-global-nav-item-active .mds-global-nav-item-text, 
+    .mds-global-nav .mds-global-nav-item:focus .mds-global-nav-item-text, 
+    .mds-global-nav .mds-global-nav-item:hover .mds-global-nav-item-text,
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-item:focus .mds-global-nav-item-text, 
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-item:hover .mds-global-nav-item-text, 
+    .mds-global-nav .mds-global-nav-item-container:focus-within .mds-global-nav-item .mds-global-nav-item-text, 
+    .mds-global-nav .mds-global-nav-item-container:focus .mds-global-nav-item .mds-global-nav-item-text, 
+    .mds-global-nav .mds-global-nav-item-container:hover .mds-global-nav-item .mds-global-nav-item-text,
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link .mds-global-nav-menu-link-text {
+        color: var(--mainfont)!important;
+    }
+    
+    .dropdown-menu>li>a:hover {
+        background-color: var(--thirdbg);
+        color: var(--secfont);
+    }
+    
+    .Widget h2, .Widget span {
+        color: var(--secfont)!important;
+    }
+    
+    .mds-global-nav .mds-global-nav-item.mds-global-nav-item-active,
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu,
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-item:focus, 
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-item:hover, 
+    .mds-global-nav .mds-global-nav-item-container:focus-within .mds-global-nav-item, 
+    .mds-global-nav .mds-global-nav-item-container:focus .mds-global-nav-item, 
+    .mds-global-nav .mds-global-nav-item-container:hover .mds-global-nav-item,
+    .btn.btn-default,
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select.mds-global-nav-select-closed:focus-within>.mds-global-nav-select-button, 
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select.mds-global-nav-select-closed:focus>.mds-global-nav-select-button, 
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select.mds-global-nav-select-closed:hover>.mds-global-nav-select-button {
+        background-color: var(--thirdbg);
+        color: var(--mainfont);
+    }
+    
+    html[data-has-magnetic=true] .react-layout #main-nav,
+    #trailer_react,
+    .magnetic-footer-wrapper {
+        background-color: var(--mainbg);
+    }
+    
+    .magnetic-footer-content {
+        border: none;
+    }
+    
+    #content.mds-content #sidetabs_body_container {
+        background-color: var(--secbg);
+    }
+    
+    .ReactFlexTable__table,
+    .ReactFlexTable--modern .ReactFlexTable__bodyCell,
+    .dropdown-widget,
+    .dropdown-menu,
+    .DropdownWidget>.dropdownWidgetDropdown{
+        background-color: var(--secbg)!important;
+        color: var(--mainfont);
+    }
+    
+    .ReactFlexTable--modern .ReactFlexTable__headerCell:first-child {
+        border-left: var(--border);
+        border-top-left-radius: var(--border-s);
+    }
+    
+    .ReactFlexTable--modern .ReactFlexTable__headerCell:last-child {
+        border-right: var(--border);
+        border-top-right-radius: var(--border-s);
+    }
+    
+    .ReactFlexTable--modern .ReactFlexTable__row .ReactFlexTable__cell:first-child {
+        border-left: var(--border);
+    }
+    
+    .ReactFlexTable--modern .ReactFlexTable__row .ReactFlexTable__cell:last-child {
+        border-right: var(--border);
+    }
+    
+    .ReactFlexTable--modern a,
+    .mds-button.mds-button-kind-tertiary {
+        color: var(--link);
+    }
+    
+    .ReactFlexTable--modern a:hover {
+        color: var(--linkhov);
+    }
+    
+    select, select > option {
+        background-color: var(--secbg);
+        border: var(--border);
+        border-radius: var(--border-s);
+    }
+    
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link:focus, 
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link:hover {
+        background-color: var(--borderclr);
+    }
+    
+    .btn.btn-default {
+        border-radius: var(--border-l);
+        border: var(--border);
+    }
+    
+    .btn.btn-default.active, 
+    .btn.btn-default.focus, 
+    .btn.btn-default.hover, 
+    .btn.btn-default:active, 
+    .btn.btn-default:focus, 
+    .btn.btn-default:hover {
+        background: var(--borderclr);
+        color: var(--mainbg);
+        border-color: var(--borderclr);
+    }
+    
+    #attachements-loading,
+    #interactions-loading,
+    #cases-loading {
+        filter: invert(1);
+    }
+    
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select.mds-global-nav-select-open>.mds-global-nav-select-button {
+        background-color: var(--thirdbg);
+    }
+    
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select .mds-global-nav-select-selector {
+        background-color: var(--thirdbg);
+        border-top: 1px solid var(--borderclr);
+    }
+    
+    .mds-global-nav-select-label,
+    .mds-global-nav-select-value p, 
+    .mds-global-nav-select-value svg,
+    .mds-global-nav-select-selector-options-label,
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select .mds-global-nav-select-selector .mds-global-nav-select-selector-options .mds-global-nav-select-selector-options-target .mds-global-nav-select-selector-options-target-text,
+    .ant-input-affix-wrapper,
+    .ant-input-affix-wrapper input {
+        color: var(--mainfont)!important;
+    }
+    
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select .mds-global-nav-select-selector .mds-global-nav-select-selector-options .mds-global-nav-select-selector-options-target.mds-global-nav-select-selector-options-target-active,
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select .mds-global-nav-select-selector .mds-global-nav-select-selector-options .mds-global-nav-select-selector-options-target.mds-global-nav-select-selector-options-target-highlight, 
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select .mds-global-nav-select-selector .mds-global-nav-select-selector-options .mds-global-nav-select-selector-options-target:focus, 
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select .mds-global-nav-select-selector .mds-global-nav-select-selector-options .mds-global-nav-select-selector-options-target:hover,
+    .ant-input-affix-wrapper,
+    .ant-input-affix-wrapper input {
+        background-color: var(--secbg);
+    }
+    
+    .mds-global-nav-select-selector-options-label,
+    .ant-dropdown-menu-submenu-title:focus, 
+    .ant-dropdown-menu-submenu-title:hover, 
+    .mds-menu-item:focus, .mds-menu-item:hover,
+    #myProfile:hover {
+        background-color: var(--borderclr)!important;
+    }
+    
+    .mds-button.mds-button-kind-tertiary:hover {
+        background-color: var(--borderclr);
+        border: none;
+    }
+    
+    .ant-menu {
+        background-color: var(--thirdbg);
+        color: var(--mainfont);
+        border: var(--border)!important;
+    }
+    
+    .ant-menu .mds-card,
+    .mds-header-submenu>ul,
+    .ant-menu-submenu-popup>.ant-menu,
+    .ant-menu-item-only-child {
+        background-color: var(--thirdbg)!important;
+        border: none!important;
+        box-shadow: none!important;
+    }
+    
+    .ant-menu-item-only-child p {
+        color: var(--mainfont)!important;
+    }
+    
+    /* BODY END */
+}
