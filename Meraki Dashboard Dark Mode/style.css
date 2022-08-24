@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.2.0
+@version        2.4.3
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -72,12 +72,24 @@
         background-color: var(--thirdbg);
     }
     
-    .mds-heading {
+    .mds-heading,
+    .mds-tabs-primary .mds-tab.mds-tab-active, 
+    .mds-tabs-primary .mds-tab:not(.mds-tabs-primary .mds-tab.mds-tab-disabled).focus, 
+    .mds-tabs-primary .mds-tab:not(.mds-tabs-primary .mds-tab.mds-tab-disabled).hover, 
+    .mds-tabs-primary .mds-tab:not(.mds-tabs-primary .mds-tab.mds-tab-disabled):focus, 
+    .mds-tabs-primary .mds-tab:not(.mds-tabs-primary .mds-tab.mds-tab-disabled):hover {
         color: var(--mainfont);
     }
     
     .mds-card p {
         color: var(--secfont)!important;
+    }
+    
+    .NetworkDiagnosticsIntro {
+        background-color: var(--thirdbg)!important;
+        border-radius: var(--border-m);
+        border: var(--border);
+        box-shadow: none;
     }
     
     /* INFO POPUPS END*/
@@ -98,12 +110,16 @@
         color: var(--mainfont)!important;
     }
     
-    .dropdown-menu>li>a:hover {
+    .dropdown-menu>li>a:hover,
+    .mds-button.mds-button-kind-secondary,
+    .mds-button.mds-button-kind-secondary.mds-button-loading, 
+    .mds-button.mds-button-kind-secondary:disabled, .mds-button.mds-button-kind-secondary[disabled] {
         background-color: var(--thirdbg);
         color: var(--secfont);
     }
     
-    .Widget h2, .Widget span {
+    .Widget h2, .Widget span,
+    .mds-text-color-light{
         color: var(--secfont)!important;
     }
     
@@ -117,14 +133,20 @@
     .btn.btn-default,
     .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select.mds-global-nav-select-closed:focus-within>.mds-global-nav-select-button, 
     .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select.mds-global-nav-select-closed:focus>.mds-global-nav-select-button, 
-    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select.mds-global-nav-select-closed:hover>.mds-global-nav-select-button {
+    .mds-global-nav .mds-global-nav-section-title .mds-global-nav-select.mds-global-nav-select-closed:hover>.mds-global-nav-select-button,
+    .NodePortTable,
+    .SwitchPortsView,
+    .ReactFlexTable--legacy .ReactFlexTable__headerCell,
+    .ReactFlexTable--legacy .ReactFlexTable__bodyCell,
+    .ReactFlexTable--legacy .ReactFlexTable__footerCell {
         background-color: var(--thirdbg);
         color: var(--mainfont);
     }
     
     html[data-has-magnetic=true] .react-layout #main-nav,
     #trailer_react,
-    .magnetic-footer-wrapper {
+    .magnetic-footer-wrapper,
+    .ReactFlexTable--legacy .ReactFlexTable__row:nth-child(2n)>.ReactFlexTable__bodyCell:not(.adminOnly):not(.dragging) {
         background-color: var(--mainbg);
     }
     
@@ -132,7 +154,8 @@
         border: none;
     }
     
-    #content.mds-content #sidetabs_body_container {
+    #content.mds-content #sidetabs_body_container,
+    .DefaultItemDetailsLayout .DefaultItemDetailsLayout__column--right>nav {
         background-color: var(--secbg);
     }
     
@@ -183,7 +206,8 @@
         background-color: var(--borderclr);
     }
     
-    .btn.btn-default {
+    .btn.btn-default,
+    .mds-card-selectable {
         border-radius: var(--border-l);
         border: var(--border);
     }
@@ -237,7 +261,8 @@
     .ant-dropdown-menu-submenu-title:focus, 
     .ant-dropdown-menu-submenu-title:hover, 
     .mds-menu-item:focus, .mds-menu-item:hover,
-    #myProfile:hover {
+    #myProfile:hover,
+    .ant-checkbox-inner {
         background-color: var(--borderclr)!important;
     }
     
@@ -246,10 +271,34 @@
         border: none;
     }
     
-    .ant-menu {
-        background-color: var(--thirdbg);
+    .ant-menu,
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector,
+    .ant-dropdown-menu,
+    .mds-collapse.mds-collapse-kind-stacked {
+        background-color: var(--thirdbg)!important;
         color: var(--mainfont);
         border: var(--border)!important;
+    }
+    
+    .ant-table,
+    .mds-table .ant-table-tbody,
+    .ant-table-cell-fix-left, .ant-table-cell-fix-right,
+    .ant-table-thead>tr>th,
+    .DefaultItemDetailsLayout .DefaultItemDetailsLayout__column--right>nav .btn-group .btn:not(.adminOnly):not(.active):not(:hover),
+    .ant-dropdown-menu-item, .ant-dropdown-menu-submenu-title {
+        background-color: var(--thirdbg)!important;
+        color: var(--mainfont);
+    }
+    
+    .ant-table-tbody>tr.ant-table-row-selected>td,
+    .DefaultItemDetailsLayout .DefaultItemDetailsLayout__column--right>nav .btn-group .btn.active {
+        background-color: var(--quotebg)!important;
+        color: var(--mainfont);
+    }
+    
+    .DefaultItemDetailsLayout .DefaultItemDetailsLayout__column--right>nav .btn-group .btn {
+        background-color: var(--quotebg);
+        color: var(--secfont);
     }
     
     .ant-menu .mds-card,
@@ -261,7 +310,8 @@
         box-shadow: none!important;
     }
     
-    .ant-menu-item-only-child p {
+    .ant-menu-item-only-child p,
+    .ant-pagination-item-active a {
         color: var(--mainfont)!important;
     }
     
