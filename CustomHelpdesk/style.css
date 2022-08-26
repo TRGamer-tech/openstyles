@@ -3,7 +3,7 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
-@version        1.6.7
+@version        1.7.0
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
@@ -202,7 +202,8 @@
         border-bottom: 20px solid /*[[bodyColor]]*/;
     }
 
-    #timeheader th {
+    #timeheader th,
+    #nLogs tr:nth-child(2n) {
         background: var(--secbody);
         border-color: var(--secbody);
         color: var(--text);
@@ -262,7 +263,12 @@
     .KA-Wrapper .chosen-results li:nth-child(18),
     .KA-Wrapper .chosen-results li:nth-child(22),
     .KA-Wrapper .chosen-results li:nth-child(23),
-    .KA-Wrapper .chosen-results li:nth-child(24){
+    .KA-Wrapper .chosen-results li:nth-child(24),
+    .ticketComment .chosen-results li:nth-of-type(-n+14),
+    .ticketComment .chosen-results li:nth-child(18),
+    .ticketComment .chosen-results li:nth-child(22),
+    .ticketComment .chosen-results li:nth-child(23),
+    .ticketComment .chosen-results li:nth-child(24){
         background-color: #bb5050!important;
         color: var(--text);
     }
@@ -272,7 +278,13 @@
     .KA-Wrapper .chosen-results li:nth-child(17),
     .KA-Wrapper .chosen-results li:nth-child(19),
     .KA-Wrapper .chosen-results li:nth-child(20),
-    .KA-Wrapper .chosen-results li:nth-child(21){
+    .KA-Wrapper .chosen-results li:nth-child(21),
+    .ticketComment .chosen-results li:nth-child(15),
+    .ticketComment .chosen-results li:nth-child(16),
+    .ticketComment .chosen-results li:nth-child(17),
+    .ticketComment .chosen-results li:nth-child(19),
+    .ticketComment .chosen-results li:nth-child(20),
+    .ticketComment .chosen-results li:nth-child(21){
         background-color: #5d9f4f!important;
         color: var(--text);
     }
@@ -425,7 +437,8 @@
         color: #b7b5b5;
     }
 
-    .footer {
+    .footer,
+    #nLogs tr {
         background-color: var(--thirdbody);
     }
 
@@ -522,6 +535,12 @@
     div.richeditor div.container {
         border-bottom-left-radius: var(--border-s);
         border-bottom-right-radius: var(--border-s);
+    }
+    
+    @media only screen and (max-width: 670px) {
+        #divBigHeader #newTicket {
+            background-color: transparent !important;
+        }
     }
 }
 
