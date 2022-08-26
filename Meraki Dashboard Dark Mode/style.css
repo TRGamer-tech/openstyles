@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.4.3
+@version        2.4.5
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -23,6 +23,8 @@
         --linkhov: #0090d6;
         --seclink: #0098b3;
         --seclinkhov: #006494;
+        --greenlink: #0fd300;
+        --greenlinkhov: #19a400;
         --border: 1px solid #8c8c8c;
         --borderclr: #8c8c8c;
         --border-l: 15px;
@@ -138,7 +140,12 @@
     .SwitchPortsView,
     .ReactFlexTable--legacy .ReactFlexTable__headerCell,
     .ReactFlexTable--legacy .ReactFlexTable__bodyCell,
-    .ReactFlexTable--legacy .ReactFlexTable__footerCell {
+    .ReactFlexTable--legacy .ReactFlexTable__footerCell,
+    th.ft, th.ssid_name,
+    tr.ftp1 td.ft:last-child, 
+    tr.ftp1 th.ft:last-child,
+    tr.ft1, tr.fth1, tr.ftp1,
+    td.ft_foot {
         background-color: var(--thirdbg);
         color: var(--mainfont);
     }
@@ -186,6 +193,14 @@
         border-right: var(--border);
     }
     
+    a {
+        color: var(--greenlink);
+    }
+    
+    a:hover {
+        color: var(--greenlinkhov);
+    }
+    
     .ReactFlexTable--modern a,
     .mds-button.mds-button-kind-tertiary {
         color: var(--link);
@@ -202,8 +217,36 @@
     }
     
     .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link:focus, 
-    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link:hover {
-        background-color: var(--borderclr);
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link:hover,
+    th.ft.ftsortable:hover,
+    tr.fth0.adminhighlight:hover, 
+    tr.fth0.errorhighlight:hover, 
+    tr.fth0:hover, 
+    tr.fth1.adminhighlight:hover, 
+    tr.fth1.errorhighlight:hover, 
+    tr.fth1:hover, 
+    tr.ftp0.adminhighlight:hover, 
+    tr.ftp0.errorhighlight:hover, 
+    tr.ftp0:hover, 
+    tr.ftp1.adminhighlight:hover, 
+    tr.ftp1.errorhighlight:hover, 
+    tr.ftp1:hover,
+    td.ft:last-child:hover, 
+    th.ft:last-child:hover,
+    tr.fth0.adminhighlight:hover, 
+    tr.fth0.errorhighlight:hover, 
+    tr.fth0:hover, 
+    tr.fth1.adminhighlight:hover, 
+    tr.fth1.errorhighlight:hover, 
+    tr.fth1:hover, 
+    tr.ftp0.adminhighlight:hover, 
+    tr.ftp0.errorhighlight:hover, 
+    tr.ftp0:hover, 
+    tr.ftp1.adminhighlight:hover, 
+    tr.ftp1.errorhighlight:hover, 
+    tr.ftp1:hover,
+    .ft_add_col.btn-group {
+        background-color: var(--borderclr)!important;
     }
     
     .btn.btn-default,
