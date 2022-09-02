@@ -1,11 +1,49 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.4.5
+@version        2.5.0
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
 
+@-moz-document domain("account.meraki.com") {
+    body,
+    .shortform input[type=email], 
+    .shortform input[type=password], 
+    .shortform input[type=text], 
+    .shortform textarea,
+    #code {
+        background-color: var(--secbg);
+    }
+    
+    .shortform input[type=email], 
+    .shortform input[type=password], 
+    .shortform input[type=text], 
+    .shortform textarea,
+    #code {
+        border: var(--border);
+        border-radius: var(--border-s);
+        color: var(--mainfont);
+    }
+    
+    #login-box,
+    #masthead {
+        background-color: var(--thirdbg);
+    }
+    
+    h1 {
+        color: var(--mainfont);
+    }
+    
+    #login_header {
+        border: none;
+        border-bottom: var(--border);
+    }
+    
+    #footer {
+        border-top: var(--border);
+    }
+}
 @-moz-document domain("meraki.com") {
     :root {
         --mainbg: #121212;
