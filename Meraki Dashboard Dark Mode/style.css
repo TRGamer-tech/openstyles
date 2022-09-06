@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.5.5
+@version        2.5.6
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -187,7 +187,8 @@
     tr.ftp1 td.ft:last-child, 
     tr.ftp1 th.ft:last-child,
     tr.ft1, tr.fth1, tr.ftp1,
-    td.ft_foot {
+    td.ft_foot,
+    .TableEditor__headerCell {
         background-color: var(--thirdbg);
         color: var(--mainfont);
     }
@@ -311,7 +312,8 @@
     tr.ftp1.adminhighlight:hover, 
     tr.ftp1.errorhighlight:hover, 
     tr.ftp1:hover,
-    .ft_add_col.btn-group {
+    .ft_add_col.btn-group,
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link.mds-global-nav-menu-link-active {
         background-color: var(--borderclr)!important;
     }
     
