@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.5.6
+@version        2.5.7
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -152,6 +152,11 @@
     .mds-global-nav .mds-global-nav-item-container:hover .mds-global-nav-item .mds-global-nav-item-text,
     .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link .mds-global-nav-menu-link-text {
         color: var(--mainfont)!important;
+    }
+    
+    .btn.btn-primary {
+        border-radius: var(--border-l);
+        border: var(--border);
     }
     
     .dropdown-menu>li>a:hover,
