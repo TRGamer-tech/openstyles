@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.5.4
+@version        2.5.5
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -52,7 +52,7 @@
         --quotebg: #313e48;
         --infobg: #002937;
         --successbg: #1a3700;
-        --warningbg: #353700;
+        --warningbg: #373300;
         --errbg: #332626;
         --mainfont: #fff;
         --secfont: #dbdbdb;
@@ -103,7 +103,9 @@
     
     .hover_help_contents,
     .status_message.notice.unsaved, 
-    .status_message.notice.unsaved_changes {
+    .status_message.notice.unsaved_changes,
+    .save_button_container.unsaved, 
+    .save_button_container.unsaved_changes{
         background-color: var(--warningbg);
         border: none;
         border-radius: var(--border-s);
