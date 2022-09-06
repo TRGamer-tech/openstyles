@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.5.3
+@version        2.5.4
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -101,7 +101,9 @@
         border: var(--border);
     }
     
-    .hover_help_contents {
+    .hover_help_contents,
+    .status_message.notice.unsaved, 
+    .status_message.notice.unsaved_changes {
         background-color: var(--warningbg);
         border: none;
         border-radius: var(--border-s);
