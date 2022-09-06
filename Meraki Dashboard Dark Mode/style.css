@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.5.2
+@version        2.5.3
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -186,6 +186,30 @@
     td.ft_foot {
         background-color: var(--thirdbg);
         color: var(--mainfont);
+    }
+    
+    input[type=email]:not(.mds-input):not(.mds-textarea):not(.ant-input), 
+    input[type=number]:not(.mds-input):not(.mds-textarea):not(.ant-input), 
+    input[type=password]:not(.mds-input):not(.mds-textarea):not(.ant-input), 
+    input[type=tel]:not(.mds-input):not(.mds-textarea):not(.ant-input), 
+    input[type=text]:not(.mds-input):not(.mds-textarea):not(.ant-input), 
+    span.mds-header-search-input input:not(.ant-input):not(.mds-input):not(.mds-textarea):not(.ant-input), 
+    textarea:not(.mds-input):not(.mds-textarea):not(.ant-input) {
+        background-color: var(--thirdbg);
+        color: var(--mainfont);
+        border-radius: var(--border-s);
+    }
+    
+    button:not(.btn,.mds-button,.mds-tag-close-icon,.mds-tab,[embeddedservice-chatheader_chatheader],
+    .ant-button,.ant-modal-close,.ant-drawer-close,.ant-switch,
+    .ant-picker-dropdown button,.mds-stepper-left-panel-button,
+    .mds-collapse-heading,.mds-collapse-trigger), 
+    input[type=button]:not(.btn,.mds-button,.ant-button,.ant-modal-close), 
+    input[type=reset]:not(.btn,.mds-button,.ant-button,.ant-modal-close), 
+    input[type=submit]:not(.btn,.mds-button,.ant-button,.ant-modal-close) {
+        background-color: var(--thirdbg);
+        color: var(--mainfont);
+        border-radius: var(--border-l);
     }
     
     html[data-has-magnetic=true] .react-layout #main-nav,
