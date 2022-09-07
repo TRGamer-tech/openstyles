@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.5.7
+@version        2.5.8
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -168,7 +168,10 @@
     }
     
     .Widget h2, .Widget span,
-    .mds-text-color-light{
+    .mds-text-color-light,
+    tspan,
+    .PrimaryTabLink,
+    .SecurityEventsTable .ReactFlexTable th.muted {
         color: var(--secfont)!important;
     }
     
@@ -427,8 +430,50 @@
     }
     
     .ant-menu-item-only-child p,
-    .ant-pagination-item-active a {
+    .ant-pagination-item-active a,
+    .PrimaryTabLink.active,
+    .SecurityCenterPager select,
+    .SecurityCenterPager div {
         color: var(--mainfont)!important;
+    }
+    
+    .SimpleTable--legacy .SimpleTable__headerCell,
+    .panel,
+    .SimpleTable--legacy .SimpleTable__cell,
+    .SecurityCenter input,
+    .SecurityCenterPager,
+    .SecurityCenterPager .select-container {
+        background-color: var(--thirdbg);
+    }
+    
+    .SimpleTable--legacy.SimpleTable--striped .SimpleTable__row:nth-child(2n) .SimpleTable__cell {
+        background-color: var(--borderclr);
+    }
+    
+    .SecurityCenterPager .select-container {
+        border: var(--border);
+        border-radius: var(--border-m);
+    }
+    
+    .btn.btn-default.disabled, 
+    .btn.btn-default.disabled.active, 
+    .btn.btn-default.disabled.focus, 
+    .btn.btn-default.disabled:active, 
+    .btn.btn-default.disabled:focus, 
+    .btn.btn-default.disabled:hover, 
+    .btn.btn-default[disabled], 
+    .btn.btn-default[disabled].active, 
+    .btn.btn-default[disabled].focus, 
+    .btn.btn-default[disabled]:active, 
+    .btn.btn-default[disabled]:focus, 
+    .btn.btn-default[disabled]:hover, 
+    fieldset[disabled] .btn.btn-default, 
+    fieldset[disabled] .btn.btn-default.active, 
+    fieldset[disabled] .btn.btn-default.focus, 
+    fieldset[disabled] .btn.btn-default:active, 
+    fieldset[disabled] .btn.btn-default:focus, 
+    fieldset[disabled] .btn.btn-default:hover {
+        background-color: var(--borderclr);
     }
     
     /* BODY END */
