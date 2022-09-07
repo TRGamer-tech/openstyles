@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.5.8
+@version        2.5.9
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -134,6 +134,32 @@
         border-radius: var(--border-m);
         border: var(--border);
         box-shadow: none;
+    }
+    
+    .FilterHeader,
+    .Search .Labels .tag{
+        background-color: var(--infobg);
+        color: var(--secfont);
+        border: var(--border);
+        border-radius: var(--border-m);
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    button:not(.btn,
+    .mds-button,
+    .mds-tag-close-icon,
+    .mds-tab,
+    [embeddedservice-chatheader_chatheader],
+    .ant-button,
+    .ant-modal-close,
+    .ant-drawer-close,
+    .ant-switch,
+    .ant-picker-dropdown button,
+    .mds-stepper-left-panel-button,
+    .mds-collapse-heading,
+    .mds-collapse-trigger).close {
+        color: var(--mainfont);
     }
     
     /* INFO POPUPS END*/
