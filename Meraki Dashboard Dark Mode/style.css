@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.5.9
+@version        2.6.0
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -459,7 +459,8 @@
     .ant-pagination-item-active a,
     .PrimaryTabLink.active,
     .SecurityCenterPager select,
-    .SecurityCenterPager div {
+    .SecurityCenterPager div,
+    .popover h3.popover-title{
         color: var(--mainfont)!important;
     }
     
@@ -468,7 +469,9 @@
     .SimpleTable--legacy .SimpleTable__cell,
     .SecurityCenter input,
     .SecurityCenterPager,
-    .SecurityCenterPager .select-container {
+    .SecurityCenterPager .select-container,
+    .popover h3.popover-title,
+    .popover{
         background-color: var(--thirdbg);
     }
     
