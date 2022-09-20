@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.6.0
+@version        2.8.0
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -105,7 +105,8 @@
     .status_message.notice.unsaved, 
     .status_message.notice.unsaved_changes,
     .save_button_container.unsaved, 
-    .save_button_container.unsaved_changes{
+    .save_button_container.unsaved_changes,
+    .accessControlPage__Container .access-control-rf-warning .status-block {
         background-color: var(--warningbg);
         border: none;
         border-radius: var(--border-s);
@@ -254,7 +255,9 @@
     html[data-has-magnetic=true] .react-layout #main-nav,
     #trailer_react,
     .magnetic-footer-wrapper,
-    .ReactFlexTable--legacy .ReactFlexTable__row:nth-child(2n)>.ReactFlexTable__bodyCell:not(.adminOnly):not(.dragging) {
+    .ReactFlexTable--legacy .ReactFlexTable__row:nth-child(2n)>.ReactFlexTable__bodyCell:not(.adminOnly):not(.dragging),
+    .mds-container,
+    .ConfigPanel .ConfigPanel__header {
         background-color: var(--mainbg);
     }
     
