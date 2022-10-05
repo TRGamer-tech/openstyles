@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.8.0
+@version        2.9.0
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -58,7 +58,7 @@
         --secfont: #dbdbdb;
         --placeholder: #bcbcbc;
         --link: #70e9ff;
-        --linkhov: #0090d6;
+        --linkhov: #2bc2dd;
         --seclink: #0098b3;
         --seclinkhov: #006494;
         --greenlink: #0fd300;
@@ -306,11 +306,13 @@
     }
     
     .ReactFlexTable--modern a,
-    .mds-button.mds-button-kind-tertiary {
+    .mds-button.mds-button-kind-tertiary,
+    .orgOverviewTableLink {
         color: var(--link);
     }
     
-    .ReactFlexTable--modern a:hover {
+    .ReactFlexTable--modern a:hover,
+    .orgOverviewTableLink:hover {
         color: var(--linkhov);
     }
     
@@ -350,7 +352,10 @@
     tr.ftp1.errorhighlight:hover, 
     tr.ftp1:hover,
     .ft_add_col.btn-group,
-    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link.mds-global-nav-menu-link-active {
+    .mds-global-nav .mds-global-nav-item-container .mds-global-nav-menu .mds-global-nav-menu-link.mds-global-nav-menu-link-active,
+    .mds-table .ant-table-tbody>tr.ant-table-row:focus>td, 
+    .mds-table .ant-table-tbody>tr.ant-table-row:hover>td, 
+    .mds-table .ant-table-tbody>tr>td.ant-table-cell-row-hover {
         background-color: var(--borderclr)!important;
     }
     
