@@ -1,0 +1,123 @@
+/* ==UserStyle==
+@name           Lenovo Login Account Darkmode
+@namespace      github.com/TRGamer-Tech/openstyles
+@version        1.1.1
+@description    Dark Mode for Lenovo Login site
+@author         TRGYT
+@license        CC Zero
+==/UserStyle== */
+@-moz-document domain("account.lenovo.com") {    
+    :root {
+        --mainbg: #121212;
+        --secbg: #1d1d1d;
+        --thirdbg: #474747;
+        --errbg: #332626;
+        --mainfont: #fff;
+        --secfont: #dbdbdb;
+        --placeholder: #bcbcbc;
+        --link: #4f9cf5;
+        --linkhov: #007dd6;
+        --border: 1px solid #8c8c8c;
+        --borderclr: #8c8c8c;
+        --border-l: 15px;
+        --border-m: 10px;
+        --border-s: 5px;
+        --red: #e2231a;
+    }
+    
+    body,
+    header .banner {
+        background-color: var(--mainbg)!important;
+        color: var(--mainfont)!important;
+    }
+    
+    header nav.navbar-first div.desktop-header div.navbar-collapse ul.navbar-nav li.open > a {
+        background-color: transparent;
+    }
+    
+    main.container .login-lenovo .loginContainer .contentLogin .sub-title {
+        color: var(--mainfont);
+    }
+    
+    main.container .login-lenovo .loginContainer .fromLogin .contentLg .line-vertical > span,
+    header nav.navbar-first div.desktop-header div.navbar-collapse ul.navbar-nav li ul.dropdown-menu li a,
+    header nav.navbar-first div.desktop-header div.navbar-collapse ul.navbar-nav li ul.dropdown-menu,
+    header nav.navbar-first div.desktop-header div.navbar-collapse ul.navbar-nav li ul.dropdown-menu li {
+        color: var(--secfont);
+        background: var(--secbg);
+    }
+    
+    header nav.navbar-first div.desktop-header div.navbar-collapse ul.navbar-nav li ul.dropdown-menu li a:hover,
+    header nav.navbar-first div.desktop-header div.navbar-collapse ul.navbar-nav li ul.dropdown-menu:hover,
+    header nav.navbar-first div.desktop-header div.navbar-collapse ul.navbar-nav li ul.dropdown-menu li:hover {
+        text-decoration: underline;    
+    }
+    
+    header nav.navbar-first,
+    header nav.navbar-first div.desktop-header div.navbar-collapse ul.navbar-nav li > a,
+    main.container .login-lenovo .loginContainer .fromLogin .contentLg .loginForm .input-group .LenovoId, 
+    main.container .login-lenovo .loginContainer .fromLogin .contentLg .loginForm .input-group .Password, 
+    main.container .login-lenovo .loginContainer .fromLogin .contentLg .loginForm .input-group .UserID,
+    main.container .login-lenovo .loginContainer .fromLogin .contentLg .loginForm .form-group .form-control {
+        background-color: var(--thirdbg);
+        color: var(--mainfont);
+    }
+    
+    #VerificationCode img {
+        filter: invert(0.9);
+    }
+    
+    .btn-blue-back {
+        background-color: var(--placeholder);
+    }
+    
+    main.container .login-lenovo .loginContainer .fromLogin .contentLg .loginForm .loginBtn .btn-register,
+    main.container .login-lenovo .loginContainer .tab-bar li.active,
+    main.container .login-lenovo .loginContainer .fromLogin .contentLg .loginForm #ErrorContainer .label-warning {
+        color: var(--placeholder);
+    }
+
+    main.container .login-lenovo .loginContainer .fromLogin .contentLg .loginForm .others .textForgot {
+        color: var(--red);
+    }
+    
+    main.container .login-lenovo .loginContainer .tab-bar li.active span {
+        border-bottom: 3px solid var(--red);
+    }
+    
+    header nav.navbar-first ul.navbar-right li.header-country-language p span,
+    main.container .login-lenovo .loginContainer .fromLogin .contentLg .login-type-menu li a > span {
+        color: var(--secfont);
+    }
+    
+    .CheckBox {
+        border: 1px solid var(--red);
+    }
+    
+    .btn-blue-solid {
+        border: 1px solid #bcbcbc;
+    }
+    
+    footer {
+        background-color: var(--secbg);
+    }   
+    
+    footer .container > .row .col-md-9 .row .col-md-3 ul li a {
+        color: var(--thirdfont)
+    }
+    
+    footer .container > .row .col-md-3 ul li a,
+    header nav.navbar-first div.desktop-header div.navbar-collapse ul.navbar-nav li > a span.caret,
+    footer .container > .row a {
+        color: var(--red);
+    }
+    
+    header nav.navbar-first div.desktop-header div.navbar-collapse ul.navbar-nav li.open > a {
+        border-bottom: solid 2px var(--red);
+    }
+    
+    footer .container > .row .col-md-3 p a,
+    .CheckBox.Checked > span {
+        color: var(--secbg);
+    }
+}
