@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Google Translate Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.0.0
+@version        1.1.0
 @description    A Darkmode for Google Translate!
 @author         TRGYT
 @license        CC Zero
@@ -25,30 +25,55 @@
         --border-s: 5px;
     }
     
-    .eyKpYb, .D5aOJc, .cEWAef, .A3dMNc, .QFw9Te, .FFpbKc, .ySES5, .akczyd, .J0lOec, .er8xn, .gb_oa .gb_Ld.gb_Qd.gb_Rd, .TYVfy, .P6w8m:not(.BDJ8fb):not(.Jj6Lae), .JqKQbd, .sp2Bqb, .fMHXgc {
-            background: var(--mainbg);
+    .eyKpYb, .D5aOJc, .cEWAef, .A3dMNc, .QFw9Te, .FFpbKc, .ySES5, .akczyd, .J0lOec, .er8xn, .gb_oa .gb_Ld.gb_Qd.gb_Rd, .TYVfy, .P6w8m:not(.BDJ8fb):not(.Jj6Lae), .JqKQbd, .sp2Bqb, .fMHXgc, .yFQBKb {
+            background: var(--thirdbg)!important;
     }
     
-    .zQTmif, .EO28P, .j1rqpc, .yFQBKb, .qSb8Pe.KKjvXb {
-        background: var(--secbg);
+    .zQTmif, .EO28P, .j1rqpc, .qSb8Pe.KKjvXb, .dykxn {
+        background: var(--secbg)!important;
     }
 
+    .qSb8Pe:hover, .qSb8Pe:focus {
+        background-color: var(--placeholder);
+    }
 
+    .qSb8Pe:hover > div, .qSb8Pe:focus > div {
+        color: var(--secbg);
+    }
 
    .WFnNle, .vSUSRc {
-        background: var(--thirdbg);
+        background: var(--secbg);
     }
     
-    .akczyd, .J0lOec, .er8xn, .gb_oa .gb_Ld.gb_Qd.gb_Rd, .TYVfy,.AarNVd, .Llmcnf, .qiN4Vb:not(:disabled) {
+    .akczyd, .J0lOec, .er8xn, .gb_oa .gb_Ld.gb_Qd.gb_Rd, .TYVfy,.AarNVd, .Llmcnf, .qiN4Vb:not(:disabled),
+    .qiN4Vb:not(:disabled), .qiN4Vb:not(:disabled) .VfPpkd-kBDsod, .ita-kd-icon-button, .yFQBKb {
         color: var(--mainfont);
     }
     
-    .cWQYBc .irkilc, .cWQYBc .hL2wFc, .cWQYBc .aiUxpf, .TcXXXb, .yUUmWd .VfPpkd-jY41G-V67aGc,-webkit-tap-highlight-color,.gb_oa svg, .gb_Fc svg, .gb_2c .gb_4d, .gb_Rc .gb_4d, .TEGJAb, .Tw0Tv:not(:disabled), .SSgGrd:not(:disabled), .itOtF:not(:disabled) {
+    .ita-kd-img {
+        filter: invert(1);
+    }
+    
+    .cWQYBc .irkilc, 
+    .cWQYBc .hL2wFc, 
+    .cWQYBc .aiUxpf, 
+    .TcXXXb, 
+    .yUUmWd .VfPpkd-jY41G-V67aGc,
+    -webkit-tap-highlight-color,
+    .gb_oa svg, 
+    .gb_Fc svg, 
+    .gb_2c .gb_4d, 
+    .gb_Rc .gb_4d, 
+    .TEGJAb, 
+    .Tw0Tv:not(:disabled), 
+    .SSgGrd:not(:disabled), 
+    .itOtF:not(:disabled), 
+    .yHy1rc:disabled {
         color: var(--secfont);
     }
     
     .X4DQ0::after {
-        background: linear-gradient(to right,rgba(255,255,255,0),rgb(0, 0, 0))
+        background: linear-gradient(to right,rgba(255,255,255,0),var(--placeholder))
     }
     
 }
