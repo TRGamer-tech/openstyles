@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.9.0
+@version        2.9.1
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -256,7 +256,6 @@
     #trailer_react,
     .magnetic-footer-wrapper,
     .ReactFlexTable--legacy .ReactFlexTable__row:nth-child(2n)>.ReactFlexTable__bodyCell:not(.adminOnly):not(.dragging),
-    .mds-container,
     .ConfigPanel .ConfigPanel__header {
         background-color: var(--mainbg);
     }
@@ -274,7 +273,8 @@
     .ReactFlexTable--modern .ReactFlexTable__bodyCell,
     .dropdown-widget,
     .dropdown-menu,
-    .DropdownWidget>.dropdownWidgetDropdown{
+    .DropdownWidget>.dropdownWidgetDropdown,
+    .mds-header .mds-container {
         background-color: var(--secbg)!important;
         color: var(--mainfont);
     }
