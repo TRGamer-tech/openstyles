@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.9.1
+@version        2.9.2
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -223,7 +223,9 @@
     tr.ftp1 th.ft:last-child,
     tr.ft1, tr.fth1, tr.ftp1,
     td.ft_foot,
-    .TableEditor__headerCell {
+    .TableEditor__headerCell,
+    .ant-drawer-content,
+    .ant-drawer-header {
         background-color: var(--thirdbg);
         color: var(--mainfont);
     }
