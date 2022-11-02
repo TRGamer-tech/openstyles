@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.9.2
+@version        2.9.3
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -95,7 +95,8 @@
         border: var(--border);
     }
     
-    .alert-success {
+    .alert-success,
+    .mds-notification.mds-notification-positive:not(.mds-notification-banner):not(.mds-notification-admin) {
         background-color: var(--successbg);
         color: var(--secfont);
         border: var(--border);
@@ -225,7 +226,10 @@
     td.ft_foot,
     .TableEditor__headerCell,
     .ant-drawer-content,
-    .ant-drawer-header {
+    .ant-drawer-header,
+    .SectionTabs__routerLink--selected, 
+    .SectionTabs__routerLink--selected:hover, 
+    .SectionTabs__tab--selected{
         background-color: var(--thirdbg);
         color: var(--mainfont);
     }
