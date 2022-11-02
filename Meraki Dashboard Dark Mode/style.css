@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.9.4
+@version        2.9.5
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -107,7 +107,8 @@
     .status_message.notice.unsaved_changes,
     .save_button_container.unsaved, 
     .save_button_container.unsaved_changes,
-    .accessControlPage__Container .access-control-rf-warning .status-block {
+    .accessControlPage__Container .access-control-rf-warning .status-block,
+    .mds-notification.mds-notification-warning:not(.mds-notification-banner):not(.mds-notification-admin) {
         background-color: var(--warningbg);
         border: none;
         border-radius: var(--border-s);
