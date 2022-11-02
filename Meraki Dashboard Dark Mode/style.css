@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Meraki Dashboard Dark Mode
 @namespace      github.com/openstyles/stylus
-@version        2.9.3
+@version        2.9.4
 @description    Dark Mode for Meraki Dashboard
 @author         TRGYT
 ==/UserStyle== */
@@ -252,7 +252,8 @@
     .mds-collapse-heading,.mds-collapse-trigger), 
     input[type=button]:not(.btn,.mds-button,.ant-button,.ant-modal-close), 
     input[type=reset]:not(.btn,.mds-button,.ant-button,.ant-modal-close), 
-    input[type=submit]:not(.btn,.mds-button,.ant-button,.ant-modal-close) {
+    input[type=submit]:not(.btn,.mds-button,.ant-button,.ant-modal-close),
+    .mds-card-info .ant-input {
         background-color: var(--thirdbg);
         color: var(--mainfont);
         border-radius: var(--border-l);
