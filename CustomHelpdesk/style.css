@@ -3,7 +3,7 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
-@version        1.7.1
+@version        1.7.3
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
@@ -166,6 +166,15 @@
     
     .dropzone {
         background-color: rgb(52 52 52 / 85%)!important;
+    }
+    
+    #editIncidentForm .outerroundedbox {
+        background-color: var(--thirdbody)!important;
+    }
+    
+    #incidentStart, #incidentEnd, #statusPage {
+        background-color: var(--borderclr);
+        border: var(--border)!important;
     }
 } 
 
@@ -549,6 +558,14 @@
     
     font > table pre{
         font-family: "Consolas","Lucida Console",Monospace;
+    }
+    
+    #addIncidentForm .outerroundedbox {
+        background-color: var(--mainbody)!important;
+    }
+    
+    input[type="datetime-local"] {
+        background-color: var(--borderclr)!important;
     }
     
     @media only screen and (max-width: 670px) {
