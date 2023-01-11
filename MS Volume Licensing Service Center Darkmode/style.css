@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           MS Volume Licensing Service Center Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.4.1
+@version        1.4.2
 @description    This is just a simple redesign (and darkmode) of the Microsoft Volume Licensing Service Center Website 
 @author         TRGYT
 @license        CC Zero
@@ -105,8 +105,17 @@
     
     .fphpTitleM, 
     .fphpTitleL, 
-    .fphpTitleR {
+    .fphpTitleR,
+    .gColH,
+    .dnkhpTitleM {
         background: var(--quotebg);
+    }
+    
+    #ctl00_ctl00_MainContent_BodyContent_pager_dnb,
+    #ctl00_ctl00_MainContent_BodyContent_pager_dlb,
+    #ctl00_ctl00_MainContent_BodyContent_pager_dpb,
+    #ctl00_ctl00_MainContent_BodyContent_pager_dfb {
+        filter: invert(0.5);
     }
     
     .hplstHdr {
@@ -237,7 +246,8 @@
     
     #ctl00_ctl00_MainContent_BodyContent_FlightingPanelRSProductKeys_FlightingControlPanel,
     #ctl00_ctl00_MainContent_BodyContent_FlightingPanelRS_InformationControlPanel,
-    #ctl00_ctl00_MainContent_BodyContent_FlightingPanelLS_InformationControlPanel {
+    #ctl00_ctl00_MainContent_BodyContent_FlightingPanelLS_InformationControlPanel,
+    #ctl00_ctl00_MainContent_BodyContent_FlightingPanelId_InformationControlPanel {
         background-color: var(--infocolor)!important;
         border-radius: var(--border-s);
     }
