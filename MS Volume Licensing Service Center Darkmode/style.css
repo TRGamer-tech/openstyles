@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           MS Volume Licensing Service Center Darkmode
 @namespace      github.com/TRGamer-Tech/openstyles
-@version        1.3.1
+@version        1.4.0
 @description    This is just a simple redesign (and darkmode) of the Microsoft Volume Licensing Service Center Website 
 @author         TRGYT
 @license        CC Zero
@@ -36,15 +36,29 @@
         background: var(--mainbg)!important;
     }
     
-    #ctl00_ctl00_homeLink img {
+    #ctl00_ctl00_homeLink img,
+    #skipToContent {
         display: none;
     }
     
     #ctl00_ctl00_homeLink { 
-        background-image: url(https://4.bp.blogspot.com/-y0-QxjF_g94/WWefD0MshDI/AAAAAAAAF0s/TlT4dVtyWFo36y1AdhQzGCXj9EPHT2AewCLcBGAs/s1600/microsoft_logo.png);
+        background-image: url("https://static.wixstatic.com/media/d40ffd_7ab4715e5c5e4896bc83123934cd0511~mv2.png/v1/fill/w_417,h_236,al_c,lg_1,q_85,enc_auto/output-onlinepngtools%20(1).png");
         background-repeat: no-repeat;
-        background-size: 8vw;
         top: -30px;
+        height: 9em;
+        background-size: 200px;
+        margin-top: 10px;
+    }
+    
+    .homelink {
+        height: 6em;
+        width: 25%;
+        float: left;
+    }
+    
+    .topLinkBar {
+        width: 75%;
+        float: right;
     }
     
     .bodyBottom {
