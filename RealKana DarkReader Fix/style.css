@@ -21,4 +21,8 @@
     img[src="/typeface-9.png"] {
         filter: invert(1);
     }
+    
+    body {
+        background-color: rgb(24, 26, 27); 
+    }
 }
