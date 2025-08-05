@@ -3,7 +3,7 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
-@version        1.7.8
+@version        1.7.9
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
@@ -185,6 +185,40 @@
     #incidentStart, #incidentEnd, #statusPage {
         background-color: var(--borderclr);
         border: var(--border)!important;
+    }
+    
+    #serviceItemPositions {
+        background-color: var(--thirdbody)!important;
+        border: none!important;
+    }
+    
+    .order-table table th {
+        background-color: #1b6081!important;
+        border: var(--border) !important;
+    }
+    
+    .order-table table td {
+        border: var(--border) !important;
+    }
+    
+    table.horizseparated th:first-child {
+        border-top-left-radius: var(--border-m)!important;
+    }
+    
+    table.horizseparated th:last-child {
+        border-top-right-radius: var(--border-m)!important;
+    }
+    
+    table.horizseparated tbody:last-of-type tr:last-child td:last-child {
+      border-bottom-right-radius: var(--border-m)!important;
+    }
+    
+    table.horizseparated tbody:last-of-type tr:last-child td:first-child {
+      border-bottom-left-radius: var(--border-m)!important;
+    }
+    
+    .order-table table {
+        border-collapse: unset !important;
     }
 } 
 
