@@ -3,11 +3,15 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
-@version        2.0.0
+@version        2.0.2
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
 @advanced color tabColor "Tab Color" rgb(0, 133, 171)
+@advanced dropdown transparency "Choose your transparency" {
+    #27272aab "Semi-Transparent" <<<EOT #27272aab EOT;
+    #27272a "Opaque" <<<EOT #27272a EOT;
+}
 ==/UserStyle== */
 @-moz-document domain("/*[[url]]*/") {
     :root {
@@ -32,6 +36,19 @@
         --border-s: 5px;
         --borderclr: #414141;
         --blueborder: 1px solid #005b75;
+        --transparency: /*[[transparency]]*/;
+    }
+    
+    body {
+        background-position: 0 0!important;
+        background-repeat: repeat-x!important;
+        background-size: 720px 720px!important;
+        background-image: url(/images/bgpattern_dark.svg)!important;
+        background-color: /*[[bodyColor]]*/;
+    }
+    
+    #tblTickets {
+        background-color: var(--transparency);
     }
     
     .tabmenu2 {
@@ -121,7 +138,8 @@
       background-color: var(--tabcolor)!important;
     }
     
-    .viewMode a.active2, .viewMode > div.dropdown > a.active2, nav > .menuItem:hover, nav > .menuItem.active {
+    .viewMode a.active2, 
+    .viewMode > div.dropdown > a.active2 {
       color: var(--link)!important;
       border-color: var(--tabcolor)!important;
     }
@@ -139,8 +157,55 @@
         min-width: 0 !important; /* Hebt die lg:min-w-80 auf */
         width: 15% !important;   /* Erzwingt die Breite */
     }
-}
-@-moz-document domain("/*[[url]]*/") {
+    
+    .badge.cust-badge,
+    .badge.fortech-badge,
+    .badge.tech-badge {
+        background-color: transparent;
+    }
+    
+    div.badge[style*="#ffbc63"] {
+        background-color: #ff9100!important;
+    }
+    
+    div.badge[style*="#ff6363"] {
+        background-color: #fc3939!important;
+    }
+    
+    div.badge[style*="#ff9263"] {
+        background-color: #ff4d00!important;
+    }
+    
+    div.badge[style*="#86198f"] {
+        background-color: #54035a!important;
+    }
+    
+    div.statusName.techStatus {
+        background-color: rgba(120, 139, 100, .1);
+        border-radius: 9999px;
+        color: #64748b;
+        font-size: .75rem;
+        font-weight: 500;
+        padding: .125rem .5rem;
+        text-wrap: nowrap;
+        line-height: 1rem!important;
+    }
+    
+    div.statusName.newStatus {
+        background-color: rgba(139, 104, 100, .1);
+        border-radius: 9999px;
+        color: #64748b;
+        font-size: .75rem;
+        font-weight: 500;
+        padding: .125rem .5rem;
+        text-wrap: nowrap;
+        line-height: 1rem!important;
+    }
+    
+    .badge {
+        line-height: 1rem!important;
+    }
+    
     #divBigHeader::after {
         content: "";
         background: url(/images/header-bg.svg) no-repeat!important;
@@ -159,7 +224,8 @@
         background-image: none!important;
         /*background-image: url(/images/header-bg.svg)!important;*/
     }
-    #divBigHeader, .adminlogo {
+    
+    #headerNav {
         background-color: /*[[bodyColor]]*/;
         position: sticky;
         top: 0;
@@ -167,13 +233,58 @@
     }
 
     #stickyHeader {
+        left: 27vw!important;
         top: 10px!important;
-        width: 75%!important;
+        width: 35%!important;
         z-index: 9999!important;
         background: rgba(39, 39, 39, 0.5)!important;
         border-radius: var(--border-m)!important;
         padding: 5px 15px!important;
-        margin: 0 auto!important;
+        flex-wrap: wrap!important;
+    }
+
+    #stickyHeader > div {
+        flex-wrap: wrap!important;
+        row-gap: 0!important;
+        column-gap: 0.75rem!important;
+        padding-bottom: 0!important;
+    }
+
+    #stickyHeader > div > a {
+        width: inherit!important;
+        line-height: 1rem!important;
+    }
+    
+    #stickyHeader .button.graybutton.scrollToTop {
+        display: inline-flex !important;
+        order: 99 !important;
+        vertical-align: middle !important;
+    }
+    
+    #stickyHeader .scrollToTop svg {
+        width: 40px !important;
+        height: 25px !important;
+    }
+    
+    #stickyHeader .grow.justify-end {
+        display: contents !important;
+        flex-grow: 0 !important;
+    }
+
+    #stickyHeader a[onclick*="ShowNewComment"] {
+        order: 98 !important;
+        flex-grow: 0 !important;
+        width: auto !important;
+    }
+
+    #stickyHeader .button.graybutton.scrollToTop {
+        display: inline-flex !important;
+        order: 99 !important;
+        padding: 2px 5px !important;
+        margin-left: 5px !important;
+        width: auto !important;
+        height: auto !important;
+        align-self: center !important;
     }
     
     #stickyHeader span.greyer, #stickyHeader div {
@@ -210,11 +321,7 @@
     
     #divBigHeader #newTicket a.button:hover {
         background: #414141!important;
-    }
-
-    body {
-        background: /*[[bodyColor]]*/;
-    }   
+    } 
     
     #leftsidebar {
         position: sticky;
@@ -267,9 +374,7 @@
     .order-table table {
         border-collapse: unset !important;
     }
-} 
-
-@-moz-document domain("/*[[url]]*/") {
+    
     #ticketBody #subject #subject-span.contentEditable {
         color: var(--text);
     }
@@ -286,7 +391,16 @@
         border: 1px solid #474747;
     }
     
-    input[disabled], select[disabled], textarea[disabled], button[disabled], input[readonly], select[readonly], textarea[readonly], .disabled, .disabledPlan, .disabledTrial {
+    input[disabled], 
+    select[disabled], 
+    textarea[disabled], 
+    button[disabled], 
+    input[readonly], 
+    select[readonly], 
+    textarea[readonly], 
+    .disabled, 
+    .disabledPlan, 
+    .disabledTrial {
         background-color: #2a2a2a;
     }
     
@@ -459,10 +573,28 @@
         border: 1px solid #424242;
     }
 
-    .xdsoft_datetimepicker, .xdsoft_noselect, .xdsoft_, .xdsoft_label {
+    .xdsoft_datetimepicker, 
+    .xdsoft_noselect, 
+    .xdsoft_, 
+    .xdsoft_label,
+    .select2-dropdown,
+    .select2-search,
+    .select2-search--dropdown{
         background: var(--thirdbody)!important;
         background-color: transparent;
         color: var(--text);
+    }
+    
+    .select2-dropdown {
+        border: var(--border);
+    }
+    
+    .select2-container--default .select2-selection--single {
+        border: none;
+    }
+    
+    span[style*="#FFEFEF"] {
+        background-color: var(--mainbody)!important;
     }
 
     .xdsoft_datetimepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_next, .xdsoft_datetimepicker .xdsoft_today_button {
@@ -661,6 +793,10 @@
         font-family: "Consolas","Lucida Console",Monospace;
     }
     
+    .dark #nLogs tr th {
+        border-radius: var(--border-l)!important;
+    }
+    
     #addIncidentForm .outerroundedbox {
         background-color: var(--mainbody)!important;
     }
@@ -743,18 +879,24 @@
     }
 }
 
-@-moz-document regexp("(?=.*?\\/Dashboard\\/Index).*"), regexp("(?=.*?\\/dashboard\\/index).*"), regexp("(?=.*?\\/Dashboard\\/Search).*"), regexp("(?=.*?\\/dashboard\\/search).*"), regexp("(?=.*?\\/dashboard\\?).*"), regexp("(?=.*?\\/Dashboard\\?).*") {
+@-moz-document regexp(".*/*[[url]]*/.*[Dd]ashboard.*") {
+    
+    :root {
+        color-scheme: light dark;
+    }
   
     #customerDashboard .outerroundedbox {
         background: #2e2e2e3b;
         border-radius: var(--border-s);
     }
     
-    .outerroundedbox > h3, #phoneNotesForm > h3,
+    .outerroundedbox > h3, 
+    #phoneNotesForm > h3,
+    #phonenotesFormWrapper > h3,
     .pnMissingDataWarning,
     .noCallsFound,
     #serverwatchLogs > span {
-      margin-left: 3%;
+      margin-left: 3%!important;
     }
     
     .outerroundedbox > h3, #phoneNotesForm > h3 {
@@ -817,9 +959,14 @@
         backdrop-filter: blur(10px);
     }
     
-    table:not(.commentsTbl):not(.horizseparated):not(#maintable) tr:last-of-type>td {
+    table:not(.commentsTbl):not(.horizseparated):not(#maintable) tr:last-of-type > td {
         padding-bottom: 20px;
-        background-color: #2E2E2E;
+        background-color: var(--transparency);
+    }
+    
+    .dark #serverwatchLogsList > div, .dark #callLog > div {
+        background: var(--transparency)!important;
+        margin-bottom: 2px;
     }
     
     #apPhone {
@@ -838,7 +985,7 @@
     }
     
     .boSearch input::placeholder, #opendashboardOptions {
-        color: #222;
+        color: var(--hovtext);
     }
     
     polyline, path {
