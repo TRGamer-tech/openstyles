@@ -3,7 +3,7 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
-@version        2.0.3
+@version        2.0.4
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
@@ -117,7 +117,8 @@
 
     .issueDetails > thead > tr > th,
     .attachments > thead > tr th,
-    .similarArticles > tbody > tr th {
+    .similarArticles > tbody > tr th ,
+    .smallTicketList > tbody > tr th {
         display: table-cell !important;
         vertical-align: middle !important;
         border-bottom: var(--border) !important;
@@ -146,8 +147,49 @@
         margin-top: 100px;
     }
     
+    nav.viewMode {
+        flex-wrap: wrap !important;
+    }
+    
+    nav.viewMode > a {
+        order: 1;
+    }
+    
     nav.viewMode > a:hover {
       background-color: var(--tabcolor)!important;
+    }
+    
+    nav.viewMode > div.grow {
+        order: 2;
+        flex-basis: 100%; /* Zwingt alles nachfolgende in eine neue Zeile */
+        height: 0;
+        margin: 0 !important;
+    }
+    
+    nav.viewMode > div.dropdown {
+        order: 3;
+        margin-top: 0.5rem!important;
+        margin-right: 0!important;
+    }
+
+    .viewMode > div.dropdown > a:where(.dark, .dark *) {
+      background-color: #27272a;
+    }
+    
+    .viewMode > div.dropdown > a:where(.dark, .dark *):hover {
+      background-color: #403d3d;
+    }
+    
+    .dropdown-menu.filterBox {
+        right: auto !important;
+        transform: none !important;
+        margin-top: 5px !important;
+        min-width: 320px; 
+    }
+    
+    #saveFilterDiv {
+        order: 4!important;
+        flex-basis: 100%!important;
     }
     
     .viewMode a.active2, 
