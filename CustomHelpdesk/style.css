@@ -950,7 +950,7 @@
     .pnMissingDataWarning,
     .noCallsFound,
     #serverwatchLogs > span {
-      margin-left: 20px!important;
+      margin-left: 16px!important;
     }
     
     .outerroundedbox > h3, #phoneNotesForm > h3 {
