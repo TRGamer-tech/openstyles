@@ -987,6 +987,96 @@
             background-color: transparent !important;
         }
     }
+    
+    @media (max-width: 1550px) {
+        div.flex.flex-wrap.flex-col-reverse.grow div.xl\:pl-8.lg\:pl-4.grow {
+            padding: 0!important;
+        }
+        
+        .flex.flex-wrap.flex-col-reverse {
+            flex-direction: column;
+        }
+
+        .leftsidebar {
+            width: 100% !important;
+            min-width: 100% !important;
+            order: -1;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 0.75rem 0;
+        }
+
+        /* Category List: Force to 100% width */
+        .leftsidebar > ul.mb-5 {
+            flex: 1 0 100% !important;
+            margin-bottom: 0.5rem !important;
+            padding: 0.75rem !important;
+        }
+
+        /* Tags Box and Saved Filters: Set to 50% width minus half the gap */
+        .leftsidebar > div.outerroundedbox,
+        .leftsidebar > section#divSavedFilters {
+            flex: 1 0 calc(50% - 0.5rem) !important;
+            min-width: 0;
+            margin-bottom: 0 !important;
+            padding: 0.75rem !important;
+        }
+
+        .leftsidebar > section#divSavedFilters {
+            padding: 0 !important;
+        }
+
+        /* Vertical stacking for the Category Groups */
+        .leftsidebar > ul.mb-5 > li {
+            display: flex !important;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px !important;
+            width: 100%;
+        }
+
+        /* Horizontal flow for sub-items and tags */
+        .leftsidebar ul ul,
+        .leftsidebar .tagslist {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            gap: 6px !important;
+        }
+
+        /* Compact Pill Styling */
+        .leftsidebar ul li a,
+        .leftsidebar .tag {
+            display: inline-flex !important;
+            align-items: center;
+            padding: 4px 10px !important;
+            font-size: 0.8rem !important;
+            border-radius: 6px;
+            background: rgba(161, 161, 170, 0.15);
+            white-space: nowrap;
+            gap: 6px;
+        }
+
+        /* Cleanup */
+        .leftsidebar ul li a span[tabindex="0"],
+        .leftsidebar ul li a svg {
+            display: none !important;
+        }
+
+        .leftsidebar .tag[style*="display: none"],
+        .leftsidebar .tag[style*="display:none"] {
+            display: none !important;
+        }
+
+        .leftsidebar .font-semibold, 
+        .leftsidebar .mb-4 {
+            font-size: 0.9rem !important;
+            margin-bottom: 0.5rem !important;
+        }
+    }
 }
 
 @-moz-document regexp("(?=.*?\\/User\\/Login).*"), regexp("(?=.*?\\/TwoFactorAuth).*") {
