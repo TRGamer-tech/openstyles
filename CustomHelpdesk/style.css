@@ -990,7 +990,7 @@
     
     @media (max-width: 1550px) {
         div.flex.flex-wrap.flex-col-reverse.grow div.xl\:pl-8.lg\:pl-4.grow {
-            padding: 0!important;
+            padding-left: 0!important;
         }
         
         .flex.flex-wrap.flex-col-reverse {
