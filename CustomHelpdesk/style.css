@@ -2,34 +2,58 @@
 @name           CustomHelpdesk
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
-@description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the default dark mode, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default dark mode<strong> What does it do?</strong>It just makes the dark mode properly dark.`
-@version        2.0.6
+@description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the styling, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default styling<strong> What does it do?</strong>Makes everything better.`
+@version        2.1.0
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
 @advanced color tabColor "Tab Color" rgb(0, 133, 171)
 @advanced dropdown transparency "Choose your transparency" {
-    #27272aab "Semi-Transparent" <<<EOT #27272aab EOT;
+    #27272a52 "Semi-Transparent" <<<EOT #27272a52 EOT;
     #27272a "Opaque" <<<EOT #27272a EOT;
 }
 ==/UserStyle== */
 @-moz-document domain("/*[[url]]*/") {
-    :root {
+    :root,
+    html:not(.dark) {
+        --mainbody: #f3f4f6;
+        --secbody: #ffffff;
+        --thirdbody: #f9fafb;
+        --hovbody: #e5e7eb;
+        --link: #0284c7;
+        --linkhov: #0369a1;
+        --green: #16a34a;
+        --yellow: #ca8a04;
+        --tabcolor: /*[[tabColor]]*/;
+        --text: #111827;
+        --hovtext: #4b5563;
+        --borderclr: #d1d5db;
+        --border: 1px solid var(--borderclr);
+        --border-l: 15px;
+        --border-m: 10px;
+        --border-s: 5px;
+        --blueborder: 1px solid #0ea5e9;
+        --transparency: rgba(255, 255, 255, 0.8);
+        --sticky-bg: rgba(255, 255, 255, 0.8);
+    }
+
+    html.dark {
+        --sticky-bg: rgba(39, 39, 39, 0.5);
         --mainbody: /*[[bodyColor]]*/;
         --secbody: #1f1f1f;
         --thirdbody: #272727;
         --hovbody: #353638;
-        --redbody: box-shadow: inset 0 0 0 2000px rgb(255 50 50 / 5%);
+
         --link: #39b1ff;
-        --visitedlink: #69a6ce;
+
         --linkhov: #47799a;
         --green: #499636;
-        --orange: #d86b10;
+
         --yellow: #645400;
         --tabcolor: /*[[tabColor]]*/;
         --text: #fff;
-        --sectext: #bbb;
-        --hovtext: #888; 
+
+        --hovtext: #888;
         --border: 1px solid #414141;
         --border-l: 15px;
         --border-m: 10px;
@@ -38,77 +62,87 @@
         --blueborder: 1px solid #005b75;
         --transparency: /*[[transparency]]*/;
     }
-    
+
     body {
-        background-position: 0 0!important;
-        background-repeat: repeat-x!important;
-        background-size: 720px 720px!important;
-        background-image: url(/images/bgpattern_dark.svg)!important;
-        background-color: /*[[bodyColor]]*/;
+        background-position: 0 0 !important;
+        background-repeat: repeat-x !important;
+        background-size: 720px 720px !important;
+        background-image: url(/images/bgpattern_dark.svg) !important;
+        background-color: var(--mainbody);
     }
-    
+
     #tblTickets {
         background-color: var(--transparency);
     }
-    
+
     .tabmenu2 {
-        background-color: rgb(0 0 0 / 20%)!important;
+        background-color: rgb(0 0 0 / 20%) !important;
         background-image: none;
         /*background-image: url(../images/tabsBg2.png);*/
     }
-    .tabmenu li.active a, .blueheader {
-        background-color: rgb(0 0 0 / 20%)!important;
+    .tabmenu li.active a,
+    .blueheader {
+        background-color: rgb(0 0 0 / 20%) !important;
     }
-    
-    .tabmenu li.active a, .tabmenu2 > a, .tabmenu li > a:hover, .tabmenu li > a:focus {
-        color: var(--text)!important;
+
+    .tabmenu li.active a,
+    .tabmenu2 > a,
+    .tabmenu li > a:hover,
+    .tabmenu li > a:focus {
+        color: var(--text) !important;
     }
-    
+
     .tabmenu2 li.active2 a {
-        color: var(--text)!important;
-        background-color: rgba(12,19,27,.4)!important;
+        color: var(--text) !important;
+        background-color: rgba(12, 19, 27, 0.4) !important;
         border-radius: 5px;
         padding-top: 5px;
         padding-bottom: 7px;
     }
 
     .topheader div.outerroundedbox {
-        top: 57px!important;
+        top: 57px !important;
     }
 
-    input[type=submit], button, a.button {
+    input[type="submit"],
+    button,
+    a.button {
         background: var(--tabcolor);
         border: var(--blueborder);
     }
 
-    .newbutton, input[type=submit].newbutton, a.newbutton {
+    .newbutton,
+    input[type="submit"].newbutton,
+    a.newbutton {
         background: var(--green);
         border-color: var(--green);
     }
 
-    .graybutton, input[type=submit].graybutton, a.graybutton {
+    .graybutton,
+    input[type="submit"].graybutton,
+    a.graybutton {
         background-color: var(--borderclr);
         border: var(--border);
     }
-    
+
     .techcomment {
-        border-right: 3px solid rgb(var(--tech-color))!important;
+        border-right: 3px solid rgb(var(--tech-color)) !important;
     }
 
     .systemcomment {
-        border-bottom: var(--border)!important;
-        padding-bottom: 5px!important;
+        border-bottom: var(--border) !important;
+        padding-bottom: 5px !important;
     }
 
     .fortechcomment {
         border-right: 3px solid var(--tabcolor);
-        border-left-color: transparent!important;
+        border-left-color: transparent !important;
     }
 
     th {
         color: var(--text);
     }
-    
+
     .issueDetails > thead > tr > th > * {
         --tw-space-x-reverse: 0 !important;
         margin-left: 0 !important;
@@ -117,7 +151,7 @@
 
     .issueDetails > thead > tr > th,
     .attachments > thead > tr th,
-    .similarArticles > tbody > tr th ,
+    .similarArticles > tbody > tr th,
     .smallTicketList > tbody > tr th {
         display: table-cell !important;
         vertical-align: middle !important;
@@ -134,137 +168,142 @@
         float: right;
         margin-left: 0.25rem !important;
     }
-    
+
     .lightbg {
         background-color: var(--secbody);
     }
-    
+
     .kbHeader div {
         margin-top: 50px;
     }
-    
+
     .maincontent > form > table {
         margin-top: 100px;
     }
-    
+
     nav.viewMode {
         flex-wrap: wrap !important;
     }
-    
+
     nav.viewMode > a {
         order: 1;
     }
-    
+
     nav.viewMode > a:hover {
-      background-color: var(--tabcolor)!important;
+        background-color: var(--tabcolor) !important;
     }
-    
+
     nav.viewMode > div.grow {
         order: 2;
         flex-basis: 100%; /* Zwingt alles nachfolgende in eine neue Zeile */
         height: 0;
         margin: 0 !important;
     }
-    
+
     nav.viewMode > div.dropdown {
         order: 3;
-        margin-top: 0.5rem!important;
-        margin-right: 0!important;
+        margin-top: 0.5rem !important;
+        margin-right: 0 !important;
+    }
+
+    .viewMode > div.dropdown > a {
+        background-color: #e5e5e5;
+    }
+
+    .viewMode > div.dropdown > a:hover {
+        background-color: #cfcfcf;
     }
 
     .viewMode > div.dropdown > a:where(.dark, .dark *) {
-      background-color: #27272a;
+        background-color: #27272a;
     }
-    
+
     .viewMode > div.dropdown > a:where(.dark, .dark *):hover {
-      background-color: #403d3d;
+        background-color: #403d3d;
     }
-    
+
     .dropdown-menu.filterBox {
         right: auto !important;
         transform: none !important;
         margin-top: 5px !important;
-        min-width: 320px; 
+        min-width: 320px;
     }
-    
+
     #saveFilterDiv {
-        order: 4!important;
-        flex-basis: 100%!important;
+        order: 4 !important;
+        flex-basis: 100% !important;
     }
-    
-    .viewMode a.active2, 
+
+    .viewMode a.active2,
     .viewMode > div.dropdown > a.active2 {
-      color: var(--link)!important;
-      border-color: var(--tabcolor)!important;
+        color: var(--link) !important;
+        border-color: var(--tabcolor) !important;
     }
-    
+
     .viewMode a.active2:hover {
-      color: var(--text)!important;
+        color: var(--text) !important;
     }
-    
-    .viewMode > a, .viewMode > div.dropdown > a {
-      padding: 0 .75rem;
+
+    .viewMode > a,
+    .viewMode > div.dropdown > a {
+        padding: 0 0.75rem;
     }
-    
+
     .leftsidebar {
         max-width: 15% !important;
         min-width: 0 !important; /* Hebt die lg:min-w-80 auf */
-        width: 15% !important;   /* Erzwingt die Breite */
+        width: 15% !important; /* Erzwingt die Breite */
     }
-    
+
     .badge.cust-badge,
     .badge.fortech-badge,
     .badge.tech-badge {
         background-color: transparent;
     }
-    
+
     div.badge[style*="#ffbc63"] {
-        background-color: #ff9100!important;
+        background-color: #ff9100 !important;
     }
-    
+
     div.badge[style*="#ff6363"] {
-        background-color: #fc3939!important;
+        background-color: #fc3939 !important;
     }
-    
+
     div.badge[style*="#ff9263"] {
-        background-color: #ff4d00!important;
+        background-color: #ff4d00 !important;
     }
-    
-    div.badge[style*="#86198f"] {
-        background-color: #54035a!important;
-    }
-    
+
     div.statusName.techStatus {
-        background-color: rgba(120, 139, 100, .1);
+        background-color: rgba(120, 139, 100, 0.1);
         border-radius: 9999px;
         color: #64748b;
-        font-size: .75rem;
+        font-size: 0.75rem;
         font-weight: 500;
-        padding: .125rem .5rem;
+        padding: 0.125rem 0.5rem;
         text-wrap: nowrap;
-        line-height: 1rem!important;
+        line-height: 1rem !important;
     }
-    
+
     div.statusName.newStatus {
-        background-color: rgba(139, 104, 100, .1);
+        background-color: rgba(139, 104, 100, 0.1);
         border-radius: 9999px;
         color: #64748b;
-        font-size: .75rem;
+        font-size: 0.75rem;
         font-weight: 500;
-        padding: .125rem .5rem;
+        padding: 0.125rem 0.5rem;
         text-wrap: nowrap;
-        line-height: 1rem!important;
+        line-height: 1rem !important;
     }
-    
+
     .badge {
-        line-height: 1rem!important;
+        line-height: 1rem !important;
     }
-    
+
     #divBigHeader::after {
         content: "";
-        background: url(/images/header-bg.svg) no-repeat!important;
+        background: url(/images/header-bg.svg) no-repeat !important;
         background-color: rgba(0, 0, 0, 0);
-        background-color: #08aac1!important;
+        background-color: #08aac1 !important;
         opacity: 0.7;
         top: 0;
         left: 0;
@@ -275,51 +314,51 @@
     }
 
     #divBigHeader {
-        background-image: none!important;
+        background-image: none !important;
         /*background-image: url(/images/header-bg.svg)!important;*/
     }
-    
+
     #headerNav {
-        background-color: /*[[bodyColor]]*/;
+        background-color: var(--mainbody);
         position: sticky;
         top: 0;
         z-index: 9999;
     }
 
     #stickyHeader {
-        left: 27vw!important;
-        top: 10px!important;
-        width: 35%!important;
-        z-index: 9999!important;
-        background: rgba(39, 39, 39, 0.5)!important;
-        border-radius: var(--border-m)!important;
-        padding: 5px 15px!important;
-        flex-wrap: wrap!important;
+        left: 27vw !important;
+        top: 10px !important;
+        width: 35% !important;
+        z-index: 9999 !important;
+        background: var(--sticky-bg) !important;
+        border-radius: var(--border-m) !important;
+        padding: 5px 15px !important;
+        flex-wrap: wrap !important;
     }
 
     #stickyHeader > div {
-        flex-wrap: wrap!important;
-        row-gap: 0!important;
-        column-gap: 0.75rem!important;
-        padding-bottom: 0!important;
+        flex-wrap: wrap !important;
+        row-gap: 0 !important;
+        column-gap: 0.75rem !important;
+        padding-bottom: 0 !important;
     }
 
     #stickyHeader > div > a {
-        width: inherit!important;
-        line-height: 1rem!important;
+        width: inherit !important;
+        line-height: 1rem !important;
     }
-    
+
     #stickyHeader .button.graybutton.scrollToTop {
         display: inline-flex !important;
         order: 99 !important;
         vertical-align: middle !important;
     }
-    
+
     #stickyHeader .scrollToTop svg {
         width: 40px !important;
         height: 25px !important;
     }
-    
+
     #stickyHeader .grow.justify-end {
         display: contents !important;
         flex-grow: 0 !important;
@@ -340,135 +379,162 @@
         height: auto !important;
         align-self: center !important;
     }
-    
-    #stickyHeader span.greyer, #stickyHeader div {
+
+    #stickyHeader span.greyer,
+    #stickyHeader div {
         color: #c1c1c1;
     }
-    
+
     #stickyHeader span.priority0 {
         color: #5ccd00;
     }
 
     .rightsidebar .outerroundedborder {
-        box-shadow: none!important;
+        box-shadow: none !important;
     }
 
     .blueheader {
         background-color: var(--tabcolor) !important;
         color: var(--text) !important;
     }
-    
+
     #divBigHeader .divSearch input {
-        background-color: /*[[bodyColor]]*/;
+        background-color: var(--mainbody);
         border: 1px solid #414141;
     }
-    
+
     #divBigHeader .divSearch input:focus {
-        background: #414141!important;
+        background: #414141 !important;
         color: var(--text);
     }
-    
+
     #divBigHeader #newTicket a.button {
-        background: /*[[bodyColor]]*/!important;
+        background: var(--mainbody) !important;
         border-color: #414141;
     }
-    
+
     #divBigHeader #newTicket a.button:hover {
-        background: #414141!important;
-    } 
-    
+        background: #414141 !important;
+    }
+
     #leftsidebar {
         position: sticky;
         top: 11.5%;
     }
-    
+
     .dropzone {
-        background-color: rgb(52 52 52 / 85%)!important;
+        background-color: rgb(52 52 52 / 85%) !important;
     }
-    
+
     #editIncidentForm .outerroundedbox {
-        background-color: var(--thirdbody)!important;
+        background-color: var(--thirdbody) !important;
     }
-    
-    #incidentStart, #incidentEnd, #statusPage {
+
+    #incidentStart,
+    #incidentEnd,
+    #statusPage {
         background-color: var(--borderclr);
-        border: var(--border)!important;
-    }
-    
-    #serviceItemPositions {
-        background-color: var(--thirdbody)!important;
-        border: none!important;
-    }
-    
-    .order-table table th {
-        background-color: #1b6081!important;
         border: var(--border) !important;
     }
-    
+
+    #serviceItemPositions {
+        background-color: var(--thirdbody) !important;
+        border: none !important;
+    }
+
+    .order-table table th {
+        background-color: var(--tabcolor) !important;
+        border: var(--border) !important;
+    }
+
     .order-table table td {
         border: var(--border) !important;
     }
-    
+
     table.horizseparated th:first-child {
-        border-top-left-radius: var(--border-m)!important;
+        border-top-left-radius: var(--border-m) !important;
     }
-    
+
     table.horizseparated th:last-child {
-        border-top-right-radius: var(--border-m)!important;
+        border-top-right-radius: var(--border-m) !important;
     }
-    
+
     table.horizseparated tbody:last-of-type tr:last-child td:last-child {
-      border-bottom-right-radius: var(--border-m)!important;
+        border-bottom-right-radius: var(--border-m) !important;
     }
-    
+
     table.horizseparated tbody:last-of-type tr:last-child td:first-child {
-      border-bottom-left-radius: var(--border-m)!important;
+        border-bottom-left-radius: var(--border-m) !important;
     }
-    
+
     .order-table table {
         border-collapse: unset !important;
     }
-    
+
     #ticketBody #subject #subject-span.contentEditable {
         color: var(--text);
     }
-    
-    table.horizseparated tr.overdue td a.ticketLink, table.horizseparated tr.overdue td.duedate {
+
+    table.horizseparated tr.overdue td a.ticketLink,
+    table.horizseparated tr.overdue td.duedate {
         color: #ff0900;
     }
-    
-    table#recordedworktime tr:not(:last-child) td, table#recordedworktime th, table#recordedworktime tr:last-of-type>td {
+
+    table#recordedworktime tr:not(:last-child) td,
+    table#recordedworktime th,
+    table#recordedworktime tr:last-of-type > td {
         border: 1px solid #474747;
     }
-    
-    table#addRecordedWorktime tr:not(:last-child) td, table#addRecordedWorktime th, table#addRecordedWorktime tr:last-of-type>td {
+
+    table#addRecordedWorktime tr:not(:last-child) td,
+    table#addRecordedWorktime th,
+    table#addRecordedWorktime tr:last-of-type > td {
         border: 1px solid #474747;
     }
-    
-    input[disabled], 
-    select[disabled], 
-    textarea[disabled], 
-    button[disabled], 
-    input[readonly], 
-    select[readonly], 
-    textarea[readonly], 
-    .disabled, 
-    .disabledPlan, 
+
+    input[disabled],
+    select[disabled],
+    textarea[disabled],
+    button[disabled],
+    input[readonly],
+    select[readonly],
+    textarea[readonly],
+    .disabled,
+    .disabledPlan,
     .disabledTrial {
         background-color: #2a2a2a;
     }
-    
-    .chosenZKANr option, .rtPosNr .chosen-container .chosen-results li {
-        background-color: #2e2e2e!important;
-    }
-    
-    .holidaytimewrapper {
-        border-top: 5px solid /*[[bodyColor]]*/;
+
+    .chosenZKANr option,
+    .rtPosNr .chosen-container .chosen-results li {
+        background-color: #2e2e2e !important;
     }
 
-    #timeform {
-        background-color: /*[[bodyColor]]*/;
-        border-bottom: 20px solid /*[[bodyColor]]*/;
+    .dark .holidaytimewrapper {
+        border-top: 5px solid var(--secbody)!important;
+    }
+    
+    button#Break_TIME_Submit {
+        margin-left: 10px;
+        border-radius: 5px!important;
+    }
+    
+    input#Break_TIME_Std {
+        height: 30px!important;
+        border-radius: 5px!important;
+    }
+    
+    .bocategories.worktime {
+      width: 85%;
+    }
+    
+    .bocategories.sync {
+      width: 80%;
+    }
+
+    .dark #timeform {
+        background-color: var(--mainbody);
+        border-bottom: 20px solid var(--secbody);
     }
 
     #timeheader th,
@@ -479,19 +545,20 @@
         color: var(--text);
     }
 
-    .breaktimewrapper {
-        border-bottom: 20px solid /*[[bodyColor]]*/;
+    .dark .breaktimewrapper {
+        border-bottom: 20px solid var(--secbody);
     }
-    
+
     table#addRecordedWorktime td#addRtSave {
         border: 1px solid #474747;
     }
 
     #rteBody {
-        background: var(--thirdbody)!important;
+        background: var(--thirdbody) !important;
     }
 
-    .categories, .midbg{
+    .categories,
+    .midbg {
         background-color: transparent;
         /* padding: 0; */
     }
@@ -500,22 +567,24 @@
         background-color: var(--secbody);
         border-radius: var(--border-m);
     }
-    
-    table.outerroundedborder th:last-child, 
+
+    table.outerroundedborder th:last-child,
     table.outerroundedbox th:last-child {
         border-top-right-radius: var(--border-m);
     }
-    
-    table.outerroundedborder th:first-child, 
+
+    table.outerroundedborder th:first-child,
     table.outerroundedbox th:first-child {
         border-top-left-radius: var(--border-m);
     }
-    
+
     .outerroundedborder {
         border-radius: var(--border-m);
     }
 
-    #tblTickets th a, #tblTickets th a:visited, h3 {
+    #tblTickets th a,
+    #tblTickets th a:visited,
+    h3 {
         color: var(--text);
     }
 
@@ -523,23 +592,22 @@
         background-color: var(--hovbody);
         border: 1px solid #424242;
     }
-    
 
     .Titel-Wrapper .chosen-results li.active-result {
         color: var(--text);
     }
 
-    .KA-Wrapper .chosen-results li:nth-of-type(-n+14),
+    .KA-Wrapper .chosen-results li:nth-of-type(-n + 14),
     .KA-Wrapper .chosen-results li:nth-child(18),
     .KA-Wrapper .chosen-results li:nth-child(22),
     .KA-Wrapper .chosen-results li:nth-child(23),
     .KA-Wrapper .chosen-results li:nth-child(24),
-    .ticketComment .chosen-results li:nth-of-type(-n+14),
+    .ticketComment .chosen-results li:nth-of-type(-n + 14),
     .ticketComment .chosen-results li:nth-child(18),
     .ticketComment .chosen-results li:nth-child(22),
     .ticketComment .chosen-results li:nth-child(23),
-    .ticketComment .chosen-results li:nth-child(24){
-        background-color: #bb5050!important;
+    .ticketComment .chosen-results li:nth-child(24) {
+        background-color: #bb5050 !important;
         color: var(--text);
     }
 
@@ -554,18 +622,19 @@
     .ticketComment .chosen-results li:nth-child(17),
     .ticketComment .chosen-results li:nth-child(19),
     .ticketComment .chosen-results li:nth-child(20),
-    .ticketComment .chosen-results li:nth-child(21){
-        background-color: #5d9f4f!important;
+    .ticketComment .chosen-results li:nth-child(21) {
+        background-color: #5d9f4f !important;
         color: var(--text);
     }
-    
+
     #divNewComment #divSubscribersList .subscriber:where(.dark, .dark *) {
-        background-color: var(--hovbody)!important;
+        background-color: var(--hovbody) !important;
     }
-    
+
     #divNewComment #divSubscribersList .subscriber,
-    input[type="checkbox"]::after, input[type="checkbox"]::before {
-      border-radius: 0.25rem!important;
+    input[type="checkbox"]::after,
+    input[type="checkbox"]::before {
+        border-radius: 0.25rem !important;
     }
 
     .KA-Wrapper .chosen-container .chosen-results li.highlighted {
@@ -598,7 +667,8 @@
         color: var(--text);
     }
 
-    div.richeditor div.editbar, #linkInventoryBox {
+    div.richeditor div.editbar,
+    #linkInventoryBox {
         background: var(--thirdbody);
     }
 
@@ -615,7 +685,7 @@
         margin-left: var(--border-s);
     }
 
-    .report-settings div.report-input input[type=checkbox] {
+    .report-settings div.report-input input[type="checkbox"] {
         margin-top: 19px;
     }
 
@@ -627,92 +697,97 @@
         border: 1px solid #424242;
     }
 
-    .xdsoft_datetimepicker, 
-    .xdsoft_noselect, 
-    .xdsoft_, 
+    .xdsoft_datetimepicker,
+    .xdsoft_noselect,
+    .xdsoft_,
     .xdsoft_label,
     .select2-dropdown,
     .select2-search,
-    .select2-search--dropdown{
-        background: var(--thirdbody)!important;
+    .select2-search--dropdown {
+        background: var(--thirdbody) !important;
         background-color: transparent;
         color: var(--text);
     }
-    
+
     .select2-dropdown {
         border: var(--border);
     }
-    
+
     .select2-container--default .select2-selection--single {
         border: none;
     }
-    
+
     span[style*="#FFEFEF"] {
-        background-color: var(--mainbody)!important;
+        background-color: var(--mainbody) !important;
     }
 
-    .xdsoft_datetimepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_next, .xdsoft_datetimepicker .xdsoft_today_button {
+    .xdsoft_datetimepicker .xdsoft_prev,
+    .xdsoft_datetimepicker .xdsoft_next,
+    .xdsoft_datetimepicker .xdsoft_today_button {
         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAeCAYAAACsYQl4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozQjRCQjRGREU4MkNFMzExQjRDQkIyRDJDOTdBRUI1MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCQjg0OUYyNTZDODAxMUUzQjMwM0IwMERBNUU0ODQ5NSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCQjg0OUYyNDZDODAxMUUzQjMwM0IwMERBNUU0ODQ5NSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkI5NzE3MjFBN0E2Q0UzMTFBQjJEQjgzMDk5RTNBNTdBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCNEJCNEZERTgyQ0UzMTFCNENCQjJEMkM5N0FFQjUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+aQvATgAAAfVJREFUeNrsmr1OwzAQxzGtkPjYEAuvVGAvfQIGRKADE49gdLwDDwBiZ2RhQUKwICQkWLsgFiRQuIBTucFJ/XFp4+hO+quqnZ4uvzj2nV2RpukCW/22yAgYNINmc7du7DcghCjrkqgOKjF1znpt6rZ0AGWQj7TvCU8d9UM+QAGDrhdyc2Bnc1WVVPBev9V8lBnY+rDwncWZThG4xk4lmxtJy2AHgoY/FySgbSBPwPZ8mEXbQx3aDERb0EbYAYFC7pcAtAvkMWwC0D3NX58S9D/YnoGC7nPWr3Dg9JTbtuHhDShBT8D2CBSK/iIEvVXxpuxSgh7DdgwUTL4iA92zmJb6lKB/YTsECmV+IgK947AGDIqgQ/LojsO135Hn51l2cWlov0JdGNrPUceueXRwilSVgkUyom9Rd6gbLfYTDeO+1v6orn0InTogYDGUkYLO3/wc9BdqqTCKP1Tfi+oTIaCBIL2TES+GTyruT9S61p6BHam+99DFEAgLFklYsIBHwSI9QY80H5ta+1rB/6ovaKihBJeEJbgLbBlQgl+j3lDPqA2tfQV1j3pVn8s+oKHGTSVJ+FqDLeR5bCqJ2E/BCycsoLZETXaKGs7rhKVt+9HZScrZNMi88V8P7LlDbvOZYaJVpMMmBCT4n0o8dTBoNgbdWPsRYACs3r7XyNfbnAAAAABJRU5ErkJggg==);
         -webkit-filter: grayscale(1) invert(1);
         filter: grayscale(1) invert(1);
     }
 
     .xdsoft_datetimepicker .xdsoft_calendar th {
-        background: var(--thirdbody)!important;
+        background: var(--thirdbody) !important;
     }
 
-    .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default, .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current {
-        background: #4D4D4D!important;
-        color: var(--text)!important;
+    .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+    .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+    .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+        background: #4d4d4d !important;
+        color: var(--text) !important;
     }
 
-    .xdsoft_datetimepicker .xdsoft_calendar td, .xdsoft_datetimepicker .xdsoft_calendar th {
-        background: var(--thirdbody)!important;
-        color: #A1A1A1!important;
+    .xdsoft_datetimepicker .xdsoft_calendar td,
+    .xdsoft_datetimepicker .xdsoft_calendar th {
+        background: var(--thirdbody) !important;
+        color: #a1a1a1 !important;
     }
 
-    .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div {
-        background: var(--thirdbody)!important;
+    .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div {
+        background: var(--thirdbody) !important;
         /* color: #666; */
     }
-    
+
     #postCalculationModal {
         background-color: var(--hovbody);
         border-radius: var(--border-m);
     }
-    
-    #postCalculationModal table, 
-    #postCalculationModal th, 
+
+    #postCalculationModal table,
+    #postCalculationModal th,
     #postCalculationModal td {
         background-color: var(--thirdbody);
-        border: 1px solid var(--hovbody)
+        border: 1px solid var(--hovbody);
     }
-    
+
     #postCalculationModal table {
         border-radius: var(--border-m);
     }
-    
+
     #postCalculationModal th {
-        background-color: var(--tabcolor)!important;
+        background-color: var(--tabcolor) !important;
     }
-    
+
     #postCalculationModal th:first-child {
         border-top-left-radius: var(--border-s);
     }
-    
+
     #postCalculationModal .woName {
         border-bottom-left-radius: var(--border-s);
     }
-    
+
     #postCalculationModal th:last-child {
         border-top-right-radius: var(--border-s);
     }
-    
+
     #postCalculationModal tr:last-child td:last-child {
         border-bottom-right-radius: var(--border-s);
     }
-    
-    #postCalculationModal #workorderOverview tbody>tr:last-of-type {
+
+    #postCalculationModal #workorderOverview tbody > tr:last-of-type {
         border-top: 3px solid var(--borderclr);
     }
 
@@ -721,38 +796,35 @@
         font-family: sans-serif;
     }
 
-
-
     div.kbHeader input {
         background-color: var(--secbody);
         border: 1px solid #3a3a3a;
     }
 
-    div.kbHeader div>a {
+    div.kbHeader div > a {
         box-shadow: 0 1px 12px -2px rgb(0 0 0 / 15%);
         background-color: var(--secbody);
         color: #b7b5b5;
-    }
-
-    .footer,
-    #nLogs tr {
-        background-color: var(--thirdbody);
     }
 
     a {
         color: #39b1ff;
     }
 
-    a:hover, a:focus {
+    a:hover,
+    a:focus {
         color: #47799a;
     }
 
-    p,h2,li {
+    .dark p,
+    .dark h2,
+    .dark li {
         color: #bbb;
     }
 
-    #projectSalesInfo > span, #projectSalesInfo > div{
-        background: none!important;
+    #projectSalesInfo > span,
+    #projectSalesInfo > div {
+        background: none !important;
     }
 
     .badge.live-badge {
@@ -765,8 +837,17 @@
     .chosen-container-multi .chosen-choices {
         border: 1px solid #444;
         background-color: #5c5c5c;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, var(--thirdbody)), color-stop(15%, var(--hovbody)));
-        background-image: -webkit-linear-gradient(var(--thirdbody) 1%, var(--hovbody) 15%);
+        background-image: -webkit-gradient(
+            linear,
+            50% 0%,
+            50% 100%,
+            color-stop(1%, var(--thirdbody)),
+            color-stop(15%, var(--hovbody))
+        );
+        background-image: -webkit-linear-gradient(
+            var(--thirdbody) 1%,
+            var(--hovbody) 15%
+        );
         background-image: -moz-linear-gradient(#eeeeee 1%, #ffffff 15%);
         background-image: -o-linear-gradient(#eeeeee 1%, #ffffff 15%);
         background-image: linear-gradient(var(--thirdbody) 1%, var(--hovbody) 15%);
@@ -795,75 +876,78 @@
         color: #444;
         background: var(--secbody);
     }
-    
+
     .hovertext:before {
-        background-color: /*[[bodyColor]]*/;
+        background-color: var(--mainbody);
         border: 1px solid #3a3a3a;
         color: #cdcdcd;
         transition: opacity 0.5s ease-in-out;
     }
-    
+
     span.tt-arrow {
         border-left: 9px solid transparent;
         border-right: 9px solid transparent;
-        border-bottom: 9px solid /*[[bodyColor]]*/;
+        border-bottom: 9px solid var(--mainbody);
     }
-    
+
     .companyStatus span {
         color: #960100;
     }
-    
+
     .editCell:after {
         border-color: transparent var(--secbody);
     }
-    
-    div.richeditor div.editbar, 
+
+    div.richeditor div.editbar,
     #linkInventoryBox {
         border-top-left-radius: var(--border-s);
         border-top-right-radius: var(--border-s);
     }
-    
+
     div.richeditor iframe {
         background-color: var(--thirdbody);
         border-bottom-left-radius: var(--border-s);
         border-bottom-right-radius: var(--border-s);
     }
-    
+
     div.richeditor div.container {
         border-bottom-left-radius: var(--border-s);
         border-bottom-right-radius: var(--border-s);
     }
-    
-    font > b, font {
+
+    font > b,
+    font {
         color: var(--text);
     }
-    
+
     font > table {
         background-color: var(--yellow);
         border-radius: var(--border-m);
     }
-    
-    font > table pre{
-        font-family: "Consolas","Lucida Console",Monospace;
+
+    font > table pre {
+        font-family: "Consolas", "Lucida Console", Monospace;
     }
-    
+
     .dark #nLogs tr th {
-        border-radius: var(--border-l)!important;
+        border-radius: var(--border-l) !important;
     }
-    
+
     #addIncidentForm .outerroundedbox {
-        background-color: var(--mainbody)!important;
+        background-color: var(--mainbody) !important;
     }
-    
+
     input[type="datetime-local"] {
-        background-color: var(--borderclr)!important;
+        background-color: var(--borderclr) !important;
     }
-    
-    #EmergencyContactsModal, #mailModal, #smsModal {
+
+    #EmergencyContactsModal,
+    #mailModal,
+    #smsModal {
         background-color: var(--borderclr);
         border-radius: var(--border-m);
     }
-    
+
     #incidentsAccordion .ui-accordion-header.ui-state-active {
         background-color: var(--mainbody);
         border-color: var(--secbody);
@@ -873,14 +957,14 @@
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
     }
-    
+
     #incidentsAccordion .ui-accordion-header {
         background-color: var(--mainbody);
         border-color: var(--secbody);
         color: var(--text);
         border-radius: var(--border-m);
     }
-    
+
     .accordionItem {
         background-color: var(--mainbody);
         border-color: var(--secbody);
@@ -888,16 +972,16 @@
         border-bottom-right-radius: var(--border-m);
         border-bottom-left-radius: var(--border-m);
     }
-    
+
     .ui-icon {
         filter: invert(1);
     }
-    
+
     #incidentsAccordion .ui-state-hover {
-        background-color: var(--hovbody)!important;
-        border: var(--border)!important;
+        background-color: var(--hovbody) !important;
+        border: var(--border) !important;
     }
-    
+
     @media only screen and (max-width: 670px) {
         #divBigHeader #newTicket {
             background-color: transparent !important;
@@ -906,14 +990,16 @@
 }
 
 @-moz-document regexp("(?=.*?\\/User\\/Login).*"), regexp("(?=.*?\\/TwoFactorAuth).*") {
-        #divBigHeader, .adminlogo {
-        z-index: 0!important;
+    #divBigHeader,
+    .adminlogo {
+        z-index: 0 !important;
     }
-    
-    body, .footer {
-        background-color: /*[[bodyColor]]*/;
+
+    body,
+    .footer {
+        background-color: var(--mainbody);
     }
-    
+
     .footer {
         border-top: 1px solid #4f4f4f;
     }
@@ -921,165 +1007,184 @@
     .outerroundedbox {
         background-color: var(--secbody);
     }
-    
+
     .outerroundedbox h2 {
         color: var(--text);
     }
-    
-    input[type=text], input[type=number], input[type=password], input[type=email], input[type=file], input[type=url], select, textarea, input.ac_input {
-        background-color: /*[[bodyColor]]*/;
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="email"],
+    input[type="file"],
+    input[type="url"],
+    select,
+    textarea,
+    input.ac_input {
+        background-color: var(--mainbody);
         color: var(--text);
         border: none;
     }
 }
 
 @-moz-document regexp(".*/*[[url]]*/.*[Dd]ashboard.*") {
-    
     :root {
         color-scheme: light dark;
     }
-  
+
     #customerDashboard .outerroundedbox {
+        background: #ffffff3b;
+        border-radius: var(--border-s);
+    }
+
+    .dark #customerDashboard .outerroundedbox {
         background: #2e2e2e3b;
         border-radius: var(--border-s);
     }
-    
-    .outerroundedbox > h3, 
+
+    .outerroundedbox > h3,
     #phoneNotesForm > h3,
     #phonenotesFormWrapper > h3,
     .pnMissingDataWarning,
     .noCallsFound,
     #serverwatchLogs > span {
-      margin-left: 16px!important;
+        margin-left: 16px !important;
     }
-    
-    .outerroundedbox > h3, #phoneNotesForm > h3 {
-      margin-top: 13px;
+
+    .outerroundedbox > h3,
+    #phoneNotesForm > h3 {
+        margin-top: 13px;
     }
-    
-    #createNewAnsprechpartnerForm, #dashboardOptions {
-        background: #2e2e2e;
+
+    #createNewAnsprechpartnerForm,
+    #dashboardOptions {
+        background: transparent!important;
         border-radius: var(--border-s);
     }
-    
+
     #opendashboardOptions {
-        color: var(--link)!important;
+        color: var(--link) !important;
         margin-left: 10px;
     }
-    
+
     #opendashboardOptions:hover {
-        color: var(--linkhov)!important;
+        color: var(--linkhov) !important;
     }
-    
+
     .chosen-container .chosen-drop {
         background: var(--hovbody);
         border-bottom-left-radius: var(--border-s);
         border-bottom-right-radius: var(--border-s);
-        border: var(--border)
+        border: var(--border);
     }
-    
+
     #dashboardOptions .modal-content {
         background-color: var(--secbody);
     }
-    
+
     #customBoxesWrapper,
-    .custom-box-item{
+    .custom-box-item {
         background-color: var(--thirdbody);
         border: none;
     }
-    
+
     .chosen-container-active .chosen-choices li.search-field input[type="text"],
     #dashboardOptionsForm h5,
     .custom-box-item .box-title {
-        color: var(--text)!important;
+        color: var(--text) !important;
     }
     
     .chosen-choices {
-        border-radius: var(--border-s)!important;
+        border-radius: var(--border-s) !important;
     }
-    
+
     .chosen-container .chosen-results {
         z-index: 999999;
     }
-    
-    #serverwatchLogsList>div, #callLog>div {
-        background: rgba(40, 40, 40, .81);
+
+    .dark #serverwatchLogsList > div,
+    .dark#callLog > div {
+        background: rgba(40, 40, 40, 0.81);
         backdrop-filter: blur(10px);
         border-radius: 3px;
     }
-    
-    #serverwatchLogsList>div:nth-of-type(even), #callLog>div:nth-of-type(even) {
-        background: rgba(37, 37, 37, .94);
+
+    .dark #serverwatchLogsList > div:nth-of-type(even),
+    .dark #callLog > div:nth-of-type(even) {
+        background: rgba(37, 37, 37, 0.94);
         backdrop-filter: blur(10px);
     }
-    
+
     table:not(.commentsTbl):not(.horizseparated):not(#maintable) tr:last-of-type > td {
         padding-bottom: 20px;
         background-color: var(--transparency);
     }
-    
-    .dark #serverwatchLogsList > div, .dark #callLog > div {
+
+    .dark #serverwatchLogsList > div,
+    .dark #callLog > div {
         background: transparent !important;
         margin-bottom: 2px;
     }
-    
+
     #callerID > table > tbody > tr > td {
         padding-bottom: 20px;
-        background-color: transparent!important;
+        background-color: transparent !important;
     }
-    
+
     .company-header > tbody > tr th {
         border-bottom: var(--border);
     }
-    
+
     #apPhone {
         border: 1px solid #424242;
         border-radius: var(--border-s);
     }
-    
-    input[type=tel],
-    #confirmAnsprechpartnerMapping, 
+
+    input[type="tel"],
+    #confirmAnsprechpartnerMapping,
     #confirmPhoneToCompanyModal {
         background-color: var(--hovbody);
     }
-    
-    input[type=tel]:disabled {
+
+    input[type="tel"]:disabled {
         background-color: #232323;
     }
-    
-    .boSearch input::placeholder, #opendashboardOptions {
+
+    .boSearch input::placeholder,
+    #opendashboardOptions {
         color: var(--hovtext);
     }
-    
-    polyline, path {
-        stroke: rgb(41, 196, 17)!important;
-        filter: drop-shadow( 0px 0px 2px rgba(28, 186, 45, .3));
+
+    polyline,
+    path {
+        stroke: rgb(41, 196, 17) !important;
+        filter: drop-shadow(0px 0px 2px rgba(28, 186, 45, 0.3));
     }
-    
+
     #customerInfo > table > tbody > tr > th:nth-child(1) {
         border-top-left-radius: var(--border-s);
     }
-    
+
     #customerInfo > table > tbody > tr > th:nth-child(2) {
         border-top-right-radius: var(--border-s);
     }
-    
-    table.outerroundedborder th:last-child, 
+
+    table.outerroundedborder th:last-child,
     table.outerroundedbox th:last-child {
         border-top-right-radius: var(--border-s);
     }
-    
-    table.outerroundedborder th:first-child, 
+
+    table.outerroundedborder th:first-child,
     table.outerroundedbox th:first-child {
         border-top-left-radius: var(--border-s);
     }
-    
+
     .chosen-with-drop .chosen-choices {
-        border-bottom-left-radius: 0px!important;
-        border-bottom-right-radius: 0px!important;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
     }
-    
+
     iframe:focus-visible {
-      outline: none!important;
+        outline: none !important;
     }
 }
