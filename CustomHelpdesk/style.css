@@ -181,7 +181,6 @@
 span.grey:has(+ .orderEdit),
 span.grey:has(+ #orderSelect) {
     flex: 0 0 100%;
-    margin-top: 4px;
 }
 
 /* Entfernt die Error-Message, falls sie keinen Inhalt hat */
@@ -1331,3 +1330,4 @@ span.grey:has(+ #orderSelect) {
         outline: none !important;
     }
 }
+
