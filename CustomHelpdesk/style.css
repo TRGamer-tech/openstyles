@@ -3,7 +3,7 @@
 @namespace      github.com/TRGamer-Tech/openstyles
 @author         TRGYT
 @description    `<dfn>General</dfn>If you use a JitBit helpdesk and don't like the styling, I got you covered!<strong>IMPORTANT</strong>You have to enter your URL to be able to use it properly! thi can be archived by pressing the "customize theme" button and entering the correct URL (can also be non-jitbit URL)<strong> Who is this for? </strong>For people who dont like the default styling<strong> What does it do?</strong>Makes everything better.`
-@version        2.1.2
+@version        2.1.3
 @license        CC Zero
 @advanced text url "URL" "X.jitbit.com"
 @advanced color bodyColor "Body Color" rgb(39, 39, 39)
@@ -138,6 +138,56 @@
         border-right: 3px solid var(--tabcolor);
         border-left-color: transparent !important;
     }
+    
+/* Container auf Wrapping vorbereiten */
+.flex.gap-x-2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start; /* Alles standardmässig nach links */
+}
+
+/* Name (Martin Schmidt) */
+.uPopup {
+    flex: 0 1 auto; /* Nur so breit wie der Text */
+    display: block;
+}
+
+/* Kommentar-Datum (3 Stunden vorher) nach rechts schieben */
+.commentDate {
+    flex: 0 0 auto;
+    margin-left: auto; /* Schiebt nur dieses Element ganz nach rechts */
+    text-align: right;
+}
+
+/* Erzwingt einen Umbruch nach der ersten Zeile */
+.commentDate::after {
+    content: "";
+    flex: 0 0 100%;
+    display: block;
+    height: 0;
+}
+
+/* Alle Spans (Datum, Std, KA) - bleiben linksbündig nebeneinander in Zeile 2 */
+.uPopup ~ span:not(#orderSelect):not(.errorMessage):not(.commentDate) {
+    display: inline-block;
+    flex: 0 0 auto;
+    /* Verhindert, dass sie nach rechts driften */
+}
+
+/* Der Auftrag-Bereich (und alles danach) - neue Zeile 3 */
+#orderSelect, 
+.orderEdit,
+span.grey:has(+ .orderEdit),
+span.grey:has(+ #orderSelect) {
+    flex: 0 0 100%;
+    margin-top: 4px;
+}
+
+/* Entfernt die Error-Message, falls sie keinen Inhalt hat */
+.errorMessage:empty {
+    display: none;
+}
 
     th {
         color: var(--text);
