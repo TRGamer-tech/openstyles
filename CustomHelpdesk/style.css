@@ -139,54 +139,54 @@
         border-left-color: transparent !important;
     }
     
-/* Container auf Wrapping vorbereiten */
-.flex.gap-x-2 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start; /* Alles standardmässig nach links */
-}
+    /* Container auf Wrapping vorbereiten */
+    .flex.gap-x-2 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start; /* Alles standardmässig nach links */
+    }
 
-/* Name (Martin Schmidt) */
-.uPopup {
-    flex: 0 1 auto; /* Nur so breit wie der Text */
-    display: block;
-}
+    /* Name (Martin Schmidt) */
+    .uPopup {
+        flex: 0 1 auto; /* Nur so breit wie der Text */
+        display: block;
+    }
 
-/* Kommentar-Datum (3 Stunden vorher) nach rechts schieben */
-.commentDate {
-    flex: 0 0 auto;
-    margin-left: auto; /* Schiebt nur dieses Element ganz nach rechts */
-    text-align: right;
-}
+    /* Kommentar-Datum (3 Stunden vorher) nach rechts schieben */
+    .commentDate {
+        flex: 0 0 auto;
+        margin-left: auto; /* Schiebt nur dieses Element ganz nach rechts */
+        text-align: right;
+    }
 
-/* Erzwingt einen Umbruch nach der ersten Zeile */
-.commentDate::after {
-    content: "";
-    flex: 0 0 100%;
-    display: block;
-    height: 0;
-}
+    /* Erzwingt einen Umbruch nach der ersten Zeile */
+    .commentDate::after {
+        content: "";
+        flex: 0 0 100%;
+        display: block;
+        height: 0;
+    }
 
-/* Alle Spans (Datum, Std, KA) - bleiben linksbündig nebeneinander in Zeile 2 */
-.uPopup ~ span:not(#orderSelect):not(.errorMessage):not(.commentDate) {
-    display: inline-block;
-    flex: 0 0 auto;
-    /* Verhindert, dass sie nach rechts driften */
-}
+    /* Alle Spans (Datum, Std, KA) - bleiben linksbündig nebeneinander in Zeile 2 */
+    .uPopup ~ span:not(#orderSelect):not(.errorMessage):not(.commentDate) {
+        display: inline-block;
+        flex: 0 0 auto;
+        /* Verhindert, dass sie nach rechts driften */
+    }
 
-/* Der Auftrag-Bereich (und alles danach) - neue Zeile 3 */
-#orderSelect, 
-.orderEdit,
-span.grey:has(+ .orderEdit),
-span.grey:has(+ #orderSelect) {
-    flex: 0 0 100%;
-}
+    /* Der Auftrag-Bereich (und alles danach) - neue Zeile 3 */
+    #orderSelect, 
+    .orderEdit,
+    span.grey:has(+ .orderEdit),
+    span.grey:has(+ #orderSelect) {
+        flex: 0 0 100%;
+    }
 
-/* Entfernt die Error-Message, falls sie keinen Inhalt hat */
-.errorMessage:empty {
-    display: none;
-}
+    /* Entfernt die Error-Message, falls sie keinen Inhalt hat */
+    .errorMessage:empty {
+        display: none;
+    }
 
     th {
         color: var(--text);
