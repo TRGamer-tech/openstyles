@@ -1025,6 +1025,77 @@
         background-color: var(--hovbody) !important;
         border: var(--border) !important;
     }
+    
+    /* --- Floating AI drawer, glowing border only --- */
+    #gptDrawer {
+      position: fixed !important;
+      top: 154.5px !important;        /* overrides inline top: 140px */
+      bottom: 16px !important;         /* overrides inset-y-0's bottom: 0 */
+      right: 16px !important;          /* overrides right-0's right: 0 */
+      left: auto !important;
+      height: auto !important;         /* overrides inline height: 80% */
+      width: 480px !important;         /* overrides w-full / lg:w-[var(...)] */
+      max-width: calc(100vw - 32px) !important;
+      border-radius: 1rem !important;
+      border-left-width: 0 !important; /* overrides border-l */
+      overflow: visible !important;
+    }
+
+    #gptDrawer #gptPopup {
+      height: 100% !important;
+      border-radius: 1rem !important;
+      overflow: hidden !important;     /* clip content to rounded corners */
+    }
+
+    /* Glowing ring hugging the edge, cycling purple -> teal-blues */
+    #gptDrawer::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 1rem;
+      pointer-events: none;
+      box-shadow:
+        0 0 0 1.5px rgba(255, 255, 255, 0.15) inset,
+        0 0 6px 1px #6d28d9,
+        0 0 12px 2px #6d28d9,
+        0 0 18px 3px #6d28d9;
+      animation: aiBorderGlow 8s ease-in-out infinite;
+    }
+
+    @keyframes aiBorderGlow {
+      0% {
+        box-shadow:
+          0 0 0 1.5px rgba(255, 255, 255, 0.15) inset,
+          0 0 6px 1px #6d28d9,
+          0 0 12px 2px #6d28d9,
+          0 0 18px 3px #6d28d9;
+      }
+      33% {
+        box-shadow:
+          0 0 0 1.5px rgba(255, 255, 255, 0.15) inset,
+          0 0 6px 1px #0a324e,
+          0 0 12px 2px #0a324e,
+          0 0 18px 3px #0a324e;
+      }
+      66% {
+        box-shadow:
+          0 0 0 1.5px rgba(255, 255, 255, 0.15) inset,
+          0 0 6px 1px #057084,
+          0 0 12px 2px #057084,
+          0 0 18px 3px #057084;
+      }
+      100% {
+        box-shadow:
+          0 0 0 1.5px rgba(255, 255, 255, 0.15) inset,
+          0 0 6px 1px #047b8c,
+          0 0 12px 2px #047b8c,
+          0 0 18px 3px #047b8c;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #gptDrawer::after { animation: none; }
+    }
 
     @media only screen and (max-width: 670px) {
         #divBigHeader #newTicket {
@@ -1322,4 +1393,3 @@
         outline: none !important;
     }
 }
-
