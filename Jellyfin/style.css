@@ -1,182 +1,87 @@
-/* ==========================================================================
-   Jellyfin Custom CSS Theme - "Disney+ Orange"
-   Disney+ inspired layout, orange accent instead of blue.
-   Works on TV, Desktop, Mobile.
-   Install: Dashboard -> General -> Custom CSS -> paste this whole file.
-   ========================================================================== */
+/* =========================================================================
+   ElegantFin - Orange Edition (Jellyfin v12)
+   Base: ElegantFin + jf12 Companion, loaded via jsDelivr (correct MIME type).
+   Below: accent color overrides (violet -> orange) + extra polish.
+   ========================================================================= */
 
+@import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
+@import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/assets/add-ons/media-bar-plugin-support-latest-min.css");
+@import url("https://cdn.jsdelivr.net/gh/mihaif7/elegantfin-jf12@main/Theme/ElegantFin-jf12-modern-latest.css");
+
+/* ---------- Orange accent override ---------- */
 :root {
-  --accent: #ff8a1e;
-  --accent-dark: #cc6a10;
-  --accent-glow: rgba(255, 138, 30, 0.55);
-  --bg-dark: #060a12;
-  --bg-card: #10151f;
-  --text-light: #f5f6fa;
-  --text-dim: #9aa1ac;
-  --ease: cubic-bezier(0.25, 0.8, 0.25, 1);
+  --accentColor: #ff8a1e;
+  --accentHoverColor: #ffa64d;
+  --semiTransparentAccentColor: rgba(255, 138, 30, 0.18);
+
+  --btnMiniPlayColor: #ff8a1e;
+  --btnMiniPlayBorderColor: #ffa64d;
+
+  --btnSubmitColor: #cc6a10;
+  --btnSubmitBorderColor: #ff8a1e;
+
+  --checkboxCheckedBgColor: #ff8a1e;
+  --highlightOutlineColor: #ff8a1e;
+
+  --osdSeekBarPlayedColor: #ff8a1e;
+  --osdSeekBarThumbColor: #ffcf9e;
+
+  --cardHoverBorderColor: #ff8a1e;
+
+  /* extra tokens used only below, not part of ElegantFin's own set */
+  --accentGlow: rgba(255, 138, 30, 0.55);
 }
 
-/* ---------- Global base ---------- */
-body {
-  background: var(--bg-dark) !important;
-  color: var(--text-light) !important;
+:root[data-theme="light"] {
+  --accentColor: #d9640a;
+  --accentHoverColor: #ff8a1e;
+  --btnSubmitColor: #d9640a;
+  --btnSubmitBorderColor: #ff8a1e;
+  --checkboxCheckedBgColor: #d9640a;
+  --highlightOutlineColor: #d9640a;
+  --osdSeekBarPlayedColor: #d9640a;
+  --osdSeekBarThumbColor: #ff8a1e;
 }
 
-a, .emby-button, button {
-  transition: color 0.25s var(--ease), background-color 0.25s var(--ease),
-    transform 0.25s var(--ease), box-shadow 0.25s var(--ease) !important;
+/* starIcon rating badge, keep TMDB/IMDB colors but tint the plain glow */
+.starIcon {
+  filter: drop-shadow(0 0 2px var(--accentGlow));
 }
 
-/* ---------- Accent color swap (blue -> orange) ---------- */
-.button-link,
-.emby-button.button-link,
-.raised.button-submit,
-.emby-select-withcolor,
-.checkboxOutline,
-.emby-checkbox-checked-bordered .checkboxOutline,
-.emby-tab-button.emby-tab-button-active .emby-button-foreground,
-.emby-tab-button.emby-tab-button-active,
-.mainDrawer .navMenuOption.selected,
-.sliderBubble,
-.emby-slider-background-lower {
-  color: var(--accent) !important;
-  border-color: var(--accent) !important;
-  background-color: var(--accent) !important;
+/* ---------- Extra: smoother, glowier motion on top of ElegantFin ---------- */
+
+/* softer, longer card hover ease + orange glow instead of hard border only */
+.card-hoverable:hover .cardScalable,
+.card-hoverable:hover .visualCardBox {
+  transition: border-color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  box-shadow: 0 0 22px var(--accentGlow);
 }
 
-.emby-tab-button.emby-tab-button-active {
-  background: none !important;
-  border-bottom: 3px solid var(--accent) !important;
+/* play button pop-in feels snappier */
+.cardOverlayContainer > .cardOverlayFab-primary {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.25s ease !important;
+}
+.card-hoverable:hover .cardOverlayContainer > .cardOverlayFab-primary {
+  transform: scale(1.12);
 }
 
-.raised.button-submit {
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark)) !important;
-  border: none !important;
-  box-shadow: 0 4px 18px var(--accent-glow);
-}
-.raised.button-submit:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 26px var(--accent-glow);
+/* glowing focus ring for remote / TV navigation */
+.card:focus .cardBox.visualCardBox,
+.card:focus .cardBox:not(.visualCardBox) .cardScalable {
+  box-shadow: 0 0 0 2px var(--accentColor), 0 0 26px var(--accentGlow) !important;
 }
 
-::selection {
-  background: var(--accent);
-  color: #000;
-}
-
-progress::-webkit-progress-value,
-.itemProgressBar {
-  background: var(--accent) !important;
-}
-
-/* ---------- Disney+ style hero / backdrop ---------- */
-.backdropContainer {
-  position: relative;
-}
-.backdropContainer::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    var(--bg-dark) 0%,
-    rgba(6, 10, 18, 0.55) 45%,
-    rgba(6, 10, 18, 0.1) 100%
-  );
-  pointer-events: none;
-}
-
-.detailImageContainer img,
-.backdropImage {
-  transition: transform 0.6s var(--ease), filter 0.6s var(--ease);
-}
-.backdropContainer:hover .backdropImage {
-  transform: scale(1.03);
-}
-
-/* ---------- Disney+ style rounded poster cards ---------- */
-.card {
-  border-radius: 14px !important;
-  overflow: hidden;
-  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease) !important;
-}
-
-.card:hover,
-.card:focus-within {
-  transform: scale(1.08) translateY(-6px);
-  z-index: 5;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55), 0 0 0 2px var(--accent);
-}
-
-.cardBox {
-  border-radius: 14px !important;
-}
-
-.cardImageContainer {
-  border-radius: 14px !important;
-  transition: box-shadow 0.35s var(--ease) !important;
-}
-
-.cardText-first {
-  font-weight: 600;
-}
-
-/* Card overlay play button, Disney+ style pop-in */
-.cardOverlayButton-br,
-.cardOverlayFab-primary {
-  background: var(--accent) !important;
-  color: #060a12 !important;
-  transform: scale(0.85);
-  opacity: 0;
-  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease) !important;
-}
-.card:hover .cardOverlayButton-br,
-.card:hover .cardOverlayFab-primary {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* ---------- Nav / header ---------- */
-.mainDrawer,
-.skinHeader {
-  background: rgba(6, 10, 18, 0.85) !important;
-  backdrop-filter: blur(14px);
-}
-
-.headerHomeButton,
-.headerButton {
-  transition: color 0.25s var(--ease), transform 0.25s var(--ease) !important;
-}
-.headerButton:hover {
-  color: var(--accent) !important;
-  transform: translateY(-1px);
-}
-
-/* ---------- Focus ring for TV / remote navigation ---------- */
-.card:focus,
-.emby-button:focus,
-button:focus {
-  outline: none !important;
-  box-shadow: 0 0 0 3px var(--accent), 0 0 22px var(--accent-glow) !important;
-}
-
-/* ---------- Sliders / carousels smooth scroll ---------- */
-.emby-scroller {
-  scroll-behavior: smooth;
-}
-
-.itemsContainer .card {
-  will-change: transform;
-}
-
-/* ---------- Page fade-in ---------- */
+/* page transitions a touch smoother */
 .view {
-  animation: fadeInUp 0.4s var(--ease);
+  animation: efOrangeFadeIn 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-@keyframes fadeInUp {
+@keyframes efOrangeFadeIn {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -184,60 +89,14 @@ button:focus {
   }
 }
 
-/* ---------- Loading spinner recolor ---------- */
-.mdl-spinner__layer-1,
-.mdl-spinner__layer-2,
-.mdl-spinner__layer-3,
-.mdl-spinner__layer-4 {
-  border-color: var(--accent) !important;
+/* seek bar thumb: bigger glow while dragging */
+.sliderContainer:active .mdl-slider-background-flex {
+  box-shadow: 0 0 12px var(--accentGlow);
 }
 
-/* ==========================================================================
-   Responsive: Desktop / Mobile / TV
-   ========================================================================== */
-
-/* Desktop wide screens: bigger hero, more breathing room */
-@media (min-width: 1200px) {
-  .card:hover {
-    transform: scale(1.1) translateY(-8px);
-  }
-}
-
-/* Tablet / small desktop */
-@media (max-width: 1199px) and (min-width: 768px) {
-  .card:hover {
-    transform: scale(1.06) translateY(-4px);
-  }
-}
-
-/* Mobile phones: no hover-scale jank, tap feedback instead */
+/* mobile: replace hover-scale jank with tap feedback, keep glow */
 @media (max-width: 767px) {
-  .card:hover {
-    transform: none;
-    box-shadow: none;
-  }
-  .card:active {
-    transform: scale(0.97);
-    transition: transform 0.15s var(--ease) !important;
-  }
-  .cardOverlayButton-br,
-  .cardOverlayFab-primary {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* TV mode (large screen, 10-foot UI, coarse pointer = remote) */
-@media (min-width: 1600px) and (pointer: coarse) {
-  .card {
-    border-radius: 18px !important;
-  }
-  .card:focus,
-  .card.show-focus {
-    transform: scale(1.15);
-    box-shadow: 0 0 0 4px var(--accent), 0 0 34px var(--accent-glow) !important;
-  }
-  body {
-    font-size: 1.15em;
+  .card-hoverable:active .cardScalable {
+    box-shadow: 0 0 16px var(--accentGlow);
   }
 }
