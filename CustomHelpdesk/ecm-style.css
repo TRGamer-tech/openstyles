@@ -13,40 +13,69 @@
     color-scheme: dark;
     --dark-text: #e6e6e6;
     --dark-border: #4a4a4a;
+    --dark-field: #2a2a2a;
+  }
+  
+  /* Strip every background the page paints, including inline and Tailwind ones */
+  *, *::before, *::after {
+    background-color: transparent !important;
+    background-image: none !important;
   }
   
   html, body, #app, main, .view {
-    background: transparent !important;
     color: var(--dark-text) !important;
   }
   
-  /* The page sets an inline white background on .area, so !important is required */
-  .area {
-    background-color: transparent !important;
-    border-color: var(--dark-border) !important;
-  }
-  
-  h1, h2, h3, h4, h5, h6, p, span, div, em, label, td, th {
+  body, body * {
     color: var(--dark-text) !important;
   }
   
-  table, td, th {
+  .area, table, td, th {
     border-color: var(--dark-border) !important;
   }
   
   th {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
   }
   
-  input, select, textarea {
-    background: #2a2a2a !important;
+  /* Form fields and the vue-select dropdown */
+  input, select, textarea,
+  .v-select, .vs__dropdown-toggle, .vs__selected, .vs__search,
+  .vs__dropdown-menu, .vs__dropdown-option {
+    background-color: var(--dark-field) !important;
     color: var(--dark-text) !important;
     border-color: var(--dark-border) !important;
   }
   
-  /* Keep the colored action buttons readable */
-  main#view11 .view-buttons button,
-  main#view4 .view-buttons button {
+  .vs__search::placeholder {
+    color: #9a9a9a !important;
+  }
+  
+  .vs__dropdown-option--highlight {
+    background-color: #3a3a3a !important;
+  }
+  
+  .vs__clear, .vs__open-indicator {
+    fill: var(--dark-text) !important;
+  }
+  
+  /* vue-select hides the menu with inline styles, so force it open when the component is open */
+  .v-select.vs--open .vs__dropdown-menu {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  /* Restore the colored action buttons, which the wildcard rule just erased */
+  main#view11 .view-buttons button:first-child {
+    background-color: #37b16d !important;
+  }
+  main#view11 .view-buttons button:nth-child(2) {
+    background-color: #2287a8 !important;
+  }
+  main#view11 .view-buttons button:last-child {
+    background-color: #e36d6a !important;
+  }
+  main#view11 .view-buttons button {
     color: #ffffff !important;
   }
 }
