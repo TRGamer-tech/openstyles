@@ -1,0 +1,40 @@
+:root {
+  color-scheme: dark;
+  --dark-text: #e6e6e6;
+  --dark-border: #4a4a4a;
+}
+
+html, body, #app, main, .view {
+  background: transparent !important;
+  color: var(--dark-text) !important;
+}
+
+/* The page sets an inline white background on .area, so !important is required */
+.area {
+  background-color: transparent !important;
+  border-color: var(--dark-border) !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, div, em, label, td, th {
+  color: var(--dark-text) !important;
+}
+
+table, td, th {
+  border-color: var(--dark-border) !important;
+}
+
+th {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+input, select, textarea {
+  background: #2a2a2a !important;
+  color: var(--dark-text) !important;
+  border-color: var(--dark-border) !important;
+}
+
+/* Keep the colored action buttons readable */
+main#view11 .view-buttons button,
+main#view4 .view-buttons button {
+  color: #ffffff !important;
+}
